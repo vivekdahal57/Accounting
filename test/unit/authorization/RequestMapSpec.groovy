@@ -6,8 +6,8 @@ import spock.lang.Specification
 /**
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
  */
-@TestFor(RequestMap)
-class RequestMapSpec extends Specification {
+@TestFor(Requestmap)
+class RequestmapSpec extends Specification {
 
     def setup() {
     }

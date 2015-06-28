@@ -1,6 +1,6 @@
 package authorization
 
-class RequestMap implements Serializable {
+class Requestmap implements Serializable {
     String configAttribute
     String url
 }

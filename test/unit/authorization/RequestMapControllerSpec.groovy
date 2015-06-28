@@ -1,12 +1,13 @@
 package authorization
 
 
+
 import grails.test.mixin.*
 import spock.lang.*
 
-@TestFor(RequestMapController)
-@Mock(RequestMap)
-class RequestMapControllerSpec extends Specification {
+@TestFor(RequestmapController)
+@Mock(Requestmap)
+class RequestmapControllerSpec extends Specification {
 
     def populateValidParams(params) {
         assert params != null
@@ -16,136 +17,136 @@ class RequestMapControllerSpec extends Specification {
 
     void "Test the index action returns the correct model"() {
 
-        when: "The index action is executed"
-        controller.index()
+        when:"The index action is executed"
+            controller.index()
 
-        then: "The model is correct"
-        !model.requestMapInstanceList
-        model.requestMapInstanceCount == 0
+        then:"The model is correct"
+            !model.requestmapInstanceList
+            model.requestmapInstanceCount == 0
     }
 
     void "Test the create action returns the correct model"() {
-        when: "The create action is executed"
-        controller.create()
+        when:"The create action is executed"
+            controller.create()
 
-        then: "The model is correctly created"
-        model.requestMapInstance != null
+        then:"The model is correctly created"
+            model.requestmapInstance!= null
     }
 
     void "Test the save action correctly persists an instance"() {
 
-        when: "The save action is executed with an invalid instance"
-        request.contentType = FORM_CONTENT_TYPE
-        request.method = 'POST'
-        def requestMap = new RequestMap()
-        requestMap.validate()
-        controller.save(requestMap)
+        when:"The save action is executed with an invalid instance"
+            request.contentType = FORM_CONTENT_TYPE
+            request.method = 'POST'
+            def requestmap = new Requestmap()
+            requestmap.validate()
+            controller.save(requestmap)
 
-        then: "The create view is rendered again with the correct model"
-        model.requestMapInstance != null
-        view == 'create'
+        then:"The create view is rendered again with the correct model"
+            model.requestmapInstance!= null
+            view == 'create'
 
-        when: "The save action is executed with a valid instance"
-        response.reset()
-        populateValidParams(params)
-        requestMap = new RequestMap(params)
+        when:"The save action is executed with a valid instance"
+            response.reset()
+            populateValidParams(params)
+            requestmap = new Requestmap(params)
 
-        controller.save(requestMap)
+            controller.save(requestmap)
 
-        then: "A redirect is issued to the show action"
-        response.redirectedUrl == '/requestMap/show/1'
-        controller.flash.message != null
-        RequestMap.count() == 1
+        then:"A redirect is issued to the show action"
+            response.redirectedUrl == '/requestmap/show/1'
+            controller.flash.message != null
+            Requestmap.count() == 1
     }
 
     void "Test that the show action returns the correct model"() {
-        when: "The show action is executed with a null domain"
-        controller.show(null)
+        when:"The show action is executed with a null domain"
+            controller.show(null)
 
-        then: "A 404 error is returned"
-        response.status == 404
+        then:"A 404 error is returned"
+            response.status == 404
 
-        when: "A domain instance is passed to the show action"
-        populateValidParams(params)
-        def requestMap = new RequestMap(params)
-        controller.show(requestMap)
+        when:"A domain instance is passed to the show action"
+            populateValidParams(params)
+            def requestmap = new Requestmap(params)
+            controller.show(requestmap)
 
-        then: "A model is populated containing the domain instance"
-        model.requestMapInstance == requestMap
+        then:"A model is populated containing the domain instance"
+            model.requestmapInstance == requestmap
     }
 
     void "Test that the edit action returns the correct model"() {
-        when: "The edit action is executed with a null domain"
-        controller.edit(null)
+        when:"The edit action is executed with a null domain"
+            controller.edit(null)
 
-        then: "A 404 error is returned"
-        response.status == 404
+        then:"A 404 error is returned"
+            response.status == 404
 
-        when: "A domain instance is passed to the edit action"
-        populateValidParams(params)
-        def requestMap = new RequestMap(params)
-        controller.edit(requestMap)
+        when:"A domain instance is passed to the edit action"
+            populateValidParams(params)
+            def requestmap = new Requestmap(params)
+            controller.edit(requestmap)
 
-        then: "A model is populated containing the domain instance"
-        model.requestMapInstance == requestMap
+        then:"A model is populated containing the domain instance"
+            model.requestmapInstance == requestmap
     }
 
     void "Test the update action performs an update on a valid domain instance"() {
-        when: "Update is called for a domain instance that doesn't exist"
-        request.contentType = FORM_CONTENT_TYPE
-        request.method = 'PUT'
-        controller.update(null)
+        when:"Update is called for a domain instance that doesn't exist"
+            request.contentType = FORM_CONTENT_TYPE
+            request.method = 'PUT'
+            controller.update(null)
 
-        then: "A 404 error is returned"
-        response.redirectedUrl == '/requestMap/index'
-        flash.message != null
+        then:"A 404 error is returned"
+            response.redirectedUrl == '/requestmap/index'
+            flash.message != null
 
 
-        when: "An invalid domain instance is passed to the update action"
-        response.reset()
-        def requestMap = new RequestMap()
-        requestMap.validate()
-        controller.update(requestMap)
+        when:"An invalid domain instance is passed to the update action"
+            response.reset()
+            def requestmap = new Requestmap()
+            requestmap.validate()
+            controller.update(requestmap)
 
-        then: "The edit view is rendered again with the invalid instance"
-        view == 'edit'
-        model.requestMapInstance == requestMap
+        then:"The edit view is rendered again with the invalid instance"
+            view == 'edit'
+            model.requestmapInstance == requestmap
 
-        when: "A valid domain instance is passed to the update action"
-        response.reset()
-        populateValidParams(params)
-        requestMap = new RequestMap(params).save(flush: true)
-        controller.update(requestMap)
+        when:"A valid domain instance is passed to the update action"
+            response.reset()
+            populateValidParams(params)
+            requestmap = new Requestmap(params).save(flush: true)
+            controller.update(requestmap)
 
-        then: "A redirect is issues to the show action"
-        response.redirectedUrl == "/requestMap/show/$requestMap.id"
-        flash.message != null
+        then:"A redirect is issues to the show action"
+            response.redirectedUrl == "/requestmap/show/$requestmap.id"
+            flash.message != null
     }
 
     void "Test that the delete action deletes an instance if it exists"() {
-        when: "The delete action is called for a null instance"
-        request.contentType = FORM_CONTENT_TYPE
-        request.method = 'DELETE'
-        controller.delete(null)
+        when:"The delete action is called for a null instance"
+            request.contentType = FORM_CONTENT_TYPE
+            request.method = 'DELETE'
+            controller.delete(null)
 
-        then: "A 404 is returned"
-        response.redirectedUrl == '/requestMap/index'
-        flash.message != null
+        then:"A 404 is returned"
+            response.redirectedUrl == '/requestmap/index'
+            flash.message != null
 
-        when: "A domain instance is created"
-        response.reset()
-        populateValidParams(params)
-        def requestMap = new RequestMap(params).save(flush: true)
+        when:"A domain instance is created"
+            response.reset()
+            populateValidParams(params)
+            def requestmap = new Requestmap(params).save(flush: true)
 
-        then: "It exists"
-        RequestMap.count() == 1
+        then:"It exists"
+            Requestmap.count() == 1
 
-        when: "The domain instance is passed to the delete action"
-        controller.delete(requestMap)
+        when:"The domain instance is passed to the delete action"
+            controller.delete(requestmap)
 
-        then: "The instance is deleted"
-        RequestMap.count() == 0
-        response.redirectedUrl == '/requestMap/index'
-        flash.message != null
+        then:"The instance is deleted"
+            Requestmap.count() == 0
+            response.redirectedUrl == '/requestmap/index'
+            flash.message != null
     }
 }
