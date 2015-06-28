@@ -117,6 +117,9 @@ log4j.main = {
 }
 
 // Added by the Spring Security Core plugin:
+//import grails.plugins.springsecurity.SecurityConfigType
+//grails.plugins.springsecurity.securityConfigType = SecurityConfigType.Requestmap
+
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'authorization.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'authorization.UserRole'
 grails.plugin.springsecurity.authority.className = 'authorization.Role'
@@ -131,6 +134,14 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         '/**/images/**'  : ['permitAll'],
         '/**/favicon.ico': ['permitAll'],
         '/welcome'       : ['permitAll'],
-        '/welcome.gsp'   : ['permitAll']
+        '/welcome.gsp'   : ['permitAll'],
+        '/*/**'          : ['ROLE_ADMIN']
 ]
 
+//grails.plugin.springsecurity.rememberMe.persistent = false
+//grails.plugin.springsecurity.rest.login.useJsonCredentials = true
+//grails.plugin.springsecurity.rest.login.failureStatusCode = 401
+//grails.plugin.springsecurity.rest.token.storage.useGorm = true
+//grails.plugin.springsecurity.rest.token.storage.gorm.tokenDomainClassName = 'authorization.AuthenticationToken'
+//grails.plugin.springsecurity.rest.token.storage.gorm.tokenValuePropertyName = 'token'
+//grails.plugin.springsecurity.rest.token.storage.gorm.usernamePropertyName = 'username'
