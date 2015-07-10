@@ -242,14 +242,25 @@ body{
 /**********************login page********************************/
 
 .login_heading{
-    background-color: #60D5AC;
+    background-color: #006F48;
+    padding: 15px;
+    border-radius: 3px 3px 0px 0px;
+    -moz-border-radius: 3px 3px 0px 0px;
+    -webkit-border-radius: 3px 3px 0px 0px;
+}
+
+.panel-title{
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .panel_login {
     position:fixed;
     top:50%;
     left:50%;
-    transform:translate(-50%,-50%);
+    margin-top: -160px;
+    margin-left: -220px;
     width:450px;
     height:300px;
     box-shadow:0 0 5px #aaa;
@@ -294,7 +305,7 @@ body{
 .btn_login_override {
     outline:0;
     padding:5px 40px;
-    background:#428BCA;
+    background: #006F48;
     border:0;
     color:#fff;
     display:block;
@@ -303,6 +314,6 @@ body{
 
 .btn_login_override:hover,
 .btn_login_override:focus {
-    background:#D9EDF7;
-    color:#3183B9;
+    background:#00AB6F ;
+    color:#fff;
 }
