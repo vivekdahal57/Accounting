@@ -34,9 +34,8 @@ class UserController {
             respond userInstance.errors, view:'create'
             return
         }
-
         userInstance.save flush:true
-
+        UserRole.create(userInstance,Role.findById(params.role.id),true)
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'user.label', default: 'User'), userInstance.id])
@@ -61,9 +60,9 @@ class UserController {
             respond userInstance.errors, view:'edit'
             return
         }
-
+        UserRole.findByUser(userInstance).delete flush: true
         userInstance.save flush:true
-
+        UserRole.create(userInstance,Role.findById(params.role.id),true)
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'User.label', default: 'User'), userInstance.id])
@@ -80,7 +79,7 @@ class UserController {
             notFound()
             return
         }
-
+        UserRole.findByUser(userInstance).delete flush: true
         userInstance.delete flush:true
 
         request.withFormat {

@@ -1,5 +1,7 @@
 import authorization.*
 
+import java.lang.reflect.Array
+
 class BootStrap {
 
     def init = { servletContext ->
@@ -26,10 +28,9 @@ class BootStrap {
         if (!basicUser.authorities.contains(userRole)) {
             UserRole.create basicUser, userRole
         }
-        for (String url in ['/', '/index', '/index.gsp', '/**/favicon.ico', '/assets/**', '/**/js/**',
-                            '/**/css/**', '/**/images/**', '/login', '/login.*', '/login/*', '/logout',
-                            '/logout.*', '/logout/*', '/welcome', '/welcome.gsp']) {
-            Requestmap.findByConfigAttribute('permitAll') ?: new Requestmap(url: url, configAttribute: 'permitAll').save()
+        def test =  ["/", "/index", "/index.gsp", "/**/favicon.ico", "/assets/**", "/**/js/**","/**/css/**", "/**/images/**", "/login", "/login.*", "/login/*", "/logout","/logout.*", "/logout/*","/welcome", "/welcome.gsp"]
+        for (String url : test) {
+            Requestmap.findByUrl(url) ?: new Requestmap(url: url, configAttribute: 'permitAll').save()
         }
         Requestmap.findByUrl('/*/**') ?: new Requestmap(url: '/*/**', configAttribute: 'ROLE_ADMIN').save()
     }

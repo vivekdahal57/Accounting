@@ -1,5 +1,5 @@
 <%@ page import="authorization.User" %>
-
+<%@ page import="authorization.UserRole" %>
 
 
 <div class="fieldcontain ${hasErrors(bean: userInstance, field: 'username', 'error')} required">
@@ -17,6 +17,14 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="password" required="" value="${userInstance?.password}"/>
+
+</div>
+<div class="fieldcontain ${hasErrors(bean: userRoleInstance, field: 'role', 'error')} required">
+    <label for="role">
+        <g:message code="userRole.role.label" default="Role" />
+        <span class="required-indicator">*</span>
+    </label>
+    <g:select id="role" name="role.id" from="${authorization.Role.list()}" optionKey="id" required="" value="${userRoleInstance?.role?.id}" class="many-to-one"/>
 
 </div>
 
