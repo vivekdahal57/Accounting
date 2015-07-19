@@ -2,98 +2,156 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Welcome to Grails</title>
-    <style type="text/css" media="screen">
-    #status {
-        background-color: #eee;
-        border: .2em solid #fff;
-        margin: 2em auto;
-        padding: 1em;
-        width: 30em;
-        -moz-box-shadow: 0px 0px 1.25em #ccc;
-        -webkit-box-shadow: 0px 0px 1.25em #ccc;
-        box-shadow: 0px 0px 1.25em #ccc;
-        -moz-border-radius: 0.6em;
-        -webkit-border-radius: 0.6em;
-        border-radius: 0.6em;
-    }
-
-    .ie6 #status {
-        display: inline; /* float double margin fix http://www.positioniseverything.net/explorer/doubled-margin.html */
-    }
-
-    #status ul {
-        font-size: 0.9em;
-        list-style-type: none;
-        margin-bottom: 0.6em;
-        padding: 0;
-    }
-
-    #status li {
-        line-height: 1.3;
-    }
-
-    #status h1 {
-        text-transform: uppercase;
-        font-size: 1.1em;
-        margin: 0 0 0.3em;
-    }
-
-    #page-body {
-        margin: 2em 1em 1.25em 18em;
-    }
-
-    h2 {
-        margin-top: 1em;
-        margin-bottom: 0.3em;
-        font-size: 1em;
-    }
-
-    p {
-        line-height: 1.5;
-        margin: 0.25em 0;
-    }
-
-    #controller-list ul {
-        list-style-position: inside;
-    }
-
-    #controller-list li {
-        line-height: 1.3;
-        list-style-position: inside;
-        margin: 0.25em 0;
-    }
-
-    @media screen and (max-width: 480px) {
-        #status {
-            display: none;
-        }
-
-        #page-body {
-            margin: 0 1em 1em;
-        }
-
-        #page-body h1 {
-            margin-top: 0;
-        }
-    }
-    </style>
+    <title>${pageTitle}</title>
 </head>
 
 <body>
-<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 
-<div id="status" role="complementary">
-    <g:form controller="logout" method="post">
-        <input type="submit" value="Logout"/>
-    </g:form>
+<div class="dashIconWrap">
+    <div class="heading" style="margin-bottom: 5px;">Dashboard</div>
+    <div class="dashIconLink">
+        <a href="#">
+            <div class="col-md-3">
+                <div class="dashIcon">
+                    <i class="glyphicon glyphicon-blackboard"></i>
 
-    <h2>Available Controllers:</h2>
-    <ul>
-        <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.name }}">
-            <li class="controller"><g:link controller="${c.logicalPropertyName}">${c.name}</g:link></li>
-        </g:each>
-    </ul>
+                    <div class="dashIconOverlay">Chart of Account</div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="dashIconLink">
+        <a href="#">
+            <div class="col-md-3">
+                <div class="dashIcon">
+                    <i class="fa fa-money"></i>
+
+                    <div class="dashIconOverlay">Opening Balance</div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="dashIconLink">
+        <a href="#">
+            <div class="col-md-3">
+                <div class="dashIcon">
+                    <i class="glyphicon glyphicon-time"></i>
+
+                    <div class="dashIconOverlay">Accounting Period</div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="dashIconLink">
+        <a href="#">
+            <div class="col-md-3">
+                <div class="dashIcon">
+                    <i class="fa fa-calendar"></i>
+
+                    <div class="dashIconOverlay">Calender Maintenance</div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="dashIconLink">
+        <a href="#">
+            <div class="col-md-3">
+                <div class="dashIcon">
+                    <i class="glyphicon glyphicon-piggy-bank"></i>
+
+                    <div class="dashIconOverlay">Interest Regulation</div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="dashIconLink">
+        <a href="#">
+            <div class="col-md-3">
+                <div class="dashIcon">
+                    <i class="fa fa-suitcase"></i>
+
+                    <div class="dashIconOverlay">Member A/C Details</div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="dashIconLink">
+        <a href="#">
+            <div class="col-md-3">
+                <div class="dashIcon">
+                    <i class="fa fa-eye"></i>
+
+                    <div class="dashIconOverlay">Granted Witness</div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="dashIconLink">
+        <a href="#">
+            <div class="col-md-3">
+                <div class="dashIcon">
+                    <i class="glyphicon glyphicon-open-file"></i>
+
+                    <div class="dashIconOverlay">Opening Interest B/F</div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="dashIconLink">
+        <a href="#">
+            <div class="col-md-3">
+                <div class="dashIcon">
+                    <i class="fa fa-book"></i>
+
+                    <div class="dashIconOverlay">Check Book Chart</div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="dashIconLink">
+        <a href="reports.php">
+            <div class="col-md-3">
+                <div class="dashIcon">
+                    <i class="fa fa-bar-chart"></i>
+
+                    <div class="dashIconOverlay">Reports</div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="dashIconLink">
+        <a href="utility.php">
+            <div class="col-md-3">
+                <div class="dashIcon">
+                    <i class="fa fa-wrench"></i>
+
+                    <div class="dashIconOverlay">Utility</div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="dashIconLink">
+        <a href="#">
+            <div class="col-md-3">
+                <div class="dashIcon">
+                    <i class="fa fa-desktop"></i>
+
+                    <div class="dashIconOverlay">System</div>
+                </div>
+            </div>
+        </a>
+    </div>
 </div>
 </body>
 </html>

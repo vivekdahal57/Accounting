@@ -100,4 +100,7 @@ class UserController {
             '*'{ render status: NOT_FOUND }
         }
     }
+    def welcome(){
+        render (view:'/welcome',model: [pageTitle:'NanceCount : Welcome'])
+    }
 }

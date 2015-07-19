@@ -28,7 +28,7 @@ class BootStrap {
         if (!basicUser.authorities.contains(userRole)) {
             UserRole.create basicUser, userRole
         }
-        def test =  ["/", "/index", "/index.gsp", "/**/favicon.ico", "/assets/**", "/**/js/**","/**/css/**", "/**/images/**", "/login", "/login.*", "/login/*", "/logout","/logout.*", "/logout/*","/welcome", "/welcome.gsp"]
+        def test =  ["/", "/index", "/index.gsp", "/**/favicon.ico", "/assets/**", "/**/js/**","/**/css/**", "/**/images/**","**/fonts/**","/login", "/login.*", "/login/*", "/logout","/logout.*", "/logout/*","/welcome", "/welcome.gsp"]
         for (String url : test) {
             Requestmap.findByUrl(url) ?: new Requestmap(url: url, configAttribute: 'permitAll').save()
         }
