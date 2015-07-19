@@ -1,6 +1,5 @@
 $(document).ready(function () {
     var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-//    alert(width);
     if (width >= 1280) {
         desktop();
     } else {
@@ -9,6 +8,9 @@ $(document).ready(function () {
     $("#menuSmall").click(function () {
         $("#menuListSmall").toggle();
     });
+    setInterval(function () {
+        $("#growlBox").fadeOut('slow');
+    }, 3000);
 });
 
 
@@ -34,8 +36,10 @@ function mobile() {
 }
 
 function desktop() {
-    $("#leftPane").hide();
-    $("#fixedShowHideBtn").show();
+    $("#leftPane").show();
+    $("#navHeading").html("Navigation Panel");
+    $("#rightPane").css({width: "80%"});
+    $("#fixedShowHideBtn").hide();
     $("#showHideBtn").click(function () {
         $("#navHeading").css({height: "37px"});
         $("#navHeading").html("");

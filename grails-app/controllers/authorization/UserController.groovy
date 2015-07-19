@@ -39,7 +39,7 @@ class UserController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'user.label', default: 'User'), userInstance.id])
-                redirect userInstance
+                redirect (action:"index")
             }
             '*' { respond userInstance, [status: CREATED] }
         }
@@ -66,7 +66,7 @@ class UserController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'User.label', default: 'User'), userInstance.id])
-                redirect userInstance
+                redirect (action:"index")
             }
             '*'{ respond userInstance, [status: OK] }
         }
