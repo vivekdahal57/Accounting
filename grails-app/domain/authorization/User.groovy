@@ -5,7 +5,10 @@ class User implements Serializable {
 	private static final long serialVersionUID = 1
 
 	transient springSecurityService
-
+    String firstName
+    String lastName
+    String email
+    String phone
 	String username
 	String password
 	boolean enabled = true

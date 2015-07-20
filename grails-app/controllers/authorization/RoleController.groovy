@@ -1,7 +1,6 @@
 package authorization
 
 
-
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -12,7 +11,7 @@ class RoleController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond Role.list(params), model:[roleInstanceCount: Role.count()]
+        respond Role.list(params), model: [roleInstanceCount: Role.count()]
     }
 
     def show(Role roleInstance) {
@@ -31,11 +30,11 @@ class RoleController {
         }
 
         if (roleInstance.hasErrors()) {
-            respond roleInstance.errors, view:'create'
+            respond roleInstance.errors, view: 'create'
             return
         }
 
-        roleInstance.save flush:true
+        roleInstance.save flush: true
 
         request.withFormat {
             form multipartForm {
@@ -58,18 +57,18 @@ class RoleController {
         }
 
         if (roleInstance.hasErrors()) {
-            respond roleInstance.errors, view:'edit'
+            respond roleInstance.errors, view: 'edit'
             return
         }
 
-        roleInstance.save flush:true
+        roleInstance.save flush: true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'Role.label', default: 'Role'), roleInstance.id])
                 redirect roleInstance
             }
-            '*'{ respond roleInstance, [status: OK] }
+            '*' { respond roleInstance, [status: OK] }
         }
     }
 
@@ -81,15 +80,29 @@ class RoleController {
             return
         }
 
-        roleInstance.delete flush:true
+        roleInstance.delete flush: true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'Role.label', default: 'Role'), roleInstance.id])
-                redirect action:"index", method:"GET"
+                redirect action: "index", method: "GET"
             }
-            '*'{ render status: NO_CONTENT }
+            '*' { render status: NO_CONTENT }
         }
+
+    }
+
+    def exceptList(Role roleInstance) {
+        def exceptList
+        for (Role temp : Role.findAll()) {
+            if (temp.id == roleInstance.id) {
+                continue
+            } else {
+                print "Inside "+temp.id
+                exceptList.add(temp)
+            }
+        }
+        return exceptList
     }
 
     protected void notFound() {
@@ -98,7 +111,7 @@ class RoleController {
                 flash.message = message(code: 'default.not.found.message', args: [message(code: 'role.label', default: 'Role'), params.id])
                 redirect action: "index", method: "GET"
             }
-            '*'{ render status: NOT_FOUND }
+            '*' { render status: NOT_FOUND }
         }
     }
 }

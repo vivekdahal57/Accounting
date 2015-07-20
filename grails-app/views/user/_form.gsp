@@ -1,5 +1,33 @@
 <%@ page import="authorization.User" %>
 <%@ page import="authorization.UserRole" %>
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'firstName', 'error')} required">
+    <label for="firstName">
+        <g:message code="user.firstName.label" default="First Name" />
+        <span class="required-indicator">:</span>
+    </label>
+    <g:textField name="firstName" required="" value="${userInstance?.firstName}" class="form-control form_control_override" />
+</div>
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'lastName', 'error')} required">
+    <label for="lastName">
+        <g:message code="user.lastName.label" default="Last Name" />
+        <span class="required-indicator">:</span>
+    </label>
+    <g:textField name="lastName" required="" value="${userInstance?.lastName}" class="form-control form_control_override" />
+</div>
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'email', 'error')} required">
+    <label for="email">
+        <g:message code="user.email.label" default="Email" />
+        <span class="required-indicator">:</span>
+    </label>
+    <g:textField name="email" required="" value="${userInstance?.email}" class="form-control form_control_override" />
+</div>
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'phone', 'error')} required">
+    <label for="phone">
+        <g:message code="user.phone.label" default="Phone" />
+        <span class="required-indicator">:</span>
+    </label>
+    <g:textField name="phone" required="" value="${userInstance?.phone}" class="form-control form_control_override" />
+</div>
 <div class="fieldcontain ${hasErrors(bean: userInstance, field: 'username', 'error')} required">
     <label for="username">
         <g:message code="user.username.label" default="Username" />
