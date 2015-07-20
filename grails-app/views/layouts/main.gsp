@@ -141,26 +141,10 @@
                     </a>
                 </span>
             </div>
-
-            <div class="panel-body">
-                <g:form method="post" controller="role" action="postNewRole">
-                    <div style="margin-bottom:20px;">
-                        <label for="roleName">
-                            Select a role:
-                        </label>
-                        <select name="rolename" class="form-control" id="roleName">
-                            <option value="keepvaluehere">rolename</option>
-                            <option value="keepvaluehere">rolename</option>
-                            <option value="keepvaluehere">rolename</option>
-                            <option value="keepvaluehere">rolename</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn editDeleteBtn">
-                        Proceed
-                    </button>
-                </g:form>
+            <div class="panel-body" id="panelBody"></div>
+            <div id="loading" class="loading">
+                <img src="${resource(asset:"images", file: "loading.gif") }" height="31" width="31"/>
             </div>
-
         </div>
     </div>
     <nav class="navbar navbar-default navbarBottomOverride">

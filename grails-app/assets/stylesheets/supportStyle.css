@@ -454,3 +454,13 @@ body {
     float: right;
     color:#fff;
 }
+
+.loading{
+    margin: 40px auto;
+    height: 31px;
+    width: 31px;
+}
+
+#loading{
+    display:none;
+}

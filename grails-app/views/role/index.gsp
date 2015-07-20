@@ -26,21 +26,20 @@
                             <tr class="${(i % 2) == 0 ? 'even' : 'odd'} tbody_tr">
                                 <td>${fieldValue(bean: roleInstance, field: "authority")}</td>
                                 <td>
-                                    <g:form method="get" action="edit" resource="${roleInstance}">
-                                        <button class="editDeleteBtn">
-                                            <i class="fa fa-pencil" style="font-size: 18px;" title="Edit" alt="Edit"></i>
-                                        </button>
-                                    </g:form>
+                                    <g:if test="${roleInstance.authority!='ROLE_ADMIN'}">
+                                        <g:form method="get" action="edit" resource="${roleInstance}">
+                                            <button class="editDeleteBtn">
+                                                <i class="fa fa-pencil" style="font-size: 18px;" title="Edit" alt="Edit"></i>
+                                            </button>
+                                        </g:form>
+                                    </g:if>
                                 </td>
                                 <td>
-                                    <button class="editDeleteBtn" type="submit" onclick="popupShow();">
-                                        <i class="fa fa-times" style="font-size: 18px;" title="Delete" alt="Delete"></i>
-                                    </button>
-                                <!--<g:form url="[resource:roleInstance, action:'delete']" method="DELETE">
-                                    <button class="editDeleteBtn" type="submit" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');">
-                                        <i class="fa fa-times" style="font-size: 18px;" title="Delete" alt="Delete"></i>
-                                    </button>
-                                </g:form>-->
+                                    <g:if test="${roleInstance.authority!='ROLE_ADMIN'}">
+                                        <button class="editDeleteBtn" type="submit" onclick="popupShow('${createLink(controller: 'role', action:'exceptList')}/${roleInstance.id}')">
+                                            <i class="fa fa-times" style="font-size: 18px;" title="Delete" alt="Delete"></i>
+                                        </button>
+                                    </g:if>
                                 </td>
                             </tr>
                         </g:each>
@@ -52,5 +51,9 @@
         <div class="pagination">
             <g:paginate total="${userInstanceCount ?: 0}" />
         </div>
+
+        <script type="text/javascript">
+
+        </script>
     </body>
 </html>

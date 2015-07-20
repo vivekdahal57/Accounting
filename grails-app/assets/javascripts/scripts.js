@@ -11,21 +11,16 @@ $(document).ready(function () {
     setInterval(function () {
         $("#growlBox").fadeOut('slow');
     }, 3000);
-
     //for delete with confirmation
 
     $("#deleteBtn").click(function () {
         popupShow();
     });
-
     $("#formClose").click(function () {
         popupHide();
     });
-
     // end of confirmation
 });
-
-
 function mobile() {
     $("#leftPane").hide();
     $("#fixedShowHideBtn").show();
@@ -71,12 +66,34 @@ function desktop() {
 }
 
 
-function popupShow() {
+function popupShow(url) {
     $("#popupBg").fadeIn();
     $("#popupContainer").fadeIn(600);
+    loadList(url);
 }
 
 function popupHide() {
     $("#popupBg").fadeOut(600);
     $("#popupContainer").fadeOut();
+}
+
+
+function loadList(url) {
+    $("#panelBody").html($("#loading").show());
+    $.ajax({
+        url: url,
+        type: "get",
+        cache: false,
+        complete: function () {
+            $("#loading").hide();
+        },
+        success: function (response) {
+            $("#panelBody").html(response);
+        },
+        failure: function (response) {
+            console.log("failure " + response);
+        }
+    });
+
+
 }
