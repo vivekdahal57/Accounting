@@ -11,6 +11,18 @@ $(document).ready(function () {
     setInterval(function () {
         $("#growlBox").fadeOut('slow');
     }, 3000);
+
+    //for delete with confirmation
+
+    $("#deleteBtn").click(function () {
+        popupShow();
+    });
+
+    $("#formClose").click(function () {
+        popupHide();
+    });
+
+    // end of confirmation
 });
 
 
@@ -56,4 +68,15 @@ function desktop() {
         });
         $("#rightPane").css({width: "80%"});
     });
+}
+
+
+function popupShow() {
+    $("#popupBg").fadeIn();
+    $("#popupContainer").fadeIn(600);
+}
+
+function popupHide() {
+    $("#popupBg").fadeOut(600);
+    $("#popupContainer").fadeOut();
 }

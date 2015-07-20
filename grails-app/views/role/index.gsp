@@ -33,11 +33,14 @@
                                     </g:form>
                                 </td>
                                 <td>
-                                    <g:form url="[resource:roleInstance, action:'delete']" method="DELETE">
-                                        <button class="editDeleteBtn" type="submit" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');">
-                                            <i class="fa fa-times" style="font-size: 18px;" title="Delete" alt="Delete"></i>
-                                        </button>
-                                    </g:form>
+                                    <button class="editDeleteBtn" type="submit" onclick="popupShow();">
+                                        <i class="fa fa-times" style="font-size: 18px;" title="Delete" alt="Delete"></i>
+                                    </button>
+                                <!--<g:form url="[resource:roleInstance, action:'delete']" method="DELETE">
+                                    <button class="editDeleteBtn" type="submit" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');">
+                                        <i class="fa fa-times" style="font-size: 18px;" title="Delete" alt="Delete"></i>
+                                    </button>
+                                </g:form>-->
                                 </td>
                             </tr>
                         </g:each>
@@ -45,6 +48,7 @@
                 </table>
             </div>
         </div>
+
         <div class="pagination">
             <g:paginate total="${userInstanceCount ?: 0}" />
         </div>

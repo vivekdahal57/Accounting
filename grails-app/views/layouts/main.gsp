@@ -21,7 +21,7 @@
     <g:layoutHead/>
 </head>
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbarOverRide">
         <div class="container-fluid">
             <div class="navbar-header" style="float:left">
                 <div class="logo">
@@ -84,7 +84,6 @@
                     <div class="unameLogoutBox">
                         <i class="fa fa-user menuIcon"></i>
                         <a href="#" class="unameLink">Username</a>
-
                         <g:form controller="logout" method="post" style="display: inline">
                             <i class="glyphicon glyphicon-off"></i>
                             <input type="submit" class="unameLinkLogout" value="Logout">
@@ -130,7 +129,41 @@
         </div>
     </div>
     <div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
-    <nav class="navbar navbar-default navbar-fixed-bottom" style="margin: 0px; border-top: 1px solid #60D5AC;">
+
+
+    <div class="popupBg" id="popupBg">
+        <div class="panel panel-info popupContainer" id="popContainer">
+            <div class="panel-heading" style="height: 37px;">
+                <h4 class="panel-title" id="heading" style="float:left">Role Transfer</h4>
+                <span id="formClose">
+                    <a href="javascript:void(0);">
+                        <i class="fa fa-times" style="font-size: 18px;" title="Close" alt="Close"></i>
+                    </a>
+                </span>
+            </div>
+
+            <div class="panel-body">
+                <g:form method="post" controller="role" action="postNewRole">
+                    <div style="margin-bottom:20px;">
+                        <label for="roleName">
+                            Select a role:
+                        </label>
+                        <select name="rolename" class="form-control" id="roleName">
+                            <option value="keepvaluehere">rolename</option>
+                            <option value="keepvaluehere">rolename</option>
+                            <option value="keepvaluehere">rolename</option>
+                            <option value="keepvaluehere">rolename</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn editDeleteBtn">
+                        Proceed
+                    </button>
+                </g:form>
+            </div>
+
+        </div>
+    </div>
+    <nav class="navbar navbar-default navbarBottomOverride">
         <div class="footer">
             Copyright &COPY; Accounting Package 2015. All Rights Reserved.
         </div>
