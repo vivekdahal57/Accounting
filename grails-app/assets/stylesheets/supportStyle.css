@@ -18,6 +18,13 @@ body {
     border-bottom: 1px solid #60D5AC;
 }
 
+.navbarOverRide{
+    position:absolute;
+    top:0px;
+    right: 0px;
+    left:0px;
+}
+
 .navbar-collapse {
     padding: 0px;
 }
@@ -246,6 +253,15 @@ body {
     margin-top: 10px;
 }
 
+.navbarBottomOverride{
+    position:fixed;
+    bottom:0px;
+    right: 0px;
+    left:0px;
+    margin: 0px; 
+    border-top: 1px solid #60D5AC;
+}
+
 .menuListSmall {
     background: #00AB6F;
     position: absolute;
@@ -332,6 +348,10 @@ body {
     color: #fff;
 }
 
+/******************Login Page complete*********************/
+
+
+/******************UserPage********************************/
 .createUser{
     float:right;
 }
@@ -400,4 +420,37 @@ body {
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     color: #fff;
+}
+
+.popupBg{
+    background:rgba(0,0,0,0.7);
+    position: fixed;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    z-index: 1;
+    display: none;
+}
+
+.popupContainer{
+    height: 200px;
+    width: 400px;
+    position:fixed;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+}
+
+.panel-info{
+    border: 1px solid #60D5AC;   
+}
+
+.panel-info > .panel-heading{
+    background-color: #00AB6F;
+}
+
+#formClose a{
+    float: right;
+    color:#fff;
 }
