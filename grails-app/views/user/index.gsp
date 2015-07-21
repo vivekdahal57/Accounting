@@ -33,6 +33,8 @@
                 <g:sortableColumn property="username"
                                   title="${message(code: 'user.username.label', default: 'Username')}"
                                   style="text-align:center;"/>
+                <g:sortableColumn property="role" title="${message(code: 'userRole.role.label', default: 'Role')}"
+                                  style="text-align:center;"/>
                 <g:sortableColumn property="accountExpired"
                                   title="${message(code: 'user.accountExpired.label', default: 'Account Expired')}"
                                   style="text-align:center;"/>
@@ -54,6 +56,7 @@
                     <td>${fieldValue(bean: userInstance, field: "email")}</td>
                     <td>${fieldValue(bean: userInstance, field: "phone")}</td>
                     <td>${fieldValue(bean: userInstance, field: "username")}</td>
+                    <td>${userroles.findByUser(userInstance).role.authority}</td>
                     <td><g:checkBox name="accountExpired" value="${userInstance.accountExpired}"
                                     onclick="return false"/></td>
                     <td><g:checkBox name="accountLocked" value="${userInstance.accountLocked}"
@@ -69,7 +72,7 @@
                         </g:form>
                     </td>
                     <td>
-                        <g:if test="${sec.loggedInUserInfo(field: "username")!=fieldValue(bean: userInstance, field: "username")}">
+                        <g:if test="${sec.loggedInUserInfo(field: "username") != fieldValue(bean: userInstance, field: "username")}">
                             <g:form url="[resource: userInstance, action: 'delete']" method="DELETE">
                                 <button class="editDeleteBtn" type="submit"
                                         onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');">

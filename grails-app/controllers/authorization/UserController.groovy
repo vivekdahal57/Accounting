@@ -12,7 +12,7 @@ class UserController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond User.list(params), model:[userInstanceCount: User.count()]
+        respond User.list(params), model:[userInstanceCount: User.count(), userroles:UserRole]
     }
 
     def show(User userInstance) {

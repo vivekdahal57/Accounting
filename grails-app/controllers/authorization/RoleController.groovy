@@ -94,7 +94,7 @@ class RoleController {
 
     def exceptList() {
         List exceptList= new ArrayList()
-        def roleId=params?.id
+        int roleId=params?.id
         for (Role temp : Role.findAll()) {
             if (temp.id == Integer.parseInt(roleId)){
                 continue
@@ -107,8 +107,8 @@ class RoleController {
     
     @Transactional(readOnly=false)
     def transferRole(){
-        def newRoleId=params?.rolename
-        def oldRoleId=params?.oldRole
+        int newRoleId=params?.rolename
+        int oldRoleId=params?.oldRole
         if(UserRole.findByRole(Role.findById(oldRoleId))){
             def updateUserRole=UserRole.executeUpdate("UPDATE UserRole SET role_id=? WHERE role_id=?",[newRoleId,oldRoleId]);
             if (updateUserRole) {
