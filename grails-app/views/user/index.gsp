@@ -21,9 +21,9 @@
         <table class="table table-hover table_override">
             <thead>
             <tr class="thead_tr">
-                <g:sortableColumn property="firstName + lastName"
-                                  title="${message(code: 'user.fullName.label', default: 'Full Name')}"
-                                  style="text-align:center;"/>
+                <g:sortableColumn property="firstName"
+                                  title="${message(code: 'user.firstName.label', default: 'Full Name')}"
+                                  style="text-align:center;" defaultOrder="asc"/>
                 <g:sortableColumn property="email"
                                   title="${message(code: 'user.email.label', default: 'Email')}"
                                   style="text-align:center;"/>
@@ -33,8 +33,7 @@
                 <g:sortableColumn property="username"
                                   title="${message(code: 'user.username.label', default: 'Username')}"
                                   style="text-align:center;"/>
-                <g:sortableColumn property="role" title="${message(code: 'userRole.role.label', default: 'Role')}"
-                                  style="text-align:center;"/>
+                <th style="text-align:center;color: #ffffff">Role</th>
                 <g:sortableColumn property="accountExpired"
                                   title="${message(code: 'user.accountExpired.label', default: 'Account Expired')}"
                                   style="text-align:center;"/>

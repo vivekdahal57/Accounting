@@ -94,9 +94,9 @@ class RoleController {
 
     def exceptList() {
         List exceptList= new ArrayList()
-        int roleId=params?.id
+        int roleId=Integer.parseInt(params?.id)
         for (Role temp : Role.findAll()) {
-            if (temp.id == Integer.parseInt(roleId)){
+            if (temp.id == roleId){
                 continue
             } else {
                 exceptList.add(temp)
@@ -107,8 +107,8 @@ class RoleController {
     
     @Transactional(readOnly=false)
     def transferRole(){
-        int newRoleId=params?.rolename
-        int oldRoleId=params?.oldRole
+        int newRoleId=Integer.parseInt(params?.rolename)
+        int oldRoleId=Integer.parseInt(params?.oldRole)
         if(UserRole.findByRole(Role.findById(oldRoleId))){
             def updateUserRole=UserRole.executeUpdate("UPDATE UserRole SET role_id=? WHERE role_id=?",[newRoleId,oldRoleId]);
             if (updateUserRole) {
@@ -127,8 +127,8 @@ class RoleController {
 
     }
     
-    def deleteRole(String oldRoleId){
-        def roleId = Role.get(Integer.parseInt(oldRoleId))
+    def deleteRole(int oldRoleId){
+        def roleId = Role.get(oldRoleId)
         roleId.delete(flush: true)
         println("Role must have been deleted")
         flash.message="Role must have been deleted"
