@@ -109,15 +109,22 @@ class RoleController {
     def transferRole(){
         def newRoleId=params?.rolename
         def oldRoleId=params?.oldRole
-        def updateUserRole=UserRole.executeUpdate("UPDATE UserRole SET role_id=? WHERE role_id=?",[newRoleId,oldRoleId]);
-        if (updateUserRole) {
+        if(UserRole.findByRole(Role.findById(oldRoleId))){
+            def updateUserRole=UserRole.executeUpdate("UPDATE UserRole SET role_id=? WHERE role_id=?",[newRoleId,oldRoleId]);
+            if (updateUserRole) {
+                println("Role updated")
+                println("Deleting old role...")
+                deleteRole(oldRoleId)
+            } else {
+                println("Role cannot be updated")
+                flash.message="Role cannot be updated"
+            }
+        }else{
             println("Role updated")
             println("Deleting old role...")
             deleteRole(oldRoleId)
-        } else {
-            println("Role cannot be updated")
-            flash.message="Role cannot be updated"
         }
+
     }
     
     def deleteRole(String oldRoleId){

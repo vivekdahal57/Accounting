@@ -51,9 +51,5 @@
         <div class="pagination">
             <g:paginate total="${userInstanceCount ?: 0}" />
         </div>
-
-        <script type="text/javascript">
-
-        </script>
     </body>
 </html>
