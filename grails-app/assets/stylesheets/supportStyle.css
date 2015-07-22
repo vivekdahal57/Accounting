@@ -371,10 +371,12 @@ body {
 .thead_tr{
     background:#00AB6F;
 }
+.thead_tr th{
+    text-align: center;
+}
 
 .tbody_tr{
     text-align:center;
-
 }
 
 .tbody_tr td{

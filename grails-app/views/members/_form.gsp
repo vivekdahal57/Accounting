@@ -92,24 +92,6 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: membersInstance, field: 'nominees', 'error')} required">
-	<label for="nominees">
-		<g:message code="members.nominees.label" default="Nominees" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="nominees" name="nominees.id" from="${accounting.Nominees.list()}" optionKey="id" required="" value="${membersInstance?.nominees?.id}" class="many-to-one"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: membersInstance, field: 'nomineesRelation', 'error')} required">
-	<label for="nomineesRelation">
-		<g:message code="members.nomineesRelation.label" default="Nominees Relation" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="nomineesRelation" required="" value="${membersInstance?.nomineesRelation}"/>
-
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: membersInstance, field: 'phone', 'error')} required">
 	<label for="phone">
 		<g:message code="members.phone.label" default="Phone" />
@@ -119,12 +101,5 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: membersInstance, field: 'relationship', 'error')} required">
-	<label for="relationship">
-		<g:message code="members.relationship.label" default="Relationship" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="relationship" name="relationship.id" from="${accounting.Relationship.list()}" optionKey="id" required="" value="${membersInstance?.relationship?.id}" class="many-to-one"/>
 
-</div>
 

@@ -1,6 +1,21 @@
 <%@ page import="accounting.Nominees" %>
 
+<div class="fieldcontain ${hasErrors(bean: nomineesInstance, field: 'members', 'error')} required">
+    <label for="nominees">
+        <g:message code="nominees.members.label" default="Member" />
+        <span class="required-indicator">*</span>
+    </label>
+    <g:select id="members" name="members.id" from="${accounting.Members.list()}" optionKey="id" required="" value="${nomineesInstance?.members?.id}" class="many-to-one"/>
 
+</div>
+<div class="fieldcontain ${hasErrors(bean: nomineesInstances, field: 'relationship', 'error')} required">
+    <label for="relationship">
+        <g:message code="nominees.relationship.label" default="Relationship" />
+        <span class="required-indicator">*</span>
+    </label>
+    <g:select id="relationship" name="relationship.id" from="${accounting.Relationship.list()}" optionKey="id" required="" value="${nomineesInstance?.relationship?.id}" class="many-to-one"/>
+
+</div>
 
 <div class="fieldcontain ${hasErrors(bean: nomineesInstance, field: 'address', 'error')} required">
 	<label for="address">

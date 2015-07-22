@@ -1,6 +1,6 @@
 package accounting
 
-class OpeaningBalance implements Serializable {
+class OpeningBalance implements Serializable {
     AccountHead accountHead
     SubAccountHead subAccountHead
     SubCategory subCategory

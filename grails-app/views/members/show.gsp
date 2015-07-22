@@ -113,24 +113,7 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${membersInstance?.nominees}">
-				<li class="fieldcontain">
-					<span id="nominees-label" class="property-label"><g:message code="members.nominees.label" default="Nominees" /></span>
-					
-						<span class="property-value" aria-labelledby="nominees-label"><g:link controller="nominees" action="show" id="${membersInstance?.nominees?.id}">${membersInstance?.nominees?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${membersInstance?.nomineesRelation}">
-				<li class="fieldcontain">
-					<span id="nomineesRelation-label" class="property-label"><g:message code="members.nomineesRelation.label" default="Nominees Relation" /></span>
-					
-						<span class="property-value" aria-labelledby="nomineesRelation-label"><g:fieldValue bean="${membersInstance}" field="nomineesRelation"/></span>
-					
-				</li>
-				</g:if>
-			
+
 				<g:if test="${membersInstance?.phone}">
 				<li class="fieldcontain">
 					<span id="phone-label" class="property-label"><g:message code="members.phone.label" default="Phone" /></span>
@@ -140,15 +123,7 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${membersInstance?.relationship}">
-				<li class="fieldcontain">
-					<span id="relationship-label" class="property-label"><g:message code="members.relationship.label" default="Relationship" /></span>
-					
-						<span class="property-value" aria-labelledby="relationship-label"><g:link controller="relationship" action="show" id="${membersInstance?.relationship?.id}">${membersInstance?.relationship?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
+
 			</ol>
 			<g:form url="[resource:membersInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">

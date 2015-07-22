@@ -109,7 +109,7 @@
                 </a>
                 <ul>
                     <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.name }}">
-                        <g:if test="${c.name != "Dbdoc" && c.name != "Login" && c.name != "Logout"}">
+                        <g:if test="${c.name != "Dbdoc" && c.name != "Login" && c.name != "Logout" && c.name!="Assets"}">
                             <li style="padding:3px;margin-left: 5px">
                                 <g:link class="unameLink" style="padding:5px;" controller="${c.logicalPropertyName}">${c.name}</g:link>
                                 </li>

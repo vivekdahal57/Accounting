@@ -11,10 +11,7 @@ class Members {
     String address
     String city
     String country
-    Nominees nominees
-    Relationship relationship
     Date memberJoinDate
-    String nomineesRelation
 
     static constraints = {
     }

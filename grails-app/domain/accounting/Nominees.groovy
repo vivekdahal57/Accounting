@@ -11,6 +11,8 @@ class Nominees {
     String address
     String city
     String country
+    Members members
+    Relationship relationship
 
     static constraints = {
     }
