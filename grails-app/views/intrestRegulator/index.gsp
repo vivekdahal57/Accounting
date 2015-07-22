@@ -34,7 +34,7 @@
 
                 <g:sortableColumn property="taxDeduction"
                                   title="${message(code: 'intrestRegulator.taxDeduction.label', default: 'Tax Deduction')}"/>
-                <g:sortableColumn colspan="2" property="action" title="Action"/>
+                <th colspan="2" style="color: #ffffff;">Action</th>
             </tr>
             </thead>
             <tbody>

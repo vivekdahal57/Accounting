@@ -38,7 +38,7 @@
                                   title="${message(code: 'nominees.country.label', default: 'Country')}"/>
                 <th style="color: #ffffff">${message(code: 'nominees.members.label', default: 'Relates To')}</th>
                 <th style="color: #ffffff">${message(code: 'nominees.relationship.label', default: 'Relationship')}</th>
-                <g:sortableColumn colspan="2" property="action" title="Action"/>
+                <th colspan="2" style="color: #ffffff;">Action</th>
             </tr>
             </thead>
             <tbody>

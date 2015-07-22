@@ -23,7 +23,7 @@
             <tr class="thead_tr">
                 <g:sortableColumn property="name" title="${message(code: 'accountHead.name.label', default: 'Name')}"
                                   style="text-align:center;"/>
-                <g:sortableColumn colspan="2" property="action" title="Action" style="text-align:center;"/>
+                <th colspan="2" style="color: #ffffff;">Action</th>
             </tr>
             </thead>
             <tbody>

@@ -63,7 +63,7 @@
                                   title="${message(code: 'calendarMaintenance.month12.label', default: 'Month12')}"/>
                 <g:sortableColumn property="endDateInAD"
                                   title="${message(code: 'calendarMaintenance.endDateInAD.label', default: 'End Date(AD)')}"/>
-                <g:sortableColumn colspan="2" property="action" title="Action" style="text-align:center;"/>
+                <th colspan="2" style="color: #ffffff;">Action</th>
             </tr>
             </thead>
             <tbody>

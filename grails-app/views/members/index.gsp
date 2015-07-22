@@ -35,7 +35,7 @@
                                   title="${message(code: 'members.country.label', default: 'Country')}"/>
                 <g:sortableColumn property="memberJoinDate"
                                   title="${message(code: 'members.memberJoinDate.label', default: 'Member Join Date')}"/>
-                <g:sortableColumn colspan="2" property="action" title="Action"/>
+                <th colspan="2" style="color: #ffffff;">Action</th>
             </tr>
             </thead>
             <tbody>

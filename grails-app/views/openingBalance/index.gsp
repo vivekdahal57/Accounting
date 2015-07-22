@@ -29,7 +29,7 @@
                 <g:sortableColumn property="openingBalance"
                                   title="${message(code: 'openingBalance.openingBalance.label', default: 'Opening Balance')}"/>
 
-                <g:sortableColumn colspan="2" property="action" title="Action"/>
+                <th colspan="2" style="color: #ffffff;">Action</th>
             </tr>
             </thead>
             <tbody>

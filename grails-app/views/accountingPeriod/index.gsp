@@ -30,7 +30,7 @@
                 <g:sortableColumn property="isDefault"
                                   title="${message(code: 'accountingPeriod.isDefault.label', default: 'Is Default')}"
                                   style="text-align:center;"/>
-                <g:sortableColumn colspan="2" property="action" title="Action" style="text-align:center;"/>
+                <th colspan="2" style="color: #ffffff;">Action</th>
             </tr>
             </thead>
             <tbody>
