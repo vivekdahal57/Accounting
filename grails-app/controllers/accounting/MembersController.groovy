@@ -40,7 +40,7 @@ class MembersController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'members.label', default: 'Members'), membersInstance.id])
-                redirect membersInstance
+                redirect (action:"index")
             }
             '*' { respond membersInstance, [status: CREATED] }
         }

@@ -40,7 +40,7 @@ class NomineesController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'nominees.label', default: 'Nominees'), nomineesInstance.id])
-                redirect nomineesInstance
+                redirect (action:"index")
             }
             '*' { respond nomineesInstance, [status: CREATED] }
         }
@@ -67,7 +67,7 @@ class NomineesController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'Nominees.label', default: 'Nominees'), nomineesInstance.id])
-                redirect nomineesInstance
+                redirect (action:"index")
             }
             '*'{ respond nomineesInstance, [status: OK] }
         }

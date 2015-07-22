@@ -40,7 +40,7 @@ class RelationshipController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'relationship.label', default: 'Relationship'), relationshipInstance.id])
-                redirect relationshipInstance
+                redirect (action:"index")
             }
             '*' { respond relationshipInstance, [status: CREATED] }
         }

@@ -40,7 +40,7 @@ class VoucherController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'voucher.label', default: 'Voucher'), voucherInstance.id])
-                redirect voucherInstance
+                redirect (action:"index")
             }
             '*' { respond voucherInstance, [status: CREATED] }
         }

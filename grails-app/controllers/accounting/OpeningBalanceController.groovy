@@ -40,7 +40,7 @@ class OpeningBalanceController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'openingBalance.label', default: 'OpeningBalance'), openingBalanceInstance.id])
-                redirect openingBalanceInstance
+                redirect (action:"index")
             }
             '*' { respond openingBalanceInstance, [status: CREATED] }
         }

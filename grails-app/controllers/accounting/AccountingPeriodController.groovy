@@ -40,7 +40,7 @@ class AccountingPeriodController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'accountingPeriod.label', default: 'AccountingPeriod'), accountingPeriodInstance.id])
-                redirect accountingPeriodInstance
+                redirect (action:"index")
             }
             '*' { respond accountingPeriodInstance, [status: CREATED] }
         }

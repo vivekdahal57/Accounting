@@ -40,7 +40,7 @@ class IntrestRegulatorController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'intrestRegulator.label', default: 'IntrestRegulator'), intrestRegulatorInstance.id])
-                redirect intrestRegulatorInstance
+                redirect (action:"index")
             }
             '*' { respond intrestRegulatorInstance, [status: CREATED] }
         }

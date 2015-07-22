@@ -40,7 +40,7 @@ class AccountHeadController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'accountHead.label', default: 'AccountHead'), accountHeadInstance.id])
-                redirect accountHeadInstance
+                redirect (action:"index")
             }
             '*' { respond accountHeadInstance, [status: CREATED] }
         }

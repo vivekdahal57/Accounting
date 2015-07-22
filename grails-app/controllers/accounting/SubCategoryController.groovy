@@ -40,7 +40,7 @@ class SubCategoryController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'subCategory.label', default: 'SubCategory'), subCategoryInstance.id])
-                redirect subCategoryInstance
+                redirect (action:"index")
             }
             '*' { respond subCategoryInstance, [status: CREATED] }
         }
