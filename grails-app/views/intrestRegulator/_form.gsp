@@ -34,7 +34,7 @@
 		<g:message code="intrestRegulator.subAccountHead.label" default="Sub Account Head" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="subAccountHead" name="subAccountHead.id" from="${accounting.SubAccountHead.list()}" optionKey="id" required="" value="${intrestRegulatorInstance?.subAccountHead?.id}" class="many-to-one"/>
+	<g:select id="subAccountHead" name="subAccountHead.id" from="${accounting.SubAccountHead.list()}" optionKey="id" required="" value="${intrestRegulatorInstance?.subAccountHead?.id}" class="many-to-one" optionValue="name"/>
 
 </div>
 

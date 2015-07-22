@@ -15,4 +15,9 @@ class Members {
 
     static constraints = {
     }
+     static transients = [ 'fullName' ]
+
+    public String getFullName() {
+        return "$firstName $middleName $lastName"
+    }
 }

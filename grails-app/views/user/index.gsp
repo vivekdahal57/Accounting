@@ -51,7 +51,7 @@
             <tbody>
             <g:each in="${userInstanceList}" status="i" var="userInstance">
                 <tr class="${(i % 2) == 0 ? 'even' : 'odd'} tbody_tr">
-                    <td>${fieldValue(bean: userInstance, field: "firstName")} ${fieldValue(bean: userInstance, field: "lastName")}</td>
+                    <td>${fieldValue(bean: userInstance, field: "fullName")}</td>
                     <td>${fieldValue(bean: userInstance, field: "email")}</td>
                     <td>${fieldValue(bean: userInstance, field: "phone")}</td>
                     <td>${fieldValue(bean: userInstance, field: "username")}</td>

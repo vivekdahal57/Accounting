@@ -47,7 +47,7 @@
 
                     <td>${fieldValue(bean: intrestRegulatorInstance, field: "maturityDays")}</td>
 
-                    <td>${fieldValue(bean: intrestRegulatorInstance, field: "subAccountHead")}</td>
+                    <td>${fieldValue(bean: intrestRegulatorInstance, field: "subAccountHead.name")}</td>
 
                     <td>${fieldValue(bean: intrestRegulatorInstance, field: "taxDeduction")}</td>
                     <td>

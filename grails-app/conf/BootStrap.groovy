@@ -6,11 +6,19 @@ class BootStrap {
 
     def init = { servletContext ->
         def adminUser = User.findByUsername('admin') ?: new User(
+                email: 'admin@gmail.com',
+                firstName: 'Admin',
+                lastName: 'Admin',
+                phone: '8789787',
                 username: 'admin',
                 password: 'admin',
                 enabled: true).save(failOnError: true)
 
         def basicUser = User.findByUsername('guest') ?: new User(
+            email: 'user@gmail.com',
+                firstName: 'User',
+                lastName: 'User',
+                phone: '8789787',
                 username: 'guest',
                 password: 'guest',                          //pw encoded by security plugin
                 enabled: true).save(failOnError: true)
