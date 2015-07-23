@@ -7,7 +7,7 @@
 		<g:message code="openingBalance.accountHead.label" default="Account Head" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="accountHead" name="accountHead.id" from="${accounting.AccountHead.list()}" optionKey="id" required="" value="${openingBalanceInstance?.accountHead?.id}" class="many-to-one"/>
+	<g:select id="accountHead" name="accountHead.id" from="${accounting.AccountHead.list()}" optionKey="id" required="" value="${openingBalanceInstance?.accountHead?.id}" class="many-to-one" optionValue="name"/>
 
 </div>
 
@@ -34,7 +34,7 @@
 		<g:message code="openingBalance.subAccountHead.label" default="Sub Account Head" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="subAccountHead" name="subAccountHead.id" from="${accounting.SubAccountHead.list()}" optionKey="id" required="" value="${openingBalanceInstance?.subAccountHead?.id}" class="many-to-one"/>
+	<g:select id="subAccountHead" name="subAccountHead.id" from="${accounting.SubAccountHead.list()}" optionKey="id" required="" value="${openingBalanceInstance?.subAccountHead?.id}" class="many-to-one" optionValue="name"/>
 
 </div>
 
@@ -43,7 +43,7 @@
 		<g:message code="openingBalance.subCategory.label" default="Sub Category" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="subCategory" name="subCategory.id" from="${accounting.SubCategory.list()}" optionKey="id" required="" value="${openingBalanceInstance?.subCategory?.id}" class="many-to-one"/>
+	<g:select id="subCategory" name="subCategory.id" from="${accounting.SubCategory.list()}" optionKey="id" required="" value="${openingBalanceInstance?.subCategory?.id}" class="many-to-one" optionValue="name"/>
 
 </div>
 

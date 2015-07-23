@@ -13,7 +13,7 @@
         <g:message code="nominees.relationship.label" default="Relationship" />
         <span class="required-indicator">*</span>
     </label>
-    <g:select id="relationship" name="relationship.id" from="${accounting.Relationship.list()}" optionKey="id" required="" value="${nomineesInstance?.relationship?.id}" class="many-to-one"/>
+    <g:select id="relationship" name="relationship.id" from="${accounting.Relationship.list()}" optionKey="id" required="" value="${nomineesInstance?.relationship?.id}" optionValue="name" class="many-to-one"/>
 
 </div>
 
