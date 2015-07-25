@@ -36,9 +36,9 @@
             <g:each in="${openingBalanceInstanceList}" status="i" var="openingBalanceInstance">
                 <tr class="${(i % 2) == 0 ? 'even' : 'odd'} tbody_tr">
 
-                    <td>${fieldValue(bean: openingBalanceInstance, field: "accountHead")}</td>
-                    <td>${fieldValue(bean: openingBalanceInstance, field: "subAccountHead")}</td>
-                    <td>${fieldValue(bean: openingBalanceInstance, field: "subCategory")}</td>
+                    <td>${fieldValue(bean: openingBalanceInstance, field: "accountHead.name")}</td>
+                    <td>${fieldValue(bean: openingBalanceInstance, field: "subAccountHead.name")}</td>
+                    <td>${fieldValue(bean: openingBalanceInstance, field: "subCategory.name")}</td>
                     <td><g:formatBoolean boolean="${openingBalanceInstance.debit}"/></td>
                     <td>${fieldValue(bean: openingBalanceInstance, field: "openingBalance")}</td>
                     <td>

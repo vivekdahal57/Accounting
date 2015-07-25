@@ -7,5 +7,6 @@ class OpeningBalance implements Serializable {
     Double openingBalance
     Boolean debit
     static constraints = {
+        subCategory unique: true
     }
 }

@@ -1,7 +1,6 @@
 package accounting
 
 
-
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -12,7 +11,7 @@ class OpeningBalanceController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond OpeningBalance.list(params), model:[openingBalanceInstanceCount: OpeningBalance.count()]
+        respond OpeningBalance.list(params), model: [openingBalanceInstanceCount: OpeningBalance.count()]
     }
 
     def show(OpeningBalance openingBalanceInstance) {
@@ -31,16 +30,16 @@ class OpeningBalanceController {
         }
 
         if (openingBalanceInstance.hasErrors()) {
-            respond openingBalanceInstance.errors, view:'create'
+            respond openingBalanceInstance.errors, view: 'create'
             return
         }
 
-        openingBalanceInstance.save flush:true
+        openingBalanceInstance.save flush: true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'openingBalance.label', default: 'OpeningBalance'), openingBalanceInstance.id])
-                redirect (action:"index")
+                redirect(action: "index")
             }
             '*' { respond openingBalanceInstance, [status: CREATED] }
         }
@@ -58,18 +57,18 @@ class OpeningBalanceController {
         }
 
         if (openingBalanceInstance.hasErrors()) {
-            respond openingBalanceInstance.errors, view:'edit'
+            respond openingBalanceInstance.errors, view: 'edit'
             return
         }
 
-        openingBalanceInstance.save flush:true
+        openingBalanceInstance.save flush: true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'OpeningBalance.label', default: 'OpeningBalance'), openingBalanceInstance.id])
                 redirect openingBalanceInstance
             }
-            '*'{ respond openingBalanceInstance, [status: OK] }
+            '*' { respond openingBalanceInstance, [status: OK] }
         }
     }
 
@@ -81,14 +80,14 @@ class OpeningBalanceController {
             return
         }
 
-        openingBalanceInstance.delete flush:true
+        openingBalanceInstance.delete flush: true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'OpeningBalance.label', default: 'OpeningBalance'), openingBalanceInstance.id])
-                redirect action:"index", method:"GET"
+                redirect action: "index", method: "GET"
             }
-            '*'{ render status: NO_CONTENT }
+            '*' { render status: NO_CONTENT }
         }
     }
 
@@ -98,7 +97,30 @@ class OpeningBalanceController {
                 flash.message = message(code: 'default.not.found.message', args: [message(code: 'openingBalance.label', default: 'OpeningBalance'), params.id])
                 redirect action: "index", method: "GET"
             }
-            '*'{ render status: NOT_FOUND }
+            '*' { render status: NOT_FOUND }
+        }
+    }
+
+    @Transactional
+    def ajaxSubAccountHeadList() {
+        int acc_id = Integer.parseInt(params.id)
+        List subAccList = SubAccountHead.findAllByAccountHead(AccountHead.findById(acc_id))
+        if (subAccList.isEmpty()) {
+            render(template: 'template/subAccountHead', model: [subAccList: subAccList])
+        } else {
+            render(template: 'template/subAccountHead', model: [subAccList: subAccList])
+        }
+    }
+
+    @Transactional
+    def ajaxSubCategoryList() {
+        int acc_id = Integer.parseInt(params.id)
+        List subCatList = SubCategory.findAllBySubAccountHead(SubAccountHead.findById(acc_id))
+        if (subCatList.isEmpty()) {
+            println "Inside:"
+            render(template: 'template/subCategory', model: [subCatList: subCatList])
+        } else {
+            render(template: 'template/subCategory', model: [subCatList: subCatList])
         }
     }
 }

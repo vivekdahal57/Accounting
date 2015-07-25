@@ -39,7 +39,7 @@ class RoleController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'role.label', default: 'Role'), roleInstance.id])
-                redirect roleInstance
+                redirect action: "index", method: "GET"
             }
             '*' { respond roleInstance, [status: CREATED] }
         }

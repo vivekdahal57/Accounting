@@ -7,9 +7,6 @@
     </head>
     <body>
         <div id="create-user" class="content scaffold-create" role="main">
-            <g:if test="${flash.message}">
-                <div class="message" role="status">${flash.message}</div>
-            </g:if>
             <div class="dashIconWrap">
                 <div class="heading" style="margin-bottom: 5px;">
                     <a class="home" href="${createLink(uri: '/')}">Dashboard</a> | 
