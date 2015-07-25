@@ -120,11 +120,20 @@
             </div>
         </g:if>
         <div class="panel panel-default rightPane" id="rightPane">
+            %{--this block is non-ajax--}%
             <g:if test="${flash.message}">
                 <div class="growlBox" id="growlBox">
                     <div class="message" role="status">${flash.message}</div>
                 </div>
             </g:if>
+            %{--this whole block is non-ajax--}%
+
+            %{--call this block after ajax request--}%
+            <div class="growlBox" id="growlBox1">
+                <div class="message" role="status" id="message"></div>
+            </div>
+            %{--This whole block--}%
+
             <g:layoutBody/>
         </div>
     </div>

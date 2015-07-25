@@ -106,7 +106,9 @@ class OpeningBalanceController {
         int acc_id = Integer.parseInt(params.id)
         List subAccList = SubAccountHead.findAllByAccountHead(AccountHead.findById(acc_id))
         if (subAccList.isEmpty()) {
-            render(template: 'template/subAccountHead', model: [subAccList: subAccList])
+            render(contentType: "application/json") {
+                status(stat: 'empty')
+            }
         } else {
             render(template: 'template/subAccountHead', model: [subAccList: subAccList])
         }
@@ -118,7 +120,9 @@ class OpeningBalanceController {
         List subCatList = SubCategory.findAllBySubAccountHead(SubAccountHead.findById(acc_id))
         if (subCatList.isEmpty()) {
             println "Inside:"
-            render(template: 'template/subCategory', model: [subCatList: subCatList])
+            render(contentType: "application/json") {
+                status(stat: 'empty')
+            }
         } else {
             render(template: 'template/subCategory', model: [subCatList: subCatList])
         }

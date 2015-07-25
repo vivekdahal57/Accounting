@@ -466,3 +466,12 @@ body {
 #loading{
     display:none;
 }
+
+#growlBox1{
+    display: none;
+}
+
+
+.fieldRequired{
+    margin-bottom: 10px;
+}

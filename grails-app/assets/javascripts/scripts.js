@@ -94,6 +94,16 @@ function loadList(url) {
             console.log("failure " + response);
         }
     });
+}
 
+function showGrowl(msg) {
+    $("#message").html(msg);
+    $("#growlBox1").fadeIn();
+    setInterval(function () {
+        hideGrowl();
+    }, 3000);
+}
 
+function hideGrowl() {
+    $("#growlBox1").fadeOut();
 }
