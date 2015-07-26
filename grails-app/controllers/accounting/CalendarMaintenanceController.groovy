@@ -67,7 +67,7 @@ class CalendarMaintenanceController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'CalendarMaintenance.label', default: 'CalendarMaintenance'), calendarMaintenanceInstance.id])
-                redirect calendarMaintenanceInstance
+                redirect (action:"index")
             }
             '*'{ respond calendarMaintenanceInstance, [status: OK] }
         }

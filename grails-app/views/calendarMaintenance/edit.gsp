@@ -6,36 +6,40 @@
 		<g:set var="entityName" value="${message(code: 'calendarMaintenance.label', default: 'CalendarMaintenance')}" />
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
 	</head>
-	<body>
-		<a href="#edit-calendarMaintenance" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
-		<div id="edit-calendarMaintenance" class="content scaffold-edit" role="main">
-			<h1><g:message code="default.edit.label" args="[entityName]" /></h1>
-			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
-			</g:if>
-			<g:hasErrors bean="${calendarMaintenanceInstance}">
-			<ul class="errors" role="alert">
-				<g:eachError bean="${calendarMaintenanceInstance}" var="error">
-				<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
-				</g:eachError>
-			</ul>
-			</g:hasErrors>
-			<g:form url="[resource:calendarMaintenanceInstance, action:'update']" method="PUT" >
-				<g:hiddenField name="version" value="${calendarMaintenanceInstance?.version}" />
-				<fieldset class="form">
-					<g:render template="form"/>
-				</fieldset>
-				<fieldset class="buttons">
-					<g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
-				</fieldset>
-			</g:form>
-		</div>
-	</body>
+<body>
+<div id="create-user" class="content scaffold-create" role="main">
+    <g:if test="${flash.message}">
+        <div class="message" role="status">${flash.message}</div>
+    </g:if>
+    <div class="dashIconWrap">
+        <div class="heading" style="margin-bottom: 5px;">
+            <a class="home" href="${createLink(uri: '/')}">Dashboard</a> |
+        <g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]"/></g:link> |
+        <g:message code="default.edit.label" args="[entityName]"/>
+        </div>
+        <g:hasErrors bean="${calendarMaintenanceInstance}">
+            <ul class="errors" role="alert">
+                <g:eachError bean="${calendarMaintenanceInstance}" var="error">
+                    <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message
+                            error="${error}"/></li>
+                </g:eachError>
+            </ul>
+        </g:hasErrors>
+        <div class="panel panel-default" style="padding: 10px;margin-right: 5px;">
+            <h6 class="heading"
+                style="font-weight: bold; margin: 0px 0px 10px 0px !important;">
+                <g:message code="default.edit.label" args="[entityName]"/></h6>
+            <g:form url="[resource: calendarMaintenanceInstance, action: 'update']" method="PUT">
+                <fieldset class="form" style="margin-left: 10px;">
+                    <g:render template="form"/>
+                </fieldset>
+                <fieldset class="buttons">
+                    <g:submitButton name="update" action="update" class="save btn btn-default btn_login_override"
+                                    value="${message(code: 'default.button.update.label', default: 'Update')}"/>
+                </fieldset>
+            </g:form>
+        </div>
+    </div>
+</div>
+</body>
 </html>

@@ -19,7 +19,7 @@ class OpeningBalanceController {
     }
 
     def create() {
-        respond new OpeningBalance(params)
+        respond(new OpeningBalance(params), model: [newList: exceptList()])
     }
 
     @Transactional
@@ -66,7 +66,7 @@ class OpeningBalanceController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'OpeningBalance.label', default: 'OpeningBalance'), openingBalanceInstance.id])
-                redirect openingBalanceInstance
+                redirect(action: "index")
             }
             '*' { respond openingBalanceInstance, [status: OK] }
         }
@@ -101,30 +101,13 @@ class OpeningBalanceController {
         }
     }
 
-    @Transactional
-    def ajaxSubAccountHeadList() {
-        int acc_id = Integer.parseInt(params.id)
-        List subAccList = SubAccountHead.findAllByAccountHead(AccountHead.findById(acc_id))
-        if (subAccList.isEmpty()) {
-            render(contentType: "application/json") {
-                status(stat: 'empty')
+    def exceptList() {
+        List exceptList = SubCategory.findAll()
+        if (!OpeningBalance.findAll().isEmpty()) {
+            for (OpeningBalance temp : OpeningBalance.findAll()) {
+                exceptList.remove(SubCategory.findById(temp.subCategoryId))
             }
-        } else {
-            render(template: 'template/subAccountHead', model: [subAccList: subAccList])
         }
-    }
-
-    @Transactional
-    def ajaxSubCategoryList() {
-        int acc_id = Integer.parseInt(params.id)
-        List subCatList = SubCategory.findAllBySubAccountHead(SubAccountHead.findById(acc_id))
-        if (subCatList.isEmpty()) {
-            println "Inside:"
-            render(contentType: "application/json") {
-                status(stat: 'empty')
-            }
-        } else {
-            render(template: 'template/subCategory', model: [subCatList: subCatList])
-        }
+        return exceptList
     }
 }
