@@ -1,7 +1,6 @@
 package accounting
 
 
-
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -12,7 +11,7 @@ class MemberSchemeController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond MemberScheme.list(params), model:[memberSchemeInstanceCount: MemberScheme.count()]
+        respond MemberScheme.list(params), model: [memberSchemeInstanceCount: MemberScheme.count()]
     }
 
     def show(MemberScheme memberSchemeInstance) {
@@ -31,16 +30,16 @@ class MemberSchemeController {
         }
 
         if (memberSchemeInstance.hasErrors()) {
-            respond memberSchemeInstance.errors, view:'create'
+            respond memberSchemeInstance.errors, view: 'create'
             return
         }
 
-        memberSchemeInstance.save flush:true
+        memberSchemeInstance.save flush: true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'memberScheme.label', default: 'MemberScheme'), memberSchemeInstance.id])
-                redirect (action:"index")
+                redirect(action: "index")
             }
             '*' { respond memberSchemeInstance, [status: CREATED] }
         }
@@ -58,18 +57,18 @@ class MemberSchemeController {
         }
 
         if (memberSchemeInstance.hasErrors()) {
-            respond memberSchemeInstance.errors, view:'edit'
+            respond memberSchemeInstance.errors, view: 'edit'
             return
         }
 
-        memberSchemeInstance.save flush:true
+        memberSchemeInstance.save flush: true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'MemberScheme.label', default: 'MemberScheme'), memberSchemeInstance.id])
-                redirect memberSchemeInstance
+                redirect(action: "index")
             }
-            '*'{ respond memberSchemeInstance, [status: OK] }
+            '*' { respond memberSchemeInstance, [status: OK] }
         }
     }
 
@@ -81,14 +80,14 @@ class MemberSchemeController {
             return
         }
 
-        memberSchemeInstance.delete flush:true
+        memberSchemeInstance.delete flush: true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'MemberScheme.label', default: 'MemberScheme'), memberSchemeInstance.id])
-                redirect action:"index", method:"GET"
+                redirect action: "index", method: "GET"
             }
-            '*'{ render status: NO_CONTENT }
+            '*' { render status: NO_CONTENT }
         }
     }
 
@@ -98,7 +97,7 @@ class MemberSchemeController {
                 flash.message = message(code: 'default.not.found.message', args: [message(code: 'memberScheme.label', default: 'MemberScheme'), params.id])
                 redirect action: "index", method: "GET"
             }
-            '*'{ render status: NOT_FOUND }
+            '*' { render status: NOT_FOUND }
         }
     }
 }

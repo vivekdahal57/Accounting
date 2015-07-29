@@ -67,7 +67,7 @@ class RelationshipController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'Relationship.label', default: 'Relationship'), relationshipInstance.id])
-                redirect relationshipInstance
+                redirect (action:"index")
             }
             '*'{ respond relationshipInstance, [status: OK] }
         }

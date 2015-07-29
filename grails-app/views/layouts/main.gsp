@@ -55,7 +55,10 @@
             </div>
 
             <div class="menuItemSmall">
-                <i class="glyphicon glyphicon-off menuSmallIcon" style="font-size: 10px;"></i> <a href="#">Logout</a>
+                <g:form controller="logout" method="post" style="display: inline">
+                    <i class="glyphicon glyphicon-off"></i>
+                    <input type="submit" class="unameLinkLogout" value="Logout">
+                </g:form>
             </div>
         </div>
 
@@ -93,8 +96,11 @@
             </ul>
 
             <div class="unameLogoutBox">
-                <i class="fa fa-user menuIcon"></i>
-                <a href="#" class="unameLink">Username</a>
+
+                <g:if test="${pageProperty(name: 'page.username')}">
+                    <i class="fa fa-user menuIcon"></i>
+                    <a href="#" class="unameLink">${pageProperty(name: 'page.username')}</a>
+                </g:if>
                 <g:form controller="logout" method="post" style="display: inline">
                     <i class="glyphicon glyphicon-off"></i>
                     <input type="submit" class="unameLinkLogout" value="Logout">

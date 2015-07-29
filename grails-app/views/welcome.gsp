@@ -3,6 +3,7 @@
 <head>
     <meta name="layout" content="main"/>
     <title>${pageTitle}</title>
+    <parameter name="username" value="${loggedIn}" />
 </head>
 
 <body>

@@ -67,7 +67,7 @@ class SubAccountHeadController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'SubAccountHead.label', default: 'SubAccountHead'), subAccountHeadInstance.id])
-                redirect subAccountHeadInstance
+                redirect (action:"index")
             }
             '*'{ respond subAccountHeadInstance, [status: OK] }
         }
