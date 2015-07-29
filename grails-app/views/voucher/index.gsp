@@ -79,7 +79,7 @@
 </div>
 
 <div class="pagination">
-    <g:paginate total="${voucherInstance ?: 0}"/>
+    <g:paginate total="${voucherInstanceCount ?: 0}"/>
 </div>
 </body>
 </html>

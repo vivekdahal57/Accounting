@@ -27,40 +27,40 @@
                 <g:sortableColumn property="startDateInAD"
                                   title="${message(code: 'calendarMaintenance.startDateInAD.label', default: 'Start Date(AD)')}"/>
                 <g:sortableColumn property="month1"
-                                  title="${message(code: 'calendarMaintenance.month1.label', default: 'Month1')}"/>
+                                  title="${message(code: 'calendarMaintenance.month1.label', default: 'M1')}"/>
 
                 <g:sortableColumn property="month2"
-                                  title="${message(code: 'calendarMaintenance.month1.label', default: 'Month2')}"/>
+                                  title="${message(code: 'calendarMaintenance.month1.label', default: 'M2')}"/>
 
                 <g:sortableColumn property="month3"
-                                  title="${message(code: 'calendarMaintenance.month1.label', default: 'Month3')}"/>
+                                  title="${message(code: 'calendarMaintenance.month1.label', default: 'M3')}"/>
 
                 <g:sortableColumn property="month4"
-                                  title="${message(code: 'calendarMaintenance.month1.label', default: 'Month4')}"/>
+                                  title="${message(code: 'calendarMaintenance.month1.label', default: 'M4')}"/>
 
                 <g:sortableColumn property="month5"
-                                  title="${message(code: 'calendarMaintenance.month1.label', default: 'Month5')}"/>
+                                  title="${message(code: 'calendarMaintenance.month1.label', default: 'M5')}"/>
 
                 <g:sortableColumn property="month6"
-                                  title="${message(code: 'calendarMaintenance.month1.label', default: 'Month6')}"/>
+                                  title="${message(code: 'calendarMaintenance.month1.label', default: 'M6')}"/>
 
                 <g:sortableColumn property="month7"
-                                  title="${message(code: 'calendarMaintenance.month1.label', default: 'Month7')}"/>
+                                  title="${message(code: 'calendarMaintenance.month1.label', default: 'M7')}"/>
 
                 <g:sortableColumn property="month8"
-                                  title="${message(code: 'calendarMaintenance.month1.label', default: 'Month8')}"/>
+                                  title="${message(code: 'calendarMaintenance.month1.label', default: 'M8')}"/>
 
                 <g:sortableColumn property="month9"
-                                  title="${message(code: 'calendarMaintenance.month1.label', default: 'Month9')}"/>
+                                  title="${message(code: 'calendarMaintenance.month1.label', default: 'M9')}"/>
 
                 <g:sortableColumn property="month10"
-                                  title="${message(code: 'calendarMaintenance.month10.label', default: 'Month10')}"/>
+                                  title="${message(code: 'calendarMaintenance.month10.label', default: 'M10')}"/>
 
                 <g:sortableColumn property="month11"
-                                  title="${message(code: 'calendarMaintenance.month11.label', default: 'Month11')}"/>
+                                  title="${message(code: 'calendarMaintenance.month11.label', default: 'M11')}"/>
 
                 <g:sortableColumn property="month12"
-                                  title="${message(code: 'calendarMaintenance.month12.label', default: 'Month12')}"/>
+                                  title="${message(code: 'calendarMaintenance.month12.label', default: 'M12')}"/>
                 <g:sortableColumn property="endDateInAD"
                                   title="${message(code: 'calendarMaintenance.endDateInAD.label', default: 'End Date(AD)')}"/>
                 <th colspan="2" style="color: #ffffff;">Action</th>
@@ -108,7 +108,7 @@
 </div>
 
 <div class="pagination">
-    <g:paginate total="${calendarMaintenanceInstance ?: 0}"/>
+    <g:paginate total="${calendarMaintenanceInstanceCount ?: 0}"/>
 </div>
 </body>
 </html>

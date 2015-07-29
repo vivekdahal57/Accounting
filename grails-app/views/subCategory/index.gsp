@@ -57,7 +57,7 @@
 </div>
 
 <div class="pagination">
-    <g:paginate total="${subCategoryInstance ?: 0}"/>
+    <g:paginate total="${subCategoryInstanceCount ?: 0}"/>
 </div>
 </body>
 </html>

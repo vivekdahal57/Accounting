@@ -68,7 +68,7 @@
 </div>
 
 <div class="pagination">
-    <g:paginate total="${openingBalanceInstance ?: 0}"/>
+    <g:paginate total="${openingBalanceInstanceCount ?: 0}"/>
 </div>
 </body>
 </html>

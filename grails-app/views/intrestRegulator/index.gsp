@@ -72,7 +72,7 @@
     </div>
 </div>
 <div class="pagination">
-    <g:paginate total="${intrestRegulatorInstance ?: 0}"/>
+    <g:paginate total="${intrestRegulatorInstanceCount ?: 0}"/>
 </div>
 </body>
 </html>

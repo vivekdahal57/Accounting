@@ -58,7 +58,7 @@
 </div>
 
 <div class="pagination">
-    <g:paginate total="${requestmapInstance ?: 0}"/>
+    <g:paginate total="${requestmapInstanceCount ?: 0}"/>
 </div>
 </body>
 </html>

@@ -40,7 +40,7 @@ class RequestmapController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'requestmap.label', default: 'Requestmap'), requestmapInstance.id])
-                redirect requestmapInstance
+                redirect action:"index", method:"GET"
             }
             '*' { respond requestmapInstance, [status: CREATED] }
         }
@@ -67,7 +67,7 @@ class RequestmapController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'Requestmap.label', default: 'Requestmap'), requestmapInstance.id])
-                redirect requestmapInstance
+                redirect action:"index", method:"GET"
             }
             '*'{ respond requestmapInstance, [status: OK] }
         }

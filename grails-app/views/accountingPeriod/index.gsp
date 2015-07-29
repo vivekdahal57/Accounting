@@ -65,7 +65,7 @@
 </div>
 
 <div class="pagination">
-    <g:paginate total="${accountingPeriodInstance ?: 0}"/>
+    <g:paginate total="${accountingPeriodInstanceCount ?: 0}"/>
 </div>
 </body>
 </html>

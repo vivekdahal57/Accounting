@@ -54,7 +54,7 @@
 </div>
 
 <div class="pagination">
-    <g:paginate total="${relationshipInstance ?: 0}"/>
+    <g:paginate total="${relationshipInstanceCount ?: 0}"/>
 </div>
 </body>
 </html>

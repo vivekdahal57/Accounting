@@ -54,7 +54,7 @@
 </div>
 
 <div class="pagination">
-    <g:paginate total="${accountHeadInstance ?: 0}"/>
+    <g:paginate total="${accountHeadInstanceCount ?: 0}"/>
 </div>
 </body>
 </html>

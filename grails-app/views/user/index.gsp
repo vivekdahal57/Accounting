@@ -88,7 +88,7 @@
 </div>
 
 <div class="pagination">
-    <g:paginate total="${userInstanceCount ?: 0}"/>
+    <g:paginate total="${userInstanceCountCount ?: 0}"/>
 </div>
 </body>
 </html>
