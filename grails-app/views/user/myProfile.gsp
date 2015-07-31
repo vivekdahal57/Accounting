@@ -1,11 +1,11 @@
-<%@ page import="accounting.MemberScheme" %>
+<%@ page import="authorization.User" %>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'memberScheme.label', default: 'MemberScheme')}" />
-		<title><g:message code="default.edit.label" args="[entityName]" /></title>
-	</head>
+<head>
+    <meta name="layout" content="main">
+    <g:set var="entityName" value="${message(code: 'user.label', default: 'My Profile')}" />
+    <title><g:message code="default.edit.label" args="[entityName]" /></title>
+</head>
 <body>
 <div id="create-user" class="content scaffold-create" role="main">
     <g:if test="${flash.message}">
@@ -17,9 +17,9 @@
         <g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]"/></g:link> |
         <g:message code="default.edit.label" args="[entityName]"/>
         </div>
-        <g:hasErrors bean="${memberSchemeInstance}">
+        <g:hasErrors bean="${userInstance}">
             <ul class="errors" role="alert">
-                <g:eachError bean="${memberSchemeInstance}" var="error">
+                <g:eachError bean="${userInstance}" var="error">
                     <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message
                             error="${error}"/></li>
                 </g:eachError>
@@ -29,7 +29,7 @@
             <h6 class="heading"
                 style="font-weight: bold; margin: 0px 0px 10px 0px !important;">
                 <g:message code="default.edit.label" args="[entityName]"/></h6>
-            <g:form url="[resource: memberSchemeInstance, action: 'update']" method="PUT">
+            <g:form url="[resource: userInstance, action: 'update']" method="PUT">
                 <fieldset class="form" style="margin-left: 10px;">
                     <g:render template="form"/>
                 </fieldset>

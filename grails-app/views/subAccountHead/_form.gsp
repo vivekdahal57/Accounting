@@ -7,7 +7,7 @@
 		<g:message code="subAccountHead.accountHead.label" default="Account Head" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="accountHead" name="accountHead.id" from="${accounting.AccountHead.list()}" optionKey="id" required="" value="${subAccountHeadInstance?.accountHead?.id}" class="many-to-one"/>
+	<g:select id="accountHead" name="accountHead.id" from="${accounting.AccountHead.list()}" optionKey="id" optionValue="name" required="" value="${subAccountHeadInstance?.accountHead?.id}" class="many-to-one"/>
 
 </div>
 

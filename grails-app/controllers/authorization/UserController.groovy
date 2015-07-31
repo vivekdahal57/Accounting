@@ -100,15 +100,21 @@ class UserController {
             '*' { render status: NOT_FOUND }
         }
     }
-    SpringSecurityService springSecurityService
+    static SpringSecurityService springSecurityService
+
+    static def getUserName() {
+        String user = springSecurityService.currentUser
+        user = user.capitalize()
+        return user
+    }
 
 
     def welcome() {
-        String user = springSecurityService.currentUser
-        if(user==null){
-            redirect(view: '/')
-        }
-        user=user.capitalize()
-        render(view: '/welcome', model: [pageTitle: 'NanceCount : Welcome', loggedIn:user])
+        render(view: '/welcome', model: [pageTitle: 'NanceCount : Welcome'])
+    }
+
+    def myProfile(User currUser) {
+        respond currUser
+//        render(view: '/myProfile', model: [pageTitle: 'NanceCount : My Profile',currUser:currUser])
     }
 }

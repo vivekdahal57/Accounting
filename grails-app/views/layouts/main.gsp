@@ -1,3 +1,4 @@
+<%@ page import="authorization.User" %>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
@@ -96,10 +97,11 @@
             </ul>
 
             <div class="unameLogoutBox">
-
-                <g:if test="${pageProperty(name: 'page.username')}">
-                    <i class="fa fa-user menuIcon"></i>
-                    <a href="#" class="unameLink">${pageProperty(name: 'page.username')}</a>
+                <g:if test="${authorization.UserController.getUserName()}">
+                    <g:form method="get" action="myProfile" resource="${authorization.User.findByUsername(authorization.UserController.getUserName())}" style="display: inline">
+                        <i class="fa fa-user menuIcon"></i>
+                        <input type="submit" class="unameLinkLogout" value="${authorization.UserController.getUserName()}"/>
+                    </g:form>
                 </g:if>
                 <g:form controller="logout" method="post" style="display: inline">
                     <i class="glyphicon glyphicon-off"></i>

@@ -19,7 +19,7 @@ class OpeningBalanceController {
     }
 
     def create() {
-        respond(new OpeningBalance(params), model: [newList: exceptList()])
+        respond(new OpeningBalance(params), model: [newList: exceptList(null)])
     }
 
     @Transactional
@@ -46,7 +46,7 @@ class OpeningBalanceController {
     }
 
     def edit(OpeningBalance openingBalanceInstance) {
-        respond openingBalanceInstance
+        respond(openingBalanceInstance, model: [newList: exceptList(openingBalanceInstance)])
     }
 
     @Transactional
@@ -101,13 +101,17 @@ class OpeningBalanceController {
         }
     }
 
-    def exceptList() {
-        List exceptList = SubCategory.findAll()
-        if (!OpeningBalance.findAll().isEmpty()) {
-            for (OpeningBalance temp : OpeningBalance.findAll()) {
-                exceptList.remove(SubCategory.findById(temp.subCategoryId))
+    def exceptList(OpeningBalance openingBalance) {
+        if (openingBalance != null) {
+            return SubCategory.findById(openingBalance.subCategoryId)
+        } else {
+            List exceptList = SubCategory.findAll()
+            if (!OpeningBalance.findAll().isEmpty()) {
+                for (OpeningBalance temp : OpeningBalance.findAll()) {
+                    exceptList.remove(SubCategory.findById(temp.subCategoryId))
+                }
             }
+            return exceptList
         }
-        return exceptList
     }
 }

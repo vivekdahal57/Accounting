@@ -88,7 +88,7 @@
 		<g:message code="voucher.subCategory.label" default="Sub Category" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="subCategory" name="subCategory.id" from="${accounting.SubCategory.list()}" optionKey="id" required="" value="${voucherInstance?.subCategory?.id}" class="many-to-one"/>
+	<g:select id="subCategory" name="subCategory.id" from="${accounting.SubCategory.list()}" optionKey="id" required="" optionValue="name" value="${voucherInstance?.subCategory?.id}" class="many-to-one"/>
 
 </div>
 
