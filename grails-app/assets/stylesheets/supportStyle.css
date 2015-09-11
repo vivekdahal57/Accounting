@@ -471,7 +471,43 @@ body {
     display: none;
 }
 
-
 .fieldRequired{
     margin-bottom: 10px;
+}
+
+.pagination > li > a,
+.pagination > li > span{
+    color: #fff;
+    background-color: #00AB6F;
+    border-color: #60D5AC;
+}
+
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus{
+    color: #fff;
+    background-color: #60D5AC;
+    border-color: #60D5AC;
+}
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus{
+    background-color: #006F48;
+    border-color: #60D5AC;
+}
+
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus{
+    color: #fff;
+    background-color: #00AB6F;
+    border-color: #60D5AC;
 }

@@ -14,7 +14,6 @@
         </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <asset:stylesheet src="application.css"/>
-    <asset:stylesheet src="font-awesome.min.css"/>
     <asset:stylesheet src="supportStyle.css"/>
     <asset:stylesheet src="mobileSupport.css"/>
     <asset:javascript src="application.js"/>
