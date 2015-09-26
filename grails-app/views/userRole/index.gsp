@@ -4,7 +4,7 @@
 <head>
     <meta name="layout" content="main">
     <g:set var="entityName" value="${message(code: 'userRole.label', default: 'UserRole')}"/>
-    <title>NanceCount :<g:message code="default.list.label" args="[entityName]"/></title>
+    <title><g:message code="default.list.label" args="[entityName]"/></title>
 </head>
 
 <body>

@@ -26,7 +26,7 @@
                 <div class="panel panel-default" style="padding: 10px;margin-right: 5px;">
                     <h6 class="heading" style="font-weight: bold; margin: 0px 0px 10px 0px !important;"><g:message code="default.create.label" args="[entityName]" /></h6>
                     <g:form url="[resource:accountHeadInstance, action:'save']" >
-                        <fieldset class="form" style="margin-left: 10px;">
+                        <fieldset class="form">
                             <g:render template="form"/>
                         </fieldset>
                         <fieldset class="buttons">
