@@ -13,7 +13,7 @@
     <div class="heading" style="margin-bottom: 5px;">
         <a class="home" href="${createLink(uri: '/')}">Dashboard</a> | <g:message code="default.list.label"
                                                                                   args="[entityName]"/>
-        <div class="createUser"><i class="fa fa-user-plus"></i> <g:link class="create" action="create"><g:message
+        <div class="createUser"><i class="fa fa-calendar"></i> <g:link class="create" action="create"><g:message
                 code="default.new.label" args="[entityName]"/></g:link></div>
     </div>
 
