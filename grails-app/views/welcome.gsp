@@ -3,13 +3,14 @@
 <head>
     <meta name="layout" content="main"/>
     <title>${pageTitle}</title>
-    <parameter name="username" value="${loggedIn}" />
+    <parameter name="username" value="${loggedIn}"/>
 </head>
 
 <body>
 
 <div class="dashIconWrap">
     <div class="heading" style="margin-bottom: 5px;">Dashboard</div>
+
     <div class="dashIconLink">
         <a href="#">
             <div class="col-md-3">
@@ -23,7 +24,7 @@
     </div>
 
     <div class="dashIconLink">
-        <a href="#">
+        <g:link controller="openingBalance" action="index">
             <div class="col-md-3">
                 <div class="dashIcon">
                     <i class="fa fa-money"></i>
@@ -31,11 +32,11 @@
                     <div class="dashIconOverlay">Opening Balance</div>
                 </div>
             </div>
-        </a>
+        </g:link>
     </div>
 
     <div class="dashIconLink">
-        <a href="#">
+        <g:link controller="accountingPeriod" action="index">
             <div class="col-md-3">
                 <div class="dashIcon">
                     <i class="glyphicon glyphicon-time"></i>
@@ -43,11 +44,11 @@
                     <div class="dashIconOverlay">Accounting Period</div>
                 </div>
             </div>
-        </a>
+        </g:link>
     </div>
 
     <div class="dashIconLink">
-        <a href="#">
+        <g:link controller="calendarMaintenance" action="index">
             <div class="col-md-3">
                 <div class="dashIcon">
                     <i class="fa fa-calendar"></i>
@@ -55,11 +56,11 @@
                     <div class="dashIconOverlay">Calender Maintenance</div>
                 </div>
             </div>
-        </a>
+        </g:link>
     </div>
 
     <div class="dashIconLink">
-        <a href="#">
+        <g:link controller="interestRegulator" action="index">
             <div class="col-md-3">
                 <div class="dashIcon">
                     <i class="glyphicon glyphicon-piggy-bank"></i>
@@ -67,7 +68,7 @@
                     <div class="dashIconOverlay">Interest Regulation</div>
                 </div>
             </div>
-        </a>
+        </g:link>
     </div>
 
     <div class="dashIconLink">
@@ -119,7 +120,7 @@
     </div>
 
     <div class="dashIconLink">
-        <a href="reports.php">
+        <g:link controller="reports" action="index">
             <div class="col-md-3">
                 <div class="dashIcon">
                     <i class="fa fa-bar-chart"></i>
@@ -127,11 +128,11 @@
                     <div class="dashIconOverlay">Reports</div>
                 </div>
             </div>
-        </a>
+        </g:link>
     </div>
 
     <div class="dashIconLink">
-        <a href="utility.php">
+        <g:link controller="utility" action="index">
             <div class="col-md-3">
                 <div class="dashIcon">
                     <i class="fa fa-wrench"></i>
@@ -139,7 +140,7 @@
                     <div class="dashIconOverlay">Utility</div>
                 </div>
             </div>
-        </a>
+        </g:link>
     </div>
 
     <div class="dashIconLink">

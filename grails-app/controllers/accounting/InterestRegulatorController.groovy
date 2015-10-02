@@ -12,11 +12,11 @@ class InterestRegulatorController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond InterestRegulator.list(params), model:[intrestRegulatorInstanceCount: InterestRegulator.count()]
+        respond InterestRegulator.list(params), model:[interestRegulatorInstanceCount: InterestRegulator.count()]
     }
 
-    def show(InterestRegulator intrestRegulatorInstance) {
-        respond intrestRegulatorInstance
+    def show(InterestRegulator interestRegulatorInstance) {
+        respond interestRegulatorInstance
     }
 
     def create() {
@@ -24,68 +24,68 @@ class InterestRegulatorController {
     }
 
     @Transactional
-    def save(InterestRegulator intrestRegulatorInstance) {
-        if (intrestRegulatorInstance == null) {
+    def save(InterestRegulator interestRegulatorInstance) {
+        if (interestRegulatorInstance == null) {
             notFound()
             return
         }
 
-        if (intrestRegulatorInstance.hasErrors()) {
-            respond intrestRegulatorInstance.errors, view:'create'
+        if (interestRegulatorInstance.hasErrors()) {
+            respond interestRegulatorInstance.errors, view:'create'
             return
         }
 
-        intrestRegulatorInstance.save flush:true
+        interestRegulatorInstance.save flush:true
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'intrestRegulator.label', default: 'InterestRegulator'), intrestRegulatorInstance.id])
+                flash.message = message(code: 'default.created.message', args: [message(code: 'interestRegulator.label', default: 'InterestRegulator'), interestRegulatorInstance.id])
                 redirect (action:"index")
             }
-            '*' { respond intrestRegulatorInstance, [status: CREATED] }
+            '*' { respond interestRegulatorInstance, [status: CREATED] }
         }
     }
 
-    def edit(InterestRegulator intrestRegulatorInstance) {
-        respond intrestRegulatorInstance
+    def edit(InterestRegulator interestRegulatorInstance) {
+        respond interestRegulatorInstance
     }
 
     @Transactional
-    def update(InterestRegulator intrestRegulatorInstance) {
-        if (intrestRegulatorInstance == null) {
+    def update(InterestRegulator interestRegulatorInstance) {
+        if (interestRegulatorInstance == null) {
             notFound()
             return
         }
 
-        if (intrestRegulatorInstance.hasErrors()) {
-            respond intrestRegulatorInstance.errors, view:'edit'
+        if (interestRegulatorInstance.hasErrors()) {
+            respond interestRegulatorInstance.errors, view:'edit'
             return
         }
 
-        intrestRegulatorInstance.save flush:true
+        interestRegulatorInstance.save flush:true
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'InterestRegulator.label', default: 'InterestRegulator'), intrestRegulatorInstance.id])
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'InterestRegulator.label', default: 'InterestRegulator'), interestRegulatorInstance.id])
                 redirect (action:"index")
             }
-            '*'{ respond intrestRegulatorInstance, [status: OK] }
+            '*'{ respond interestRegulatorInstance, [status: OK] }
         }
     }
 
     @Transactional
-    def delete(InterestRegulator intrestRegulatorInstance) {
+    def delete(InterestRegulator interestRegulatorInstance) {
 
-        if (intrestRegulatorInstance == null) {
+        if (interestRegulatorInstance == null) {
             notFound()
             return
         }
 
-        intrestRegulatorInstance.delete flush:true
+        interestRegulatorInstance.delete flush:true
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'InterestRegulator.label', default: 'InterestRegulator'), intrestRegulatorInstance.id])
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'InterestRegulator.label', default: 'InterestRegulator'), interestRegulatorInstance.id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -95,7 +95,7 @@ class InterestRegulatorController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'intrestRegulator.label', default: 'InterestRegulator'), params.id])
+                flash.message = message(code: 'default.not.found.message', args: [message(code: 'interestRegulator.label', default: 'InterestRegulator'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

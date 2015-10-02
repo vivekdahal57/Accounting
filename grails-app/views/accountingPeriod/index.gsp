@@ -13,9 +13,15 @@
     <div class="heading" style="margin-bottom: 5px;">
         <a class="home" href="${createLink(uri: '/')}">Dashboard</a> | <g:message code="default.list.label"
                                                                                   args="[entityName]"/>
-        <div class="createUser"><i class="fa fa-user-plus"></i> <g:link class="create" action="create"><g:message
-                code="default.new.label" args="[entityName]"/></g:link></div>
+
+        <div class="createUser">
+        <i class="glyphicon glyphicon-time"></i>
+            <g:link class="create" action="create">
+                <g:message code="default.new.label" args="[entityName]"/>
+            </g:link>
+        </div>
     </div>
+
     <div class="panel panel-default" style="margin-bottom: 0px;margin-right: 5px; ">
         <table class="table table-hover table_override">
             <thead>
@@ -38,7 +44,7 @@
                 <tr class="${(i % 2) == 0 ? 'even' : 'odd'} tbody_tr">
                     <td>${accountingPeriodInstance.startDate.format('yyyy/MM/dd')}</td>
                     <td>${accountingPeriodInstance.endDate.format('yyyy/MM/dd')}</td>
-                    <td><g:formatBoolean boolean="${accountingPeriodInstance.isDefault}" /></td>
+                    <td><g:formatBoolean boolean="${accountingPeriodInstance.isDefault}"/></td>
 
                     <td>
                         <g:form method="get" action="edit" resource="${accountingPeriodInstance}">

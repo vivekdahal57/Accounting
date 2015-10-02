@@ -15,7 +15,7 @@
     <asset:stylesheet src="supportStyle.css"/>
     <asset:stylesheet src="mobileSupport.css"/>
     <asset:javascript src="application.js"/>
-    <asset:javascript src="scripts.js"/>
+    %{--<asset:javascript src="scripts.js"/>--}%
     <g:layoutHead/>
 </head>
 
@@ -29,7 +29,7 @@
                 <!--<a class="navbar-brand" href="#">Brand</a>-->
             </div>
             <g:if test='${!request.requestURL.contains('/login')}'>
-                <a href="javascript:void();" id="menuSmall">
+                <a href="javascript:void(0);" id="menuSmall">
                     <div class="smallList" id="smallList">
                         <i class="fa fa-list-alt" style="font-size: 30px;color:#fff;text-align: center;"></i>
                     </div>
@@ -37,7 +37,7 @@
 
                 <div class="menuListSmall" id="menuListSmall">
                     <div class="menuItemSmall">
-                        <i class="fa fa-tachometer menuSmallIcon"></i> <a href="#">Dashboard</a>
+                        <i class="fa fa-tachometer menuSmallIcon"></i> <g:link controller="user" action="welcome">Dashboard</g:link>
                     </div>
 
                     <div class="menuItemSmall" id="smallAcc">
@@ -63,10 +63,10 @@
                 <div class="collapse navbar-collapse" id="menuItem">
                     <ul class="nav navbar-nav" id="menuUl">
                         <li>
-                            <a href="#">
+                            <g:link controller="user" action="welcome">
                                 <i class="fa fa-tachometer menuIcon"></i>
                                 Dashboard
-                            </a>
+                            </g:link>
                         </li>
                         <li id="accMgnt">
                             <a href="#">

@@ -2,8 +2,8 @@ package accounting
 
 class InterestRegulator {
     SubAccountHead subAccountHead
-    Float intrestRate
-    String intrestType
+    Float interestRate
+    String interestType
     Integer maturityDays
     Float taxDeduction
 

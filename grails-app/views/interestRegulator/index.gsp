@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta name="layout" content="main">
-    <g:set var="entityName" value="${message(code: 'intrestRegularot.label', default: 'Intrest Regulator')}"/>
+    <g:set var="entityName" value="${message(code: 'interestRegularot.label', default: 'Interest Regulator')}"/>
     <title><g:message code="default.list.label" args="[entityName]"/></title>
 </head>
 
@@ -13,7 +13,7 @@
     <div class="heading" style="margin-bottom: 5px;">
         <a class="home" href="${createLink(uri: '/')}">Dashboard</a> | <g:message code="default.list.label"
                                                                                   args="[entityName]"/>
-        <div class="createUser"><i class="fa fa-user-plus"></i> <g:link class="create" action="create"><g:message
+        <div class="createUser"><i class="glyphicon glyphicon-piggy-bank"></i> <g:link class="create" action="create"><g:message
                 code="default.new.label" args="[entityName]"/></g:link></div>
     </div>
 
@@ -21,44 +21,44 @@
         <table class="table table-hover table_override">
             <thead>
             <tr class="thead_tr">
-                <g:sortableColumn property="intrestRate"
-                                  title="${message(code: 'intrestRegulator.intrestRate.label', default: 'Intrest Rate')}"/>
+                <g:sortableColumn property="interestRate"
+                                  title="${message(code: 'interestRegulator.interestRate.label', default: 'Interest Rate')}"/>
 
-                <g:sortableColumn property="intrestType"
-                                  title="${message(code: 'intrestRegulator.intrestType.label', default: 'Intrest Type')}"/>
+                <g:sortableColumn property="interestType"
+                                  title="${message(code: 'interestRegulator.interestType.label', default: 'Interest Type')}"/>
 
                 <g:sortableColumn property="maturityDays"
-                                  title="${message(code: 'intrestRegulator.maturityDays.label', default: 'Maturity Days')}"/>
+                                  title="${message(code: 'interestRegulator.maturityDays.label', default: 'Maturity Days')}"/>
 
                 <th style="color:#ffffff;">Sub Account Head</th>
 
                 <g:sortableColumn property="taxDeduction"
-                                  title="${message(code: 'intrestRegulator.taxDeduction.label', default: 'Tax Deduction')}"/>
+                                  title="${message(code: 'interestRegulator.taxDeduction.label', default: 'Tax Deduction')}"/>
                 <th colspan="2" style="color: #ffffff;">Action</th>
             </tr>
             </thead>
             <tbody>
-            <g:each in="${intrestRegulatorInstanceList}" status="i" var="intrestRegulatorInstance">
+            <g:each in="${interestRegulatorInstanceList}" status="i" var="interestRegulatorInstance">
                 <tr class="${(i % 2) == 0 ? 'even' : 'odd'} tbody_tr">
 
-                    <td>${fieldValue(bean: intrestRegulatorInstance, field: "intrestRate")}</td>
+                    <td>${fieldValue(bean: interestRegulatorInstance, field: "interestRate")}</td>
 
-                    <td>${fieldValue(bean: intrestRegulatorInstance, field: "intrestType")}</td>
+                    <td>${fieldValue(bean: interestRegulatorInstance, field: "interestType")}</td>
 
-                    <td>${fieldValue(bean: intrestRegulatorInstance, field: "maturityDays")}</td>
+                    <td>${fieldValue(bean: interestRegulatorInstance, field: "maturityDays")}</td>
 
-                    <td>${fieldValue(bean: intrestRegulatorInstance, field: "subAccountHead.name")}</td>
+                    <td>${fieldValue(bean: interestRegulatorInstance, field: "subAccountHead.name")}</td>
 
-                    <td>${fieldValue(bean: intrestRegulatorInstance, field: "taxDeduction")}</td>
+                    <td>${fieldValue(bean: interestRegulatorInstance, field: "taxDeduction")}</td>
                     <td>
-                        <g:form method="get" action="edit" resource="${intrestRegulatorInstance}">
+                        <g:form method="get" action="edit" resource="${interestRegulatorInstance}">
                             <button class="editDeleteBtn">
                                 <i class="fa fa-pencil" style="font-size: 18px;" title="Edit" alt="Edit"></i>
                             </button>
                         </g:form>
                     </td>
                     <td>
-                        <g:form url="[resource: intrestRegulatorInstance, action: 'delete']" method="DELETE">
+                        <g:form url="[resource: interestRegulatorInstance, action: 'delete']" method="DELETE">
                             <button class="editDeleteBtn" type="submit"
                                     onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');">
                                 <i class="fa fa-times" style="font-size: 18px;" title="Delete" alt="Delete"></i>
@@ -72,7 +72,7 @@
     </div>
 </div>
 <div class="pagination">
-    <g:paginate total="${intrestRegulatorInstanceCount ?: 0}"/>
+    <g:paginate total="${interestRegulatorInstanceCount ?: 0}"/>
 </div>
 </body>
 </html>

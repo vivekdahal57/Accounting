@@ -2,48 +2,48 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: intrestRegulatorInstance, field: 'intrestRate', 'error')} required">
-	<label for="intrestRate">
-		<g:message code="intrestRegulator.intrestRate.label" default="Intrest Rate" />
-		<span class="required-indicator">*</span>
+<div class="fieldcontain ${hasErrors(bean: interestRegulatorInstance, field: 'interestRate', 'error')} required">
+	<label for="interestRate">
+		<g:message code="interestRegulator.interestRate.label" default="Interest Rate" />
+		<span class="required-indicator">:</span>
 	</label>
-	<g:field name="intrestRate" value="${fieldValue(bean: intrestRegulatorInstance, field: 'intrestRate')}" required=""/>
+	<g:field name="interestRate" value="${fieldValue(bean: interestRegulatorInstance, field: 'interestRate')}" required="" class="form-control form_control_override"/>
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: intrestRegulatorInstance, field: 'intrestType', 'error')} required">
-	<label for="intrestType">
-		<g:message code="intrestRegulator.intrestType.label" default="Intrest Type" />
-		<span class="required-indicator">*</span>
+<div class="fieldcontain ${hasErrors(bean: interestRegulatorInstance, field: 'interestType', 'error')} required">
+	<label for="interestType">
+		<g:message code="interestRegulator.interestType.label" default="Interest Type" />
+		<span class="required-indicator">:</span>
 	</label>
-	<g:textField name="intrestType" required="" value="${intrestRegulatorInstance?.intrestType}"/>
+	<g:textField name="interestType" required="" value="${interestRegulatorInstance?.interestType}" class="form-control form_control_override"/>
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: intrestRegulatorInstance, field: 'maturityDays', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: interestRegulatorInstance, field: 'maturityDays', 'error')} required">
 	<label for="maturityDays">
-		<g:message code="intrestRegulator.maturityDays.label" default="Maturity Days" />
-		<span class="required-indicator">*</span>
+		<g:message code="interestRegulator.maturityDays.label" default="Maturity Days" />
+		<span class="required-indicator">:</span>
 	</label>
-	<g:field name="maturityDays" type="number" value="${intrestRegulatorInstance.maturityDays}" required=""/>
+	<g:field name="maturityDays" type="number" value="${interestRegulatorInstance.maturityDays}" required="" class="form-control form_control_override"/>
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: intrestRegulatorInstance, field: 'subAccountHead', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: interestRegulatorInstance, field: 'subAccountHead', 'error')} required">
 	<label for="subAccountHead">
-		<g:message code="intrestRegulator.subAccountHead.label" default="Sub Account Head" />
-		<span class="required-indicator">*</span>
+		<g:message code="interestRegulator.subAccountHead.label" default="Sub Account Head" />
+		<span class="required-indicator">:</span>
 	</label>
-	<g:select id="subAccountHead" name="subAccountHead.id" from="${accounting.SubAccountHead.list()}" optionKey="id" required="" value="${intrestRegulatorInstance?.subAccountHead?.id}" class="many-to-one" optionValue="name"/>
+	<g:select id="subAccountHead" name="subAccountHead.id" from="${accounting.SubAccountHead.list()}" optionKey="id" required="" value="${interestRegulatorInstance?.subAccountHead?.id}" class="many-to-one" optionValue="name"/>
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: intrestRegulatorInstance, field: 'taxDeduction', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: interestRegulatorInstance, field: 'taxDeduction', 'error')} required">
 	<label for="taxDeduction">
-		<g:message code="intrestRegulator.taxDeduction.label" default="Tax Deduction" />
-		<span class="required-indicator">*</span>
+		<g:message code="interestRegulator.taxDeduction.label" default="Tax Deduction" />
+		<span class="required-indicator">:</span>
 	</label>
-	<g:field name="taxDeduction" value="${fieldValue(bean: intrestRegulatorInstance, field: 'taxDeduction')}" required=""/>
+	<g:field name="taxDeduction" value="${fieldValue(bean: interestRegulatorInstance, field: 'taxDeduction')}" required="" class="form-control form_control_override"/>
 
 </div>
 

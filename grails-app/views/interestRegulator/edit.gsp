@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta name="layout" content="main">
-        <g:set var="entityName" value="${message(code: 'intrestRegulator.label', default: 'InterestRegulator')}" />
+        <g:set var="entityName" value="${message(code: 'interestRegulator.label', default: 'InterestRegulator')}" />
         <title><g:message code="default.edit.label" args="[entityName]" /></title>
     </head>
     <body>
@@ -17,9 +17,9 @@
                     <g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]"/></g:link> |
                     <g:message code="default.edit.label" args="[entityName]"/>
                 </div>
-                <g:hasErrors bean="${intrestRegulatorInstance}">
+                <g:hasErrors bean="${interestRegulatorInstance}">
                     <ul class="errors" role="alert">
-                        <g:eachError bean="${intrestRegulatorInstance}" var="error">
+                        <g:eachError bean="${interestRegulatorInstance}" var="error">
                             <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message
                                 error="${error}"/></li>
                             </g:eachError>
@@ -29,7 +29,7 @@
                     <h6 class="heading"
                     style="font-weight: bold; margin: 0px 0px 10px 0px !important;">
                     <g:message code="default.edit.label" args="[entityName]"/></h6>
-                    <g:form url="[resource: intrestRegulatorInstance, action: 'update']" method="PUT">
+                    <g:form url="[resource: interestRegulatorInstance, action: 'update']" method="PUT">
                         <fieldset class="form" style="margin-left: 10px;">
                             <g:render template="form"/>
                         </fieldset>
