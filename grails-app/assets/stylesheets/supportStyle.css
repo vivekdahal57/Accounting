@@ -132,6 +132,7 @@ body {
     right: 5px;
     left: 5px;
     bottom: 55px;
+    /*overflow-x: hidden;*/
     overflow-x: no-display;
     overflow-y: auto;
 }
@@ -275,7 +276,7 @@ body {
 
 .login_heading {
     background-color: #006F48;
-    padding: 15px;
+    padding: 10px;
     border-radius: 3px 3px 0px 0px;
     -moz-border-radius: 3px 3px 0px 0px;
     -webkit-border-radius: 3px 3px 0px 0px;
@@ -283,20 +284,25 @@ body {
 
 .panel-title {
     color: #fff;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
 }
 
 .panel_login {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -160px;
-    margin-left: -220px;
+    position:fixed;
+    top:50%;
+    left:50%;
+    margin-top: -130px;
+    margin-left: -225px;
     width: 450px;
-    height: 300px;
+    height: 260px;
     box-shadow: 0 0 5px #aaa;
     border: none;
+}
+
+.panel_login .panel-body{
+    margin: 0px;
+    padding-top: 0px;
 }
 
 .input_wrap input {
@@ -334,8 +340,9 @@ body {
 }
 
 .btn_login_override {
+    font-size: 12px;
     outline: 0;
-    padding: 5px 40px;
+    padding: 5px 30px;
     background: #006F48;
     border: 0;
     color: #fff;
@@ -537,4 +544,8 @@ body {
     height: 25px;
     padding: 0px 5px;
     margin-bottom: 5px;
+}
+
+.fieldcontain label{
+    margin-top: 10px;
 }

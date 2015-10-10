@@ -24,7 +24,7 @@
         <div class="container-fluid">
             <div class="navbar-header" style="float:left">
                 <div class="logo">
-                    <img src="${assetPath(src: 'logo.jpg')}" width="150" height="55"/>
+                    <img src="${assetPath(src: 'logo.jpg')}" width="150" height="55" id="logoImg"/>
                 </div>
                 <!--<a class="navbar-brand" href="#">Brand</a>-->
             </div>

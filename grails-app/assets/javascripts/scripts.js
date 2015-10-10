@@ -22,6 +22,8 @@ $(document).ready(function () {
     // end of confirmation
 });
 function mobile() {
+    $("#logoImg").attr('width', '100');
+    $("#logoImg").attr('height', '30');
     $("#leftPane").hide();
     $("#fixedShowHideBtn").show();
     $("#showHideBtn").click(function () {

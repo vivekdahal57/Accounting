@@ -25,7 +25,7 @@ response.setHeader("Expires", "-1");
                 </g:if>
                 <form action='${postUrl}' method='POST' id='loginForm' autocomplete='off'>
                     <div class="inner-addon left-addon">
-                        <input type='text' class="form-control" name='j_username' id='username' placeholder="UserName"/>
+                        <input type='text' class="form-control" name='j_username' id='username' placeholder="Username"/>
                         <i class="glyphicon glyphicon-user"></i>
                     </div>
 
@@ -46,15 +46,14 @@ response.setHeader("Expires", "-1");
                                Remember me
                         </label>
                     </div>
-                    <button type='submit' id="submit" value='${message(code: "springSecurity.login.button")}'
-                            class="btn btn-default btn_login_override">Login</button>
-                            </form>
-                            </div>
-                            <script type='text/javascript'>
-                            (function () {
-                            document.forms['loginForm'].elements['j_username'].focus();
-                            })();
-                    </script>
-                        </div>
-                        </body>
-                        </html>
+                    <button type='submit' id="submit" value='${message(code: "springSecurity.login.button")}' class="btn btn-default btn_login_override">Login</button>
+                </form>
+            </div>
+            <script type='text/javascript'>
+                (function () {
+                document.forms['loginForm'].elements['j_username'].focus();
+                })();
+            </script>
+        </div>
+    </body>
+</html>
