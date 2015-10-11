@@ -31,7 +31,7 @@
             <g:if test='${!request.requestURL.contains('/login')}'>
                 <a href="javascript:void(0);" id="menuSmall">
                     <div class="smallList" id="smallList">
-                        <i class="fa fa-list-alt" style="font-size: 30px;color:#fff;text-align: center;"></i>
+                        <i class="fa fa-bars" style="font-size: 20px;color:#fff;text-align: center;"></i>
                     </div>
                 </a>
 

@@ -11,6 +11,54 @@
         min-height: 30px;
     }
 
+    #menuUl a {
+        padding: 5px 8px;
+        color: #fff;
+    }
+
+    #menuUl a:hover {
+        background: #35D59D;
+    }
+
+    .menuIcon {
+        font-size: 16px;
+    }
+
+    .unameLogoutBox {
+        float: right;
+        padding: 5px 0px;
+        color: #fff;
+    }
+
+    .unameLinkLogout {
+        text-decoration: none;
+        color: #fff;
+        margin-right: 15px;
+        border: 0px;
+        background: none;
+        display: inline;
+    }
+
+    .unameLinkLogout:hover, .unameLinkLogout:focus {
+        text-decoration: underline;
+        outline: none;
+    }
+
+    .unameLink {
+        text-decoration: none;
+        color: #fff;
+        margin-right: 15px;
+    }
+
+    .unameLink:last-child {
+        margin-right: 0px;
+    }
+
+    .unameLink:hover {
+        text-decoration: underline;
+        color: #fff;
+    }
+
     .logo {
         background: #fff;
         height: 30px;
@@ -150,13 +198,17 @@
     }
 
     .smallList{
-        margin-top: 5px;
         background: #00AB6F;
         border-radius: 4px;
         -moz-border-radius: 4px;
         -webkit-border-radius: 4px;
-        padding: 5px 10px;
+        padding: 3px 8px;
+        margin-top: 2px;
         float:right;
+    }
+    
+    .smallList:hover{
+        color: #00AB6F;
     }
 
     #menuSmall{
@@ -201,7 +253,7 @@
         box-shadow: 0 0 5px #aaa;
         border: none;
     }
-    
+
     .panel_login .panel-body{
         margin: 0px;
         padding: 0px 10px;
