@@ -19,7 +19,7 @@
     <g:layoutHead/>
 </head>
 
-<body>
+<body onload="javascript:equalHeight();">
     <nav class="navbar navbar-default navbarOverRide">
         <div class="container-fluid">
             <div class="navbar-header" style="float:left">
@@ -38,7 +38,7 @@
                 <div class="menuListSmall" id="menuListSmall">
                     <div class="menuItemSmall">
                         <i class="fa fa-tachometer menuSmallIcon"></i> <g:link controller="user" action="welcome">Dashboard</g:link>
-                    </div>
+                        </div>
 
                     <div class="menuItemSmall" id="smallAcc">
                         <i class="fa fa-folder menuSmallIcon"></i> <a href="#">Account</a>

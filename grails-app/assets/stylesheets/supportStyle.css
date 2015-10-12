@@ -133,8 +133,9 @@ body {
     left: 5px;
     bottom: 55px;
     /*overflow-x: hidden;*/
-    overflow-x: no-display;
-    overflow-y: auto;
+    /*overflow-x: no-display;*/
+    /*overflow-y: auto;*/
+    /*border: 1px solid black;*/
 }
 
 .navigationBox {
@@ -213,7 +214,7 @@ body {
 }
 
 .col-md-3:hover {
-    opacity: .8;
+    opacity: 0.8;
 }
 
 .dashIcon {

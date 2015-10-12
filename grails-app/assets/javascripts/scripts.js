@@ -21,6 +21,21 @@ $(document).ready(function () {
     });
     // end of confirmation
 });
+
+function equalHeight() {
+    console.log('equalHeight');
+    var outerHeight = $("#rightPane").outerHeight(true);
+    var leftHeight = $("#leftPane").height();
+    var rightHeight = $("#rightPane").height();
+//    alert(leftHeight + ':' + rightHeight);
+    if (leftHeight < rightHeight) {
+        $("#leftPane").height(rightHeight);
+    }
+    else {
+        $("#rightPane").height(leftHeight);
+    }
+}
+
 function mobile() {
     $("#logoImg").attr('width', '100');
     $("#logoImg").attr('height', '30');

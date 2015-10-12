@@ -17,7 +17,7 @@
                 code="default.new.label" args="[entityName]"/></g:link></div>
     </div>
 
-    <div class="panel panel-default" style="margin-bottom: 0px;margin-right: 5px; ">
+    <div class="panel panel-default" style="margin-bottom: 0px;margin-right: 5px;overflow-x: auto; ">
         <table class="table table-hover table_override">
             <thead>
             <tr class="thead_tr">
