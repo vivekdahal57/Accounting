@@ -18,6 +18,7 @@ function DetectPhone() {
         redirectMobileView();
     } else if (uagent.search("windows nt") > -1) {
         console.log("Windows PC");
+//        redirectMobileView();
     } else if (uagent.search("android") > -1) {
         redirectMobileView();
     } else {
@@ -26,11 +27,20 @@ function DetectPhone() {
 }
 
 function redirectMobileView() {
-    if (/mobile/.test(window.location.href)) {
-        console.log("Showing mobile view");
-    } else {
-        console.log("Mobile Phone detected...");
-        console.log("Redirecting to mobile view...");
-        window.location.replace("mobile");
+    var $head = $("head");
+    var $headlinklast = $head.find("link[rel='stylesheet']:last");
+    var linkElement = "<link type='text/css' rel='stylesheet' href='css/mobile-support.css' />";
+    if ($headlinklast.length) {
+        $headlinklast.after(linkElement);
     }
+    else {
+        $head.append(linkElement);
+    }
+//    if (/mobile/.test(window.location.href)) {
+//        console.log("Showing mobile view");
+//    } else {
+//        console.log("Mobile Phone detected...");
+//        console.log("Redirecting to mobile view...");
+//        window.location.replace("mobile");
+//    }
 }

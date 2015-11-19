@@ -59,28 +59,36 @@
 
 .content-wrap{
     width: 100%;
-    /*background: #ccc;*/
     float: right;
     height: 1000px;
 }
 
+.table-wrap > .panel-default > .panel-body{
+    padding: 0px;
+}
 
-
-.table-wrap{
-
+.panel-default > .panel-heading {
+    color: #ddd;
+    background-color: #000;
 }
 
 .table_override{
-    /*border: 1px solid #000;*/
+    margin: 0px;
 }
 
 .table_override thead{
-    background-color: #000;
+    background-color: #555;
     color: #ddd;
 }
 
 .table_override thead tr th{
-    border-bottom: 2px solid #555;
+    border-bottom: 2px solid #333;
+}
+
+.table-wrap > .panel-default > .panel-footer {
+    color: #ddd;
+    background-color: #000;
+    /*border-top: 1px solid #000;*/
 }
 
 .footer{

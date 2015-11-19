@@ -4,11 +4,12 @@
         <title>Mobile Detection</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="../css/style.css" rel="stylesheet" type="text/css" />
-        <link href="../css/mobile-support.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="../js/angular.js"></script>
         <script type="text/javascript" src="../js/jquery.min.js"></script>
         <script type="text/javascript" src="../js/scripts.js"></script>
-        <script type="text/javascript" src="../js/collapse.js"></script>
         <script type="text/javascript" src="../js/dropdown.js"></script>
+        <script type="text/javascript" src="../js/collapse.js"></script>
+        <link type='text/css' rel='stylesheet' href='../css/mobile-support.css' />
     </head>
     <body>
         <nav class="navbar navbar-default" id="nav">
@@ -64,24 +65,49 @@
 
         <div class="content-wrap" id="cont-wrap">
             <div class="col-md-12 table-wrap">
-                <table class="table table-hover table_override">
-                    <thead>
-                        <tr>
-                            <th>S.No.</th>
-                            <th>Name</th>
-                            <th>Address</th>
-                            <th colspan="2">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Vinaya Dahal</td>
-                            <td>Jorpati, Kathmandu</td>
-                            <td>Edit | Delete</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">User Details</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-hover table_override">
+                            <thead>
+                                <tr>
+                                    <th>S.No.</th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Phone</th>
+                                    <th colspan="2">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Vinaya Dahal</td>
+                                    <td>Jorpati, Kathmandu</td>
+                                    <td>9875632415</td>
+                                    <td>Edit | Delete</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Vinaya Dahal</td>
+                                    <td>Jorpati, Kathmandu</td>
+                                    <td>9875632415</td>
+                                    <td>Edit | Delete</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Vinaya Dahal</td>
+                                    <td>Jorpati, Kathmandu</td>
+                                    <td>9875632415</td>
+                                    <td>Edit | Delete</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="panel-footer">Pagination Area</div>
+                </div>
+
             </div>
         </div>
 

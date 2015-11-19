@@ -64,24 +64,48 @@
 
         <div class="content-wrap" id="cont-wrap">
             <div class="col-md-12 table-wrap">
-                <table class="table table-hover table_override">
-                    <thead>
-                        <tr>
-                            <th>S.No.</th>
-                            <th>Name</th>
-                            <th>Address</th>
-                            <th colspan="2">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Vinaya Dahal</td>
-                            <td>Jorpati, Kathmandu</td>
-                            <td>Edit | Delete</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">User Details</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-hover table_override">
+                            <thead>
+                                <tr>
+                                    <th>S.No.</th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Phone</th>
+                                    <th colspan="2">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Vinaya Dahal</td>
+                                    <td>Jorpati, Kathmandu</td>
+                                    <td>9875632415</td>
+                                    <td>Edit | Delete</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Vinaya Dahal</td>
+                                    <td>Jorpati, Kathmandu</td>
+                                    <td>9875632415</td>
+                                    <td>Edit | Delete</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Vinaya Dahal</td>
+                                    <td>Jorpati, Kathmandu</td>
+                                    <td>9875632415</td>
+                                    <td>Edit | Delete</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="panel-footer">Pagination Area</div>
+                </div>
             </div>
         </div>
 
