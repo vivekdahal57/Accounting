@@ -1,6 +1,19 @@
 $(document).ready(function () {
     DetectPhone();
     setFooter();
+    $("#downloadLink").click(function () {
+        $("#downloadOptions").animate({width: 'show', direction: 'right'}, 500, function () {
+            console.log('ok');
+            $("#headingFormat").show();
+        });
+    });
+
+    $("#hideDownloadOption").click(function () {
+        $("#headingFormat").hide();
+        $("#downloadOptions").animate({width: 'hide', direction: 'left'}, 500, function () {
+            console.log('ok');
+        });
+    });
 });
 
 function setFooter() {
@@ -44,3 +57,4 @@ function redirectMobileView() {
 //        window.location.replace("mobile");
 //    }
 }
+

@@ -49,12 +49,23 @@
 
 .sidebar{
     width: 20%;
-    background: #ccc;
+    background-color: #ccc;
     position: fixed;
-    left: 0px;
+    right: 0px;
     bottom: 45px;
-    top: 52px;
+    top: 65px;
     display: none;
+    z-index: 1;
+}
+
+.downloadOptions{
+    width: 150px;
+    background-color: #fff;
+    position: fixed;
+    right: 0px;
+    top: 65px;
+    display: none;
+    z-index: 1;
 }
 
 .content-wrap{
@@ -74,6 +85,8 @@
 
 .table_override{
     margin: 0px;
+    /*table-layout: fixed;*/
+    /*border: 1px solid #ddd;*/
 }
 
 .table_override thead{
@@ -81,14 +94,104 @@
     color: #ddd;
 }
 
-.table_override thead tr th{
-    border-bottom: 2px solid #333;
+.table_override thead tr th,
+.table_override tbody tr td{
+    border: 1px solid #888;
+    text-align: center;
+    /*    width: 10%;*/
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+    background-color: #d0d0d0;
 }
 
 .table-wrap > .panel-default > .panel-footer {
     color: #ddd;
     background-color: #000;
     /*border-top: 1px solid #000;*/
+}
+
+.addressBar{
+    background-color: #d0d0d0;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.addItem{
+    float:right;
+    background-color: #555;
+}
+
+.downloadBtnWrap{
+    position: fixed;
+    right: 15px;
+    top:65px;
+    padding: 4px 10px;
+    background-color: #ccc;
+    z-index: 0;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+#downloadLink{
+    font-size: 20px;
+    color: #000;
+}
+
+#downloadLink:hover{
+    text-decoration: none;
+    color: #333;
+}
+
+.downloadHeadingWrap{
+    height: 30px;
+    background-color: #555;
+}
+
+#headingFormat{
+    display: none;
+    text-align: center;
+    margin: 0px;
+    padding: 4px;
+    color: #ccc;
+}
+
+#hideDownloadOption{
+    font-size: 18px;
+    color: #000;
+}
+
+#hideDownloadOption:hover{
+    text-decoration: none;
+    color: #333;
+}
+
+.hideDownloadOption{
+    padding: 10px;
+    /*float: left;*/
+    background-color: #777;
+    z-index: 0;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+.printIcons{
+    color: #000;
+    font-size: 120px;
+    outline: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.printIcons:hover{
+    text-decoration: none;
+    color: #333;
 }
 
 .footer{
