@@ -1,0 +1,22 @@
+1. Creating index:
+
+curl -XPOST "http://localhost:9200/testindex" -d  "{}"
+
+2. List All indices
+
+curl -XGET "http://localhost:9200/_cat/indices?v"
+		
+		health status index pri rep docs.count docs.deleted store.size pri.store.size --means no index in cluster
+
+3. see everything inside a index
+
+curl -XGET "http://localhost:9200/accounting?pretty=true"
+
+4. Inserting a document
+
+curl -XPOST "http://localhost:9200/testindex/mySuperCoolType" -d "{"fullName": "Sean McGary", "twitterHandle": "@seanmcagry"}"
+
+// response
+{"ok":true,"_index":"testindex","_type":"mySuperCoolType","_id":"N_c9-SQ8RRSrRwPIBqG6Ow","_version":1}
+
+5. 
