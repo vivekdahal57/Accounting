@@ -61,46 +61,71 @@
         </nav>
 
 
-        <div class="sidebar" id="sidebar">
-            Sidebar
-        </div>
 
-        <div class="downloadOptions" id="downloadOptions">
-            <div class="downloadHeadingWrap">
-                <h5 id="headingFormat">
-                    <a href="javascript:void(0);" id="hideDownloadOption">
-                        <i class="fa fa-caret-right"></i>
-                    </a> 
-                    Choose A Format
-                </h5>
-            </div>
-            <div style="background-color: #009933;margin: 0 auto;text-align: center;">
-                <a href="#" class="printIcons">
-                    <i class="fa fa-file-excel-o"></i>
-                </a>
-            </div>
-            <div style="background-color: #cc0000;margin: 0 auto;text-align: center;">
-                <a href="#" class="printIcons">
-                    <i class="fa fa-file-pdf-o"></i>
-                </a>
-            </div>
-            <div style="background-color: #0066ff;margin: 0 auto;text-align: center;">
-                <a href="#" class="printIcons">
-                    <i class="fa fa-file-word-o"></i>
-                </a>
-            </div>
-        </div>
 
-        <div class="content-wrap" id="cont-wrap">
-            <div class="col-md-12 table-wrap">
-                <h3 style="margin-top: 5px;">User Details</h3>
-                <div class="downloadBtnWrap">
-                    <a href="javascript:void(0);" id="downloadLink"  alt="Download Report" title="Download Report">
-                        <i class="fa fa-download"></i>
+        <div class="popupBackground" id="popupBackground"></div>
+        
+        <!--download panel start-->
+        <div class="panel panel-default chooseFormatPanel" id="downloadOptions">
+            <div class="panel-heading">Choose A File Format:
+                <a href="javascript:void(0);" id="hideDownloadOption">
+                    <i class="fa fa-close"></i>
+                </a> 
+            </div>
+            <div class="panel-body" style="padding: 0px;">
+                <div class="printIconsWrap">
+                    <a href="#" class="printIcons" alt="XLS Format" title="XLS Format">
+                        <i class="fa fa-file-excel-o"></i>
                     </a>
                 </div>
+                <div class="printIconsWrap">
+                    <a href="#" class="printIcons" alt="PDF Format" title="PDF Format">
+                        <i class="fa fa-file-pdf-o"></i>
+                    </a>
+                </div>
+                <div class="printIconsWrap">
+                    <a href="#" class="printIcons" alt="Word Format" title="Word Format">
+                        <i class="fa fa-file-word-o"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--download panel end-->
+        
+        <!--sidebar start-->
+        <div class="panel panel-default sidebar" id="sidebar">
+            <div class="panel-heading" style="border-radius: 0px;">Sidebar
+                <a href="javascript:void(0);" id="closeSidebar">
+                    <i class="fa fa-close"></i>
+                </a> 
+            </div>
+            <div class="panel-body sidebarList">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--sidebar end-->
+        <div class="content-wrap" id="cont-wrap">
+            <div class="col-md-12 table-wrap">
+                <div class="pageTitle">
+                    <h3>User Details</h3>
+                    <a href="javascript:void(0);" id="downloadLink" alt="Download Report" title="Download Report">
+                        <div class="btnWrap"><i class="fa fa-download"></i></div>
+                    </a>
+                    <a href="javascript:void(0);" id="sideBarLink" alt="Access Sidebar" title="Access SideBar">
+                        <div class="btnWrap"><i class="fa fa-wrench"></i></div>
+                    </a>
+                </div>
+
                 <div class="addressBar">
-                    Home > User Details
+                    <a href="#">DashBoard</a> > User Details
                     <div class="addItem">
                         <a href="#">Add New</a>
                     </div>
@@ -121,24 +146,24 @@
                             <td>Vinaya Dahal</td>
                             <td>Jorpati, Kathmandu</td>
                             <td>9875632415</td>
-                            <td>Edit</td>
-                            <td>Delete</td>
+                            <td><a href="#"><i class="fa fa-edit"></i></a></td>
+                            <td><a href="#"><i class="fa fa-close"></i></a></td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>Vinaya Dahal</td>
                             <td>Jorpati, Kathmandu</td>
                             <td>9875632415</td>
-                            <td>Edit</td>
-                            <td>Delete</td>
+                            <td><a href="#"><i class="fa fa-edit"></i></a></td>
+                            <td><a href="#"><i class="fa fa-close"></i></a></td>
                         </tr>
                         <tr>
                             <td>3</td>
                             <td>Vinaya Dahal</td>
                             <td>Jorpati, Kathmandu</td>
                             <td>9875632415</td>
-                            <td>Edit</td>
-                            <td>Delete</td>
+                            <td><a href="#"><i class="fa fa-edit"></i></a></td>
+                            <td><a href="#"><i class="fa fa-close"></i></a></td>
                         </tr>
                     </tbody>
                 </table>

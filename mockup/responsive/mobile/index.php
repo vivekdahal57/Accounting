@@ -4,7 +4,7 @@
         <title>Mobile Detection</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="../css/style.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="../js/angular.js"></script>
+        <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="../js/jquery.min.js"></script>
         <script type="text/javascript" src="../js/scripts.js"></script>
         <script type="text/javascript" src="../js/dropdown.js"></script>
@@ -59,55 +59,96 @@
         </nav>
 
 
-        <div class="sidebar">
+        <div class="sidebar" id="sidebar">
             Sidebar
         </div>
 
+        <div class="popupBackground" id="popupBackground"></div>
+
+        <div class="panel panel-default chooseFormatPanel" id="downloadOptions">
+            <div class="panel-heading">Choose A File Format:
+                <a href="javascript:void(0);" id="hideDownloadOption">
+                    <i class="fa fa-close"></i>
+                </a> 
+            </div>
+            <div class="panel-body"  style="border: 1px solid #ff0000;">
+                <div class="printIconsWrap">
+                    <div class="printIconsBgExcel">
+                        <a href="#" class="printIcons" alt="XLS Format" title="XLS Format">
+                            <i class="fa fa-file-excel-o"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="printIconsWrap">
+                    <div class="printIconsBgPdf">
+                        <a href="#" class="printIcons" alt="PDF Format" title="PDF Format">
+                            <i class="fa fa-file-pdf-o"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="printIconsWrap">
+                    <div class="printIconsBgWord">
+                        <a href="#" class="printIcons" alt="Word Format" title="Word Format">
+                            <i class="fa fa-file-word-o"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="octagon"></div>
+
         <div class="content-wrap" id="cont-wrap">
             <div class="col-md-12 table-wrap">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">User Details</h3>
+                <h3 style="margin-top: 5px;">User Details</h3>
+                <!--<div class="downloadBtnWrap">-->
+                    <a href="javascript:void(0);" class="downloadBtnWrap" id="downloadLink"  alt="Download Report" title="Download Report">
+                        <i class="fa fa-download"></i>
+                    </a>
+                <!--</div>-->
+                <div class="addressBar">
+                    Home > User Details
+                    <div class="addItem">
+                        <a href="#">Add New</a>
                     </div>
-                    <div class="panel-body">
-                        <table class="table table-hover table_override">
-                            <thead>
-                                <tr>
-                                    <th>S.No.</th>
-                                    <th>Name</th>
-                                    <th>Address</th>
-                                    <th>Phone</th>
-                                    <th colspan="2">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Vinaya Dahal</td>
-                                    <td>Jorpati, Kathmandu</td>
-                                    <td>9875632415</td>
-                                    <td>Edit | Delete</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Vinaya Dahal</td>
-                                    <td>Jorpati, Kathmandu</td>
-                                    <td>9875632415</td>
-                                    <td>Edit | Delete</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Vinaya Dahal</td>
-                                    <td>Jorpati, Kathmandu</td>
-                                    <td>9875632415</td>
-                                    <td>Edit | Delete</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="panel-footer">Pagination Area</div>
                 </div>
-
+                <table class="table table-hover table-striped table_override">
+                    <thead>
+                        <tr>
+                            <th>S.No.</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Phone</th>
+                            <th colspan="2">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Vinaya Dahal</td>
+                            <td>Jorpati, Kathmandu</td>
+                            <td>9875632415</td>
+                            <td>Edit</td>
+                            <td>Delete</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Vinaya Dahal</td>
+                            <td>Jorpati, Kathmandu</td>
+                            <td>9875632415</td>
+                            <td>Edit</td>
+                            <td>Delete</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Vinaya Dahal</td>
+                            <td>Jorpati, Kathmandu</td>
+                            <td>9875632415</td>
+                            <td>Edit</td>
+                            <td>Delete</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 

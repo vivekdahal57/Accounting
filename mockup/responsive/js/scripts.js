@@ -2,18 +2,39 @@ $(document).ready(function () {
     DetectPhone();
     setFooter();
     $("#downloadLink").click(function () {
-        $("#downloadOptions").animate({width: 'show', direction: 'right'}, 500, function () {
-            console.log('ok');
-            $("#headingFormat").show();
+        $("#popupBackground").fadeIn(600, function () {
+            setScrollPosition();
+            $("#downloadOptions").animate({height: 'show', direction: 'top'}, 600, function () {
+                console.log('Choose Format screen loaded.');
+            });
         });
     });
 
     $("#hideDownloadOption").click(function () {
-        $("#headingFormat").hide();
-        $("#downloadOptions").animate({width: 'hide', direction: 'left'}, 500, function () {
+        $("#downloadOptions").animate({height: 'hide', direction: 'bottom'}, 600, function () {
             console.log('ok');
+            $("#popupBackground").fadeOut(600);
+            unsetScrollPosition();
         });
     });
+
+    $("#sideBarLink").click(function () {
+        $("#popupBackground").fadeIn(600, function () {
+            setScrollPosition();
+            $("#sidebar").animate({width: 'show', direction: 'left'}, 600, function () {
+                console.log('Choose Format screen loaded.');
+            });
+        });
+    });
+
+    $("#closeSidebar").click(function () {
+        $("#sidebar").animate({width: 'hide', direction: 'right'}, 600, function () {
+            console.log('ok');
+            $("#popupBackground").fadeOut(600);
+            unsetScrollPosition();
+        });
+    });
+
 });
 
 function setFooter() {
@@ -49,12 +70,23 @@ function redirectMobileView() {
     else {
         $head.append(linkElement);
     }
-//    if (/mobile/.test(window.location.href)) {
-//        console.log("Showing mobile view");
-//    } else {
-//        console.log("Mobile Phone detected...");
-//        console.log("Redirecting to mobile view...");
-//        window.location.replace("mobile");
-//    }
+}
+
+function setScrollPosition() {
+    var scrollPosition = [
+        self.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft, self.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+    ];
+    var html = jQuery('html');
+    html.data('scroll-position', scrollPosition);
+    html.data('previous-overflow', html.css('overflow'));
+    html.css('overflow', 'hidden');
+    window.scrollTo(scrollPosition[0], scrollPosition[1]);
+}
+
+function unsetScrollPosition() {
+    var html = jQuery('html');
+    var scrollPosition = html.data('scroll-position');
+    html.css('overflow', html.data('previous-overflow'));
+    window.scrollTo(scrollPosition[0], scrollPosition[1]);
 }
 

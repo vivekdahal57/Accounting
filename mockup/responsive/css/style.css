@@ -1,8 +1,20 @@
 *{
     margin: 0;
     padding: 0;
-    font-size: 12px;
     font-family: sans-serif;
+}
+
+body{
+    font-size: 12px;
+}
+
+a{
+    color: #333;
+}
+
+a:hover,a:focus{
+    color: #333;
+    outline: none;
 }
 
 #nav{
@@ -49,29 +61,35 @@
 
 .sidebar{
     width: 20%;
-    background-color: #ccc;
     position: fixed;
-    right: 0px;
-    bottom: 45px;
-    top: 65px;
+    left: 0px;
+    top:0px;
     display: none;
     z-index: 1;
+    border-radius: 0px;
 }
 
-.downloadOptions{
-    width: 150px;
-    background-color: #fff;
-    position: fixed;
-    right: 0px;
-    top: 65px;
-    display: none;
-    z-index: 1;
+.sidebarList{
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
+
+.sidebarList ul{
+    list-style: none;
+}
+
+.sidebarList li{
+    padding: 10px 0px;
+    margin-bottom: 3px;
+}
+
+.sidebarList li:last-child{
+    margin-bottom: 0px;
+}
+
 
 .content-wrap{
-    width: 100%;
-    float: right;
-    height: 1000px;
+    /*height: 1000px;*/
 }
 
 .table-wrap > .panel-default > .panel-body{
@@ -85,8 +103,6 @@
 
 .table_override{
     margin: 0px;
-    /*table-layout: fixed;*/
-    /*border: 1px solid #ddd;*/
 }
 
 .table_override thead{
@@ -98,7 +114,10 @@
 .table_override tbody tr td{
     border: 1px solid #888;
     text-align: center;
-    /*    width: 10%;*/
+}
+
+.table_override tbody td a i{
+    font-size: 20px;
 }
 
 .table-striped>tbody>tr:nth-child(odd)>td,
@@ -109,7 +128,6 @@
 .table-wrap > .panel-default > .panel-footer {
     color: #ddd;
     background-color: #000;
-    /*border-top: 1px solid #000;*/
 }
 
 .addressBar{
@@ -126,54 +144,53 @@
     background-color: #555;
 }
 
-.downloadBtnWrap{
-    position: fixed;
-    right: 15px;
-    top:65px;
-    padding: 4px 10px;
+.pageTitle{
+    height: 20px;
+    margin-bottom: 7px;
+    display: table;
+    width: 100%;
+}
+
+.pageTitle h3{
+    margin-top: 5px;
+    display: table-cell;
+    float: left;
+}
+
+.btnWrap{
+    float:right;
+    display: table-cell;
+    padding: 5px 12px;
     background-color: #ccc;
-    z-index: 0;
     border-radius: 3px;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
+    margin-right: 10px;
 }
 
-#downloadLink{
+#downloadLink,#sideBarLink{
     font-size: 20px;
     color: #000;
 }
 
-#downloadLink:hover{
+#downloadLink:hover,#sideBarLink:hover{
     text-decoration: none;
     color: #333;
 }
 
-.downloadHeadingWrap{
-    height: 30px;
-    background-color: #555;
+#hideDownloadOption,#closeSidebar{
+    font-size: 12px;
+    color: #ddd;
+    float: right;
 }
 
-#headingFormat{
-    display: none;
-    text-align: center;
-    margin: 0px;
-    padding: 4px;
-    color: #ccc;
-}
-
-#hideDownloadOption{
-    font-size: 18px;
-    color: #000;
-}
-
-#hideDownloadOption:hover{
+#hideDownloadOption:hover,#closeSidebar:hover{
     text-decoration: none;
-    color: #333;
+    color: #999;
 }
 
 .hideDownloadOption{
     padding: 10px;
-    /*float: left;*/
     background-color: #777;
     z-index: 0;
     border-radius: 3px;
@@ -181,18 +198,46 @@
     -webkit-border-radius: 3px;
 }
 
+.popupBackground{
+    position: fixed;
+    top:0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 1;
+}
+
+.printIconsWrap{
+    text-align: center;
+    float: left;
+    font-size: 120px;
+    width: 120px;
+}
+
 .printIcons{
     color: #000;
-    font-size: 120px;
     outline: none;
-    padding: 0px;
-    margin: 0px;
 }
 
 .printIcons:hover{
     text-decoration: none;
     color: #333;
 }
+
+.chooseFormatPanel{
+    width: 362px;
+    height:211px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    margin-left: -131px;
+    margin-top:-106px; 
+    display: none;
+}
+
 
 .footer{
     border-top: 2px solid #555;
