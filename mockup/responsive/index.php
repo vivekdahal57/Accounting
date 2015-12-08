@@ -20,9 +20,9 @@
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-bar" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span> 
+                        <span class="fa fa-bars" style="font-size: 20px"></span>
+                                                <!--<span class="icon-bar"></span>-->
+                        <!--<span class="icon-bar"></span>--> 
                     </button>
                     <a class="navbar-brand" href="#">Brand</a> 
                 </div> 
@@ -31,8 +31,9 @@
                     <ul class="nav navbar-nav"> 
                         <li id="active_link"><a href="#">Home <span class="sr-only">(current)</span></a></li> 
                         <li><a href="#">Account</a></li>
+                        <li><a href="dashboard.php">DashBoard</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="fa fa-caret-down"></span></a>
                             <ul class="dropdown-menu"> 
                                 <li><a href="#">Action</a></li>
                                 <li><a href="#">Another action</a></li>
@@ -46,7 +47,7 @@
                     </ul> 
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#">Link</a></li>
-                        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="fa fa-caret-down"></span></a>
                             <ul class="dropdown-menu"> 
                                 <li><a href="#">Action</a></li>
                                 <li><a href="#">Another action</a></li>
@@ -64,7 +65,7 @@
 
 
         <div class="popupBackground" id="popupBackground"></div>
-        
+
         <!--download panel start-->
         <div class="panel panel-default chooseFormatPanel" id="downloadOptions">
             <div class="panel-heading">Choose A File Format:
@@ -91,7 +92,7 @@
             </div>
         </div>
         <!--download panel end-->
-        
+
         <!--sidebar start-->
         <div class="panel panel-default sidebar" id="sidebar">
             <div class="panel-heading" style="border-radius: 0px;">Sidebar
@@ -101,13 +102,12 @@
             </div>
             <div class="panel-body sidebarList">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="#"><div>Home</div></a></li>
+                    <li><a href="#"><div>Home</div></a></li>
+                    <li><a href="#"><div>Home</div></a></li>
+                    <li><a href="#"><div>Home</div></a></li>
+                    <li><a href="#"><div>Home</div></a></li>
+                    <li><a href="#"><div>Home</div></a></li>
                 </ul>
             </div>
         </div>
@@ -120,7 +120,7 @@
                         <div class="btnWrap"><i class="fa fa-download"></i></div>
                     </a>
                     <a href="javascript:void(0);" id="sideBarLink" alt="Access Sidebar" title="Access SideBar">
-                        <div class="btnWrap"><i class="fa fa-wrench"></i></div>
+                        <div class="btnWrap"><i class="fa fa-sign-in"></i></div>
                     </a>
                 </div>
 

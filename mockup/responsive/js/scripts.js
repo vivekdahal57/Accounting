@@ -1,4 +1,11 @@
+$(window).resize(function () {
+    setFooter();
+
+});
+
 $(document).ready(function () {
+    console.log("das" + $("#dashBoardBg").height());
+    console.log("cont" + $("#cont-wrap").height());
     DetectPhone();
     setFooter();
     $("#downloadLink").click(function () {
@@ -38,11 +45,14 @@ $(document).ready(function () {
 });
 
 function setFooter() {
-    if ($("#cont-wrap").height() <= 514) {
+    if ($("#cont-wrap").height() <= 514 || $("#dashBoardBg").height() <= 514) {
         $('#footer').removeClass("footer").addClass("footer-fixed");
-        console.log("Class swapped");
+        console.log("Class swapped from normal to fixed footer");
+    } else if ($("#cont-wrap").height() > 514 || $("#dashBoardBg").height() > 514) {
+        $('#footer').removeClass("footer-fixed").addClass("footer");
+        console.log("Class swapped from fixed to normal footer");
     } else {
-        console.log($("#cont-wrap").height());
+        console.log("nothing" + $("#cont-wrap").height());
     }
 }
 
