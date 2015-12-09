@@ -60,13 +60,14 @@ a:hover,a:focus{
 }
 
 .sidebar{
-    width: 20%;
-    position: fixed;
+    /*width: 20%;*/
+    position: absolute;
     left: 0px;
-    top:52px;
+    top: 60px;
     display: none;
     z-index: 1;
     border-radius: 0px;
+
 }
 
 .sidebarList{
@@ -78,7 +79,6 @@ a:hover,a:focus{
 }
 
 .sidebarList li{
-
     margin-bottom: 3px;
 }
 
@@ -87,7 +87,7 @@ a:hover,a:focus{
 }
 
 .sidebarList li a div{
-    padding: 10px 15px;
+    padding: 9px 15px;
 }
 
 .sidebarList li a div:hover{

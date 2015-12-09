@@ -103,7 +103,7 @@
             <div class="panel-body sidebarList">
                 <ul>
                     <li><a href="#"><div>Home</div></a></li>
-                    <li><a href="#"><div>Home</div></a></li>
+                    <li><a href="#"><div>Homeyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy</div></a></li>
                     <li><a href="#"><div>Home</div></a></li>
                     <li><a href="#"><div>Home</div></a></li>
                     <li><a href="#"><div>Home</div></a></li>

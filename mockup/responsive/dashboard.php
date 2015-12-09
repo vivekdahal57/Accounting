@@ -75,7 +75,7 @@
             </div>
             <div class="panel-body sidebarList">
                 <ul>
-                    <li><a href="#"><div>Home</div></a></li>
+                    <li><a href="#"><div>Homeuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu</div></a></li>
                     <li><a href="#"><div>Home</div></a></li>
                     <li><a href="#"><div>Home</div></a></li>
                     <li><a href="#"><div>Home</div></a></li>

@@ -1,6 +1,5 @@
 $(window).resize(function () {
     setFooter();
-
 });
 
 $(document).ready(function () {
@@ -27,7 +26,7 @@ $(document).ready(function () {
 
     $("#sideBarLink").click(function () {
         $("#popupBackground").fadeIn(600, function () {
-            setScrollPosition();
+//            setScrollPosition();
             $("#sidebar").animate({width: 'show', direction: 'left'}, 600, function () {
                 console.log('Choose Format screen loaded.');
             });
@@ -38,7 +37,7 @@ $(document).ready(function () {
         $("#sidebar").animate({width: 'hide', direction: 'right'}, 600, function () {
             console.log('ok');
             $("#popupBackground").fadeOut(600);
-            unsetScrollPosition();
+//            unsetScrollPosition();
         });
     });
 
@@ -99,4 +98,5 @@ function unsetScrollPosition() {
     html.css('overflow', html.data('previous-overflow'));
     window.scrollTo(scrollPosition[0], scrollPosition[1]);
 }
+
 
