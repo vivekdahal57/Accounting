@@ -1,0 +1,484 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body{
+    font-size: 12px;
+}
+
+a{
+    color: #333;
+}
+
+a:hover,a:focus{
+    color: #333;
+    outline: none;
+}
+
+#nav{
+    background-color: #000;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border:none;
+    border-bottom: 2px solid #555;
+    margin-bottom: 10px;
+}
+
+#nav a{
+    color:#ddd;
+    outline: none;
+}
+
+#active_link{
+    background-color: #555;
+}
+
+.dropdown-menu{
+    background-color: #000;
+}
+
+.dropdown-menu > li > a:hover{
+    background-color: #555;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover{
+    background-color: #555;
+}
+
+.navbar-default .navbar-toggle .icon-bar{
+    background-color: #555;
+}
+
+
+.dropdown-menu .divider{
+    background-color: #555;
+}
+
+.sidebar{
+    /*width: 20%;*/
+    position: absolute;
+    left: 0px;
+    top: 60px;
+    display: none;
+    z-index: 1;
+    border-radius: 0px;
+
+}
+
+.sidebarList{
+    padding:0px;
+}
+
+.sidebarList ul{
+    list-style: none;
+}
+
+.sidebarList li{
+    margin-bottom: 3px;
+}
+
+.sidebarList li:last-child{
+    margin-bottom: 0px;
+}
+
+.sidebarList li a div{
+    padding: 9px 15px;
+}
+
+.sidebarList li a div:hover{
+    background-color: #e8e8e8;
+}
+
+
+.content-wrap{
+    /*height: 1000px;*/
+}
+
+.table-wrap > .panel-default > .panel-body{
+    padding: 0px;
+}
+
+.panel-default > .panel-heading {
+    color: #ddd;
+    background-color: #000;
+}
+
+.table_override{
+    margin: 0px;
+}
+
+.table_override thead{
+    background-color: #555;
+    color: #ddd;
+}
+
+.table_override thead tr th,
+.table_override tbody tr td{
+    border: 1px solid #888;
+    text-align: center;
+}
+
+.table_override tbody td a i{
+    font-size: 20px;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+    background-color: #d0d0d0;
+}
+
+.table-wrap > .panel-default > .panel-footer {
+    color: #ddd;
+    background-color: #000;
+}
+
+.addressBar{
+    background-color: #d0d0d0;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.addItem{
+    float:right;
+}
+
+.addItem i{
+    font-size: 18px;
+}
+
+.pageTitle{
+    height: 20px;
+    margin-bottom: 7px;
+    display: table;
+    width: 100%;
+}
+
+.pageTitle h3{
+    margin-top: 5px;
+    display: table-cell;
+    float: left;
+}
+
+.btnWrap{
+    float:right;
+    display: table-cell;
+    padding: 5px 12px;
+    background-color: #ccc;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    margin-right: 10px;
+}
+
+#downloadLink,#sideBarLink{
+    font-size: 20px;
+    color: #000;
+}
+
+#downloadLink:hover,#sideBarLink:hover{
+    text-decoration: none;
+    color: #333;
+}
+
+#hideDownloadOption,#closeSidebar{
+    font-size: 12px;
+    color: #ddd;
+    float: right;
+}
+
+#hideDownloadOption:hover,#closeSidebar:hover{
+    text-decoration: none;
+    color: #999;
+}
+
+.hideDownloadOption{
+    padding: 10px;
+    background-color: #777;
+    z-index: 0;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+.popupBackground{
+    position: fixed;
+    top:0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 1;
+}
+
+.printIconsWrap{
+    text-align: center;
+    float: left;
+    font-size: 120px;
+    width: 120px;
+}
+
+.printIcons{
+    color: #000;
+    outline: none;
+}
+
+.printIcons:hover{
+    text-decoration: none;
+    color: #333;
+}
+
+.chooseFormatPanel{
+    width: 362px;
+    height:211px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    margin-left: -131px;
+    margin-top:-106px; 
+    display: none;
+}
+
+
+.footer{
+    border-top: 2px solid #555;
+    width: 100%;
+    background-color: #000;
+    float: right;
+    color: #ddd;
+    margin-top: 10px;
+    text-align: center;
+    padding: 15px 0px;
+}
+
+.footer-fixed{
+    position:fixed;
+    bottom: 0px;
+    border-top: 2px solid #555;
+    width: 100%;
+    background-color: #000;
+    float: right;
+    color: #ddd;
+    margin-top: 10px;
+    text-align: center;
+    padding: 15px 0px;
+}
+
+
+/*dashboard*/
+.dashBoardBg{
+    background-color: #000; 
+    padding: 20px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.dashIconWrap{
+    background: #ccc;
+    display: table;
+    padding: 5px 0px 0px 5px;
+    width: 100%;
+}
+
+.dashIconLink .col-md-2{
+    background: #000;
+    border-right: 5px solid #ccc;
+    border-bottom: 5px solid #ccc;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+
+}
+
+.dashIconLink .col-md-2:hover{
+    opacity: 0.8;
+}
+
+.dashIcon {
+    height: 128px;
+    width: 128px;
+    text-align: center;
+    margin: 0 auto;
+
+}
+
+.dashIconOverlay {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: #555;
+    padding: 5px;
+}
+
+.dashIcon .dashIconOverlay {
+    display: block;
+}
+
+.dashIconWrap a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.dashIcon i {
+    margin: 30px 0px;
+    font-size: 64px;
+    color: #fff;
+}
+
+/**********************login page********************************/
+
+.login_heading {
+    background-color: #000;
+    padding: 10px;
+    border-radius: 3px 3px 0px 0px;
+    -moz-border-radius: 3px 3px 0px 0px;
+    -webkit-border-radius: 3px 3px 0px 0px;
+}
+
+.panel-title {
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.panel_login {
+    width: 35%;
+    height: 300px;
+    box-shadow: 0px 1px 15px #000;
+    border: none;
+    padding: 0px;
+    margin: 50px auto;
+}
+
+.panel_login .panel-body{
+    margin: 0px;
+    padding-top: 0px;
+}
+
+.input_wrap input {
+    margin-top: 30px;
+    border: 1px solid #aaa;
+    padding: 5px;
+    height: 35px;
+    position: relative;
+}
+
+.inner-addon {
+    position: relative;
+}
+
+.inner-addon .glyphicon {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+}
+
+.left-addon .glyphicon {
+    left: 0;
+}
+
+.right-addon .glyphicon {
+    right: 0;
+}
+
+.left-addon input {
+    padding-left: 30px;
+}
+
+.right-addon input {
+    padding-right: 30px;
+}
+
+.btn_login_override {
+    font-size: 12px;
+    outline: 0;
+    padding: 5px 30px;
+    background: #000;
+    border: 0;
+    color: #fff;
+    display: block;
+    margin: 15px 0px;
+}
+
+.btn_login_override:hover,
+.btn_login_override:focus {
+    background: #555;
+    color: #fff;
+}
+
+/******************Login Page complete*********************/
+
+.unameLinkLogout {
+    text-decoration: none;
+    color: #ddd;
+    margin-right: 15px;
+    border: 0px;
+    background: none;
+    width: 100%;
+    text-align: left;
+    padding: 3px 20px;
+}
+
+.unameLinkLogout:hover, .unameLinkLogout:focus {
+    background-color: #555;
+    outline: none;
+}
+
+.editDeleteBtn {
+    border: 0px;
+    background-color: rgba(0,0,0,0);
+    outline: none;
+}
+
+.pagination{
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+    color: #333;
+    background-color: #000;
+    border-color: #555;
+}
+
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+    color: #fff;
+    background-color: #555;
+    border-color: #000;
+}
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+    background-color: #333;
+    border-color: #555;
+}
+
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+    color: #333;
+    background-color: #555;
+    border-color: #000;
+}

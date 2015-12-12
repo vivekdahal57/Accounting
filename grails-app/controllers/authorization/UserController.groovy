@@ -104,13 +104,8 @@ class UserController {
 
     static def getUserName() {
         String user = springSecurityService.currentUser
-        user = user.capitalize()
+//        user = user.capitalize()
         return user
-    }
-
-
-    def welcome() {
-        render(view: '/welcome', model: [pageTitle: 'NanceCount : Welcome'])
     }
 
     def myProfile(User currUser) {

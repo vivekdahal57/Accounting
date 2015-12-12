@@ -1,0 +1,117 @@
+.navbar-collapse {
+    padding-right: 15px;
+    padding-left: 15px;
+    overflow-x: visible;
+    border-top: 1px solid transparent;
+    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.1) inset;
+}
+
+.navbar-toggle{
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    display: block;
+}
+
+.navbar-collapse.collapse {
+    display: none !important;
+}
+
+.navbar-header{
+    float: none;
+}
+
+.collapse.in {
+    display: block !important;
+}
+
+.navbar-collapse.in {
+    overflow-y: auto;
+}
+
+.nav > li{
+    width: 100%;
+}
+
+.navbar-nav{
+    float: none;
+}
+
+.navbar-nav > li{
+    float: none;
+}
+
+.navbar-right {
+    border-top: 1px solid #ccc;
+    float:none !important;
+    margin:0px;
+}
+
+.dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0px;
+    background-color: transparent;
+    border: 0px none;
+    box-shadow: none;
+}
+
+.navbar-nav > li > .dropdown-menu {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.dropdown-menu > li > a {
+    display: block;
+    padding: 15px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857;
+    color: #333;
+    white-space: nowrap;
+}
+
+.panel-default > .panel-heading {
+    padding: 5px;
+}
+
+.chooseFormatPanel{
+    width: 212px;
+    height:92px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    margin-left: -106px;
+    margin-top:-41px; 
+    display: none;
+}
+
+.printIconsWrap{
+    text-align: center;
+    float: left;
+    font-size: 50px;
+    width: 70px;
+}
+
+.printIcons{
+    color: #000;
+    outline: none;
+}
+
+.printIcons:hover{
+    text-decoration: none;
+    color: #333;
+}
+
+.panel_login {
+    width: 70%;
+}

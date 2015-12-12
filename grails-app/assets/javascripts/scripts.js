@@ -1,126 +1,118 @@
-$(document).ready(function () {
-    var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-    if (width >= 1280) {
-        desktop();
-    } else {
-        mobile();
-    }
-    $("#menuSmall").click(function () {
-        $("#menuListSmall").toggle();
-    });
-    setInterval(function () {
-        $("#growlBox").fadeOut('slow');
-    }, 3000);
-    //for delete with confirmation
-
-    $("#deleteBtn").click(function () {
-        popupShow();
-    });
-    $("#formClose").click(function () {
-        popupHide();
-    });
-    // end of confirmation
+$(window).resize(function () {
+    setFooter();
+    setFooterLogin();
 });
 
-function equalHeight() {
-    console.log('equalHeight');
-    var outerHeight = $("#rightPane").outerHeight(true);
-    var leftHeight = $("#leftPane").height();
-    var rightHeight = $("#rightPane").height();
-//    alert(leftHeight + ':' + rightHeight);
-    if (leftHeight < rightHeight) {
-        $("#leftPane").height(rightHeight);
+$(document).ready(function () {
+    DetectPhone();
+    setFooter();
+    setFooterLogin();
+    console.log("dasIcon Height: " + $("#dashBoardBg").height());
+    console.log("cont-wrap Height: " + $("#cont-wrap").height());
+
+    $("#downloadLink").click(function () {
+        $("#popupBackground").fadeIn(600, function () {
+            setScrollPosition();
+            $("#downloadOptions").animate({height: 'show', direction: 'top'}, 600, function () {
+                console.log('Choose Format screen loaded.');
+            });
+        });
+    });
+
+    $("#hideDownloadOption").click(function () {
+        $("#downloadOptions").animate({height: 'hide', direction: 'bottom'}, 600, function () {
+            console.log('ok');
+            $("#popupBackground").fadeOut(600);
+            unsetScrollPosition();
+        });
+    });
+
+    $("#sideBarLink").click(function () {
+        $("#popupBackground").fadeIn(600, function () {
+//            setScrollPosition();
+            $("#sidebar").animate({width: 'show', direction: 'left'}, 600, function () {
+                console.log('Choose Format screen loaded.');
+            });
+        });
+    });
+
+    $("#closeSidebar").click(function () {
+        $("#sidebar").animate({width: 'hide', direction: 'right'}, 600, function () {
+            console.log('ok');
+            $("#popupBackground").fadeOut(600);
+//            unsetScrollPosition();
+        });
+    });
+
+});
+
+function setFooter() {
+    if ($("#cont-wrap").height() <= 514 || $("#dashBoardBg").height() <= 514) {
+        if ($("#cont-wrap").height() !== null && $("#dashBoardBg").height() !== null) {
+            $('#footer').removeClass("footer").addClass("footer-fixed");
+        }
+    } else if ($("#cont-wrap").height() > 514 || $("#dashBoardBg").height() > 514) {
+        $('#footer').removeClass("footer-fixed").addClass("footer");
+        console.log("Class swapped from fixed to normal footer");
+    } else {
+        console.log("nothing" + $("#cont-wrap").height());
+    }
+}
+
+function setFooterLogin() {
+    console.log("set footer should work");
+    if ($(window).height() >= 428) {
+        console.log($(window).height());
+        $('#footer').removeClass("footer").addClass("footer-fixed");
+        console.log("Class swapped from normal to fixed footer For login page");
+    } else {
+        $('#footer').removeClass("footer-fixed").addClass("footer");
+        console.log("Class swapped from fixed to normal footer for login page");
+    }
+}
+
+function DetectPhone() {
+    var uagent = navigator.userAgent.toLowerCase();
+    if (uagent.search("iphone") > -1) {
+        redirectMobileView();
+    } else if (uagent.search("windows nt") > -1) {
+        console.log("Windows PC");
+//        redirectMobileView();
+    } else if (uagent.search("android") > -1) {
+        redirectMobileView();
+    } else {
+        console.log(uagent);
+    }
+}
+
+function redirectMobileView() {
+    var $head = $("head");
+    var $headlinklast = $head.find("link[rel='stylesheet']:last");
+    var linkElement = "<link type='text/css' rel='stylesheet' href='css/mobile-support.css' />";
+    if ($headlinklast.length) {
+        $headlinklast.after(linkElement);
     }
     else {
-        $("#rightPane").height(leftHeight);
+        $head.append(linkElement);
     }
 }
 
-function mobile() {
-    $("#logoImg").attr('width', '100');
-    $("#logoImg").attr('height', '30');
-    $("#leftPane").hide();
-    $("#fixedShowHideBtn").show();
-    $("#showHideBtn").click(function () {
-        $("#navHeading").css({height: "37px"});
-        $("#navHeading").html("");
-        $("#rightPane").css({width: "100%"});
-        $("#leftPane").animate({width: 'hide'}, 550, function () {
-            $("#fixedShowHideBtn").show();
-        });
-    });
-    $("#fixedShowHideBtn").click(function () {
-        $("#fixedShowHideBtn").hide();
-        $("#navHeading").css({height: "37px"});
-        $("#leftPane").animate({width: 'show'}, 550, function () {
-            $("#navHeading").html("All Menu");
-        });
-        $("#rightPane").css({width: "100%"});
-    });
+function setScrollPosition() {
+    var scrollPosition = [
+        self.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft, self.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+    ];
+    var html = jQuery('html');
+    html.data('scroll-position', scrollPosition);
+    html.data('previous-overflow', html.css('overflow'));
+    html.css('overflow', 'hidden');
+    window.scrollTo(scrollPosition[0], scrollPosition[1]);
 }
 
-function desktop() {
-    $("#leftPane").show();
-    $("#navHeading").html("Navigation Panel");
-    $("#rightPane").css({width: "80%"});
-    $("#fixedShowHideBtn").hide();
-    $("#showHideBtn").click(function () {
-        $("#navHeading").css({height: "37px"});
-        $("#navHeading").html("");
-        $("#rightPane").css({width: "97%"});
-        $("#leftPane").animate({width: 'hide'}, 550, function () {
-            $("#fixedShowHideBtn").show();
-        });
-    });
-    $("#fixedShowHideBtn").click(function () {
-        $("#fixedShowHideBtn").hide();
-        $("#navHeading").css({height: "37px"});
-        $("#leftPane").animate({width: 'show'}, 550, function () {
-            $("#navHeading").html("Navigation Panel");
-        });
-        $("#rightPane").css({width: "80%"});
-    });
+function unsetScrollPosition() {
+    var html = jQuery('html');
+    var scrollPosition = html.data('scroll-position');
+    html.css('overflow', html.data('previous-overflow'));
+    window.scrollTo(scrollPosition[0], scrollPosition[1]);
 }
 
 
-function popupShow(url) {
-    $("#popupBg").fadeIn();
-    $("#popupContainer").fadeIn(600);
-    loadList(url);
-}
-
-function popupHide() {
-    $("#popupBg").fadeOut(600);
-    $("#popupContainer").fadeOut();
-}
-
-
-function loadList(url) {
-    $("#panelBody").html($("#loading").show());
-    $.ajax({
-        url: url,
-        type: "get",
-        cache: false,
-        complete: function () {
-            $("#loading").hide();
-        },
-        success: function (response) {
-            $("#panelBody").html(response);
-        },
-        failure: function (response) {
-            console.log("failure " + response);
-        }
-    });
-}
-
-function showGrowl(msg) {
-    $("#message").html(msg);
-    $("#growlBox1").fadeIn();
-    setInterval(function () {
-        hideGrowl();
-    }, 3000);
-}
-
-function hideGrowl() {
-    $("#growlBox1").fadeOut();
-}

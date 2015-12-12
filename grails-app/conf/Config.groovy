@@ -126,6 +126,6 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'authorization.Use
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'authorization.UserRole'
 grails.plugin.springsecurity.authority.className = 'authorization.Role'
 grails.plugin.springsecurity.requestMap.className = 'authorization.Requestmap'
-grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/welcome'
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/dashboard'
 grails.plugin.springsecurity.rejectIfNoRule = true
 
