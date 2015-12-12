@@ -148,9 +148,11 @@ a:hover,a:focus{
 
 .addItem{
     float:right;
-    background-color: #555;
 }
 
+.addItem i{
+    font-size: 18px;
+}
 .pageTitle{
     height: 20px;
     margin-bottom: 7px;
@@ -430,4 +432,47 @@ a:hover,a:focus{
 .unameLinkLogout:hover, .unameLinkLogout:focus {
     background-color: #555;
     outline: none;
+}
+
+.editDeleteBtn {
+    border: 0px;
+    background-color: rgba(0,0,0,0);
+    outline: none;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+    color: #333;
+    background-color: #000;
+    border-color: #555;
+}
+
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+    color: #fff;
+    background-color: #555;
+    border-color: #000;
+}
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+    background-color: #333;
+    border-color: #555;
+}
+
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+    color: #333;
+    background-color: #555;
+    border-color: #000;
 }
