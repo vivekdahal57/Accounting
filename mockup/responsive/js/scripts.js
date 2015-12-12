@@ -1,12 +1,15 @@
 $(window).resize(function () {
     setFooter();
+    setFooterLogin();
 });
 
 $(document).ready(function () {
-    console.log("das" + $("#dashBoardBg").height());
-    console.log("cont" + $("#cont-wrap").height());
     DetectPhone();
     setFooter();
+    setFooterLogin();
+    console.log("dasIcon Height: " + $("#dashBoardBg").height());
+    console.log("cont-wrap Height: " + $("#cont-wrap").height());
+
     $("#downloadLink").click(function () {
         $("#popupBackground").fadeIn(600, function () {
             setScrollPosition();
@@ -45,13 +48,26 @@ $(document).ready(function () {
 
 function setFooter() {
     if ($("#cont-wrap").height() <= 514 || $("#dashBoardBg").height() <= 514) {
-        $('#footer').removeClass("footer").addClass("footer-fixed");
-        console.log("Class swapped from normal to fixed footer");
+        if ($("#cont-wrap").height() !== null && $("#dashBoardBg").height() !== null) {
+            $('#footer').removeClass("footer").addClass("footer-fixed");
+        }
     } else if ($("#cont-wrap").height() > 514 || $("#dashBoardBg").height() > 514) {
         $('#footer').removeClass("footer-fixed").addClass("footer");
         console.log("Class swapped from fixed to normal footer");
     } else {
         console.log("nothing" + $("#cont-wrap").height());
+    }
+}
+
+function setFooterLogin() {
+    console.log("set footer should work");
+    if ($(window).height() >= 428) {
+        console.log($(window).height());
+        $('#footer').removeClass("footer").addClass("footer-fixed");
+        console.log("Class swapped from normal to fixed footer For login page");
+    } else {
+        $('#footer').removeClass("footer-fixed").addClass("footer");
+        console.log("Class swapped from fixed to normal footer for login page");
     }
 }
 
