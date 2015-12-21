@@ -29,7 +29,6 @@ $(document).ready(function () {
 
     $("#sideBarLink").click(function () {
         $("#popupBackground").fadeIn(600, function () {
-//            setScrollPosition();
             $("#sidebar").animate({width: 'show', direction: 'left'}, 600, function () {
                 console.log('Choose Format screen loaded.');
             });
@@ -40,11 +39,25 @@ $(document).ready(function () {
         $("#sidebar").animate({width: 'hide', direction: 'right'}, 600, function () {
             console.log('ok');
             $("#popupBackground").fadeOut(600);
-//            unsetScrollPosition();
         });
     });
 
+    $("#closeGrowl").click(function () {
+        hideGrowl();
+    });
+
 });
+
+function showGrowl() {
+    $("#growlPanel").fadeIn(600);
+    setInterval(function () {
+        hideGrowl();
+    }, 3000);
+}
+
+function hideGrowl() {
+    $("#growlPanel").fadeOut(600);
+}
 
 function setFooter() {
     if ($("#cont-wrap").height() <= 514 || $("#dashBoardBg").height() <= 514) {

@@ -104,7 +104,6 @@ class UserController {
 
     static def getUserName() {
         String user = springSecurityService.currentUser
-//        user = user.capitalize()
         return user
     }
 

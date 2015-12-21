@@ -482,3 +482,38 @@ a:hover,a:focus{
     background-color: #555;
     border-color: #000;
 }
+
+.form-panel{
+    padding: 0px 10px;
+}
+
+.form-panel label{
+    margin: 10px 0px;
+}
+
+.form-control-override{
+    font-size: 12px;
+    
+}
+
+.growlPanel{
+    width: 180px;
+    background-color: #ccc;
+    position: fixed;
+    top:10%;
+    right: 20px;
+    padding: 12px;
+    display: none;
+}
+
+#closeGrowl{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 0px 3px;
+    color: #555;
+}
+
+#closeGrowl:hover{
+    color: #000;
+}

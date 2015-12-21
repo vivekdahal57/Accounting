@@ -11,35 +11,46 @@
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <div class="dashIconWrap">
-                <div class="heading" style="margin-bottom: 5px;">
-                    <a class="home" href="${createLink(uri: '/')}">Dashboard</a> |
-                    <g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]"/></g:link> |
-                    <g:message code="default.edit.label" args="[entityName]"/>
-                </div>
-                <g:hasErrors bean="${accountHeadInstance}">
-                    <ul class="errors" role="alert">
-                        <g:eachError bean="${accountHeadInstance}" var="error">
-                            <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message
-                                error="${error}"/></li>
-                            </g:eachError>
-                    </ul>
-                </g:hasErrors>
-                <div class="panel panel-default" style="padding: 10px;margin-right: 5px;">
-                    <h6 class="heading"
-                    style="font-weight: bold; margin: 0px 0px 10px 0px !important;">
-                    <g:message code="default.edit.label" args="[entityName]"/></h6>
-                    <g:form url="[resource: accountHeadInstance, action: 'update']" method="PUT">
-                        <fieldset class="form">
-                            <g:render template="form"/>
-                        </fieldset>
-                        <fieldset class="buttons">
-                            <g:submitButton name="update" action="update" class="save btn btn-default btn_login_override"
-                            value="${message(code: 'default.button.update.label', default: 'Update')}"/>
-                        </fieldset>
-                    </g:form>
+            <div class="content-wrap" id="cont-wrap">
+                <div class="col-md-12 table-wrap">
+                    <div class="pageTitle">
+                        <h3><g:message code="default.edit.label" args="[entityName]"/></h3>
+                        <a href="javascript:void(0);" id="downloadLink" alt="Download Report" title="Download Report">
+                            <div class="btnWrap"><i class="fa fa-download"></i></div>
+                        </a>
+                        <a href="javascript:void(0);" id="sideBarLink" alt="Access Sidebar" title="Access SideBar">
+                            <div class="btnWrap"><i class="fa fa-sign-in"></i></div>
+                        </a>
+                    </div>
+                    <div class="addressBar">
+                        <g:link controller="dashboard" action="index" href="#">
+                            DashBoard
+                        </g:link> |
+                        <g:link class="list" action="index">
+                            <g:message code="default.list.label" args="[entityName]" />
+                        </g:link> |
+                        <g:message code="default.edit.label" args="[entityName]"/>
+                    </div>
+                    <g:hasErrors bean="${accountHeadInstance}">
+                        <ul class="errors" role="alert">
+                            <g:eachError bean="${accountHeadInstance}" var="error">
+                                <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message
+                                    error="${error}"/></li>
+                                </g:eachError>
+                        </ul>
+                    </g:hasErrors>
+                    <div class="panel panel-default form-panel">
+                        <g:form url="[resource: accountHeadInstance, action: 'update']" method="PUT">
+                            <fieldset class="form">
+                                <g:render template="form"/>
+                            </fieldset>
+                            <fieldset class="buttons">
+                                <g:submitButton name="update" action="update" class="save btn btn-default btn_login_override"
+                                value="${message(code: 'default.button.update.label', default: 'Update')}"/>
+                            </fieldset>
+                        </g:form>
+                    </div>
                 </div>
             </div>
-        </div>
     </body>
 </html>

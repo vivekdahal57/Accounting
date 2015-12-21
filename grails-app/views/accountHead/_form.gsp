@@ -4,6 +4,6 @@
         <g:message code="accountHead.name.label" default="Name" />
         <span class="required-indicator">:</span>
     </label>
-    <g:textField name="name" required="" value="${accountHeadInstance?.name}" class="form-control form_control_override"/>
+    <g:textField name="name" required="" value="${accountHeadInstance?.name}" class="form-control form-control-override"/>
 </div>
 

@@ -1,3 +1,5 @@
+import grails.plugin.springsecurity.SpringSecurityUtils
+
 // locations to search for config files that get merged into the main config;
 // config files can be ConfigSlurper scripts, Java properties files, or classes
 // in the classpath in ConfigSlurper format
@@ -127,5 +129,6 @@ grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'authorization.
 grails.plugin.springsecurity.authority.className = 'authorization.Role'
 grails.plugin.springsecurity.requestMap.className = 'authorization.Requestmap'
 grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/dashboard'
+//SpringSecurityUtils.securityConfig.auth.ajaxLoginFormUrl='/login'
 grails.plugin.springsecurity.rejectIfNoRule = true
 
