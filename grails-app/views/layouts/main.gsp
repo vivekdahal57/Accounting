@@ -13,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <asset:stylesheet src="application.css"/>
     <asset:stylesheet src="style.css"/>
+    %{--<asset:stylesheet src="colors.css"/>--}%
     %{--<asset:stylesheet src="mobile-support.css"/>--}%
     <asset:javascript src="application.js"/>
     %{--<asset:javascript src="scripts.js"/>--}%
@@ -80,7 +81,33 @@
     </div>
 </nav>
 
+<!--Loading end-->
 <div class="popupBackground" id="popupBackground"></div>
+
+<div class="loading" id="loading">
+    <h1>Loading...</h1>
+</div>
+<!--Loading end-->
+
+<!--Confirm box start-->
+<div class="panel panel-default confirm" id="confirm">
+    <div class="panel-heading">
+        <div id="confirm-title" style="display: inline-block"></div>
+        <a href="javascript:void(0);" onclick="confirmClose();"><i class="fa fa-close"></i></a>
+    </div>
+
+    <div class="panel-body">
+        <div style="padding-bottom: 15px;" id="confirm-body">
+            %{--${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}--}%
+        </div>
+        <button type="button" class="btn brn-default btn-override"
+                id="confirm-yes">Yes</button> <!-- change this line by passing onclick event from js-->
+        <button type="button" class="btn brn-default btn-override" onclick="confirmClose();">No</button>
+    </div>
+
+</div>
+<!--Confirm box end-->
+
 <!--download panel start-->
 <div class="panel panel-default chooseFormatPanel" id="downloadOptions">
     <div class="panel-heading">Choose A File Format:
@@ -112,14 +139,13 @@
 <!--download panel end-->
 
 <!--growl box-->
-<g:if test='${flash.message}'>
-    <div class="panel panel-default growlPanel" id="growlPanel">
-        <a href="javascript:void(0);" id="closeGrowl">
-            <i class="fa fa-close"></i>
-        </a>
-        <g:message code="${flash.message}"/>
-    </div>
-</g:if>
+<div class="panel panel-default growlPanel" id="growlPanel">
+    <a href="javascript:void(0);" id="closeGrowl">
+        <i class="fa fa-close"></i>
+    </a>
+
+    <div id="message-area"><g:message code="${flash.message}"/></div>
+</div>
 <!--growl box end-->
 
 <!--sidebar start-->
@@ -150,10 +176,17 @@
         <g:layoutBody/>
     </div>
 </div>
-<script type="text/javascript">
-    showGrowl();
-</script>
 
 <div class="footer" id="footer">Copyright &copy; 2015 Accounting Practice. All Rights Reserved.</div>
+<g:if test='${flash.message}'>
+    <script type="text/javascript">
+        showGrowl();
+    </script>
+</g:if>
+<g:if test="${request.requestURL.contains('/login')}">
+    <script type="text/javascript">
+        setFooterLogin();
+    </script>
+</g:if>
 </body>
 </html>

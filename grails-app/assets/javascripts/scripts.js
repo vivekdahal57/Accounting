@@ -3,43 +3,34 @@ $(window).resize(function () {
     setFooterLogin();
 });
 
+$(document).keydown(function (e) {
+    if (e.keyCode == 27) {
+        confirmClose();
+        closeSidebar();
+        hideDownloadOption();
+    }
+});
+
 $(document).ready(function () {
     DetectPhone();
     setFooter();
-    setFooterLogin();
     console.log("dasIcon Height: " + $("#dashBoardBg").height());
     console.log("cont-wrap Height: " + $("#cont-wrap").height());
 
     $("#downloadLink").click(function () {
-        $("#popupBackground").fadeIn(600, function () {
-            setScrollPosition();
-            $("#downloadOptions").animate({height: 'show', direction: 'top'}, 600, function () {
-                console.log('Choose Format screen loaded.');
-            });
-        });
+        showDownloadOptions();
     });
 
     $("#hideDownloadOption").click(function () {
-        $("#downloadOptions").animate({height: 'hide', direction: 'bottom'}, 600, function () {
-            console.log('ok');
-            $("#popupBackground").fadeOut(600);
-            unsetScrollPosition();
-        });
+        hideDownloadOption();
     });
 
     $("#sideBarLink").click(function () {
-        $("#popupBackground").fadeIn(600, function () {
-            $("#sidebar").animate({width: 'show', direction: 'left'}, 600, function () {
-                console.log('Choose Format screen loaded.');
-            });
-        });
+        showSidebar();
     });
 
     $("#closeSidebar").click(function () {
-        $("#sidebar").animate({width: 'hide', direction: 'right'}, 600, function () {
-            console.log('ok');
-            $("#popupBackground").fadeOut(600);
-        });
+        closeSidebar();
     });
 
     $("#closeGrowl").click(function () {
@@ -47,6 +38,38 @@ $(document).ready(function () {
     });
 
 });
+
+function showDownloadOptions() {
+    $("#popupBackground").fadeIn(600, function () {
+        setScrollPosition();
+        $("#downloadOptions").animate({height: 'show', direction: 'top'}, 600, function () {
+            console.log('Choose Format screen loaded.');
+        });
+    });
+}
+
+function hideDownloadOption() {
+    $("#downloadOptions").animate({height: 'hide', direction: 'bottom'}, 600, function () {
+        console.log('ok');
+        $("#popupBackground").fadeOut(600);
+        unsetScrollPosition();
+    });
+}
+
+function showSidebar() {
+    $("#popupBackground").fadeIn(600, function () {
+        $("#sidebar").animate({width: 'show', direction: 'left'}, 600, function () {
+            console.log('Choose Format screen loaded.');
+        });
+    });
+}
+
+function closeSidebar() {
+    $("#sidebar").animate({width: 'hide', direction: 'right'}, 600, function () {
+        console.log('ok');
+        $("#popupBackground").fadeOut(600);
+    });
+}
 
 function showGrowl() {
     $("#growlPanel").fadeIn(600);
@@ -70,17 +93,26 @@ function setFooter() {
     } else {
         console.log("nothing" + $("#cont-wrap").height());
     }
+    setFooterAfterAjax();
 }
 
 function setFooterLogin() {
-    console.log("set footer should work");
     if ($(window).height() >= 428) {
-        console.log($(window).height());
         $('#footer').removeClass("footer").addClass("footer-fixed");
         console.log("Class swapped from normal to fixed footer For login page");
     } else {
         $('#footer').removeClass("footer-fixed").addClass("footer");
         console.log("Class swapped from fixed to normal footer for login page");
+    }
+}
+
+function setFooterAfterAjax() {
+    if ($("#cont-wrap").height() <= 514 && $("#cont-wrap").height() !== null) {
+        $('#footer').removeClass("footer").addClass("footer-fixed");
+    } else if ($("#cont-wrap").height() > 514) {
+        $('#footer').removeClass("footer-fixed").addClass("footer");
+    } else {
+        console.log("nothing" + $("#cont-wrap").height());
     }
 }
 
@@ -128,4 +160,70 @@ function unsetScrollPosition() {
     window.scrollTo(scrollPosition[0], scrollPosition[1]);
 }
 
+function showConfirmBox(title, body, deleteurl, redirecturl) {
+    $("#popupBackground").fadeIn();
+    $("#confirm").fadeIn(600);
+    $("#confirm-title").html(title);
+    $("#confirm-body").html(body);
+    $("#confirm-yes").click(function () {
+        if (deleteurl != null) {
+            deleteData(deleteurl, redirecturl);
+            deleteurl = null;
+            redirecturl = null;
+            confirmClose();
+        }
 
+    });
+
+}
+
+function confirmClose() {
+    $("#popupBackground").fadeOut(600);
+    $("#confirm").fadeOut();
+}
+
+function deleteData(deleteurl, redirecturl) {
+    $.ajax({
+        url: deleteurl,
+        type: 'post',
+        method: 'DELETE',
+        cache: false,
+        success: function (response) {
+            $("#message-area").html(response);
+            showGrowl();
+            getData(redirecturl);
+        },
+        failure: function (response) {
+            alert(response);
+        }
+    });
+
+}
+
+function sortData(event, url) {
+    event.preventDefault();
+    //setFooter();
+    getData(url);
+}
+
+function getData(url) {
+    $("#popupBackground").show();
+    $("#loading").show();
+    $.ajax({
+        url: url,
+        type: 'get',
+        cache: false,
+        complete: function () {
+            $("#popupBackground").hide();
+            $("#loading").hide();
+        },
+        success: function (response) {
+            $('#dataTable').html(response);
+            $("#name-sort a").append(" <i class='fa fa-caret-down'></i>");
+            setFooterAfterAjax();
+        },
+        failure: function (response) {
+            $("#table-wrap").append('No data recieved from server');
+        }
+    });
+}
