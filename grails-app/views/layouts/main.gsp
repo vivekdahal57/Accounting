@@ -31,7 +31,7 @@
                     <span class="fa fa-bars" style="font-size: 20px"></span>
                 </button>
             </g:if>
-            <g:link controller="dashboard" action="index" class="navbar-brand">Brand</g:link>
+            <g:link controller="dashboard" action="index" class="navbar-brand">NanceCount</g:link>
         </div>
         <g:if test="${!request.requestURL.contains('/login')}">
             <div class="collapse navbar-collapse" id="main-nav-bar">

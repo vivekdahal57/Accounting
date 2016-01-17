@@ -82,15 +82,12 @@ class AccountHeadController {
 
     @Transactional
     def delete(AccountHead accountHeadInstance) {
-
         if (accountHeadInstance == null) {
             render("Error Deleting " + accountHeadInstance.name)
 //            notFound()
 //            return
         }
-
         accountHeadInstance.delete flush: true
-
         render "Deleted Successfully!!!"
     }
 

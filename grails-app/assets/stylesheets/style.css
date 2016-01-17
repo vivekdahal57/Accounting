@@ -1,65 +1,64 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
 }
 
-body{
+body {
     font-size: 12px;
 }
 
-a{
+a {
     color: #333;
 }
 
-a:hover,a:focus{
+a:hover, a:focus {
     color: #333;
     outline: none;
 }
 
-#nav{
+#nav {
     background-color: #000;
     border-radius: 0px;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
-    border:none;
+    border: none;
     border-bottom: 2px solid #555;
     margin-bottom: 10px;
 }
 
-#nav a{
-    color:#ddd;
+#nav a {
+    color: #ddd;
     outline: none;
 }
 
-#active_link{
+#active_link {
     background-color: #555;
 }
 
-.dropdown-menu{
+.dropdown-menu {
     background-color: #000;
 }
 
-.dropdown-menu > li > a:hover{
+.dropdown-menu > li > a:hover {
     background-color: #555;
 }
 
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:focus,
-.navbar-default .navbar-nav > .open > a:hover{
+.navbar-default .navbar-nav > .open > a:hover {
     background-color: #555;
 }
 
-.navbar-default .navbar-toggle .icon-bar{
+.navbar-default .navbar-toggle .icon-bar {
     background-color: #555;
 }
 
-
-.dropdown-menu .divider{
+.dropdown-menu .divider {
     background-color: #555;
 }
 
-.sidebar{
+.sidebar {
     /*width: 20%;*/
     position: absolute;
     left: 0px;
@@ -70,36 +69,35 @@ a:hover,a:focus{
 
 }
 
-.sidebarList{
-    padding:0px;
+.sidebarList {
+    padding: 0px;
 }
 
-.sidebarList ul{
+.sidebarList ul {
     list-style: none;
 }
 
-.sidebarList li{
+.sidebarList li {
     margin-bottom: 3px;
 }
 
-.sidebarList li:last-child{
+.sidebarList li:last-child {
     margin-bottom: 0px;
 }
 
-.sidebarList li a div{
+.sidebarList li a div {
     padding: 9px 15px;
 }
 
-.sidebarList li a div:hover{
+.sidebarList li a div:hover {
     background-color: #e8e8e8;
 }
 
-
-.content-wrap{
+.content-wrap {
     /*height: 1000px;*/
 }
 
-.table-wrap > .panel-default > .panel-body{
+.table-wrap > .panel-default > .panel-body {
     padding: 0px;
 }
 
@@ -108,7 +106,7 @@ a:hover,a:focus{
     background-color: #000;
 }
 
-.loading{
+.loading {
     padding: 10px 20px;
     display: none;
     position: fixed;
@@ -125,14 +123,14 @@ a:hover,a:focus{
     -webkit-border-radius: 3px;
 }
 
-.loading h1{
+.loading h1 {
     font-size: 20px;
     color: #fff;
     padding: 0px;
     margin: 0px;
 }
 
-.confirm{
+.confirm {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -143,51 +141,52 @@ a:hover,a:focus{
     display: none;
 }
 
-.confirm a{
+.confirm a {
     float: right;
     color: #fff;
 }
 
-.confirm a:hover{
+.confirm a:hover {
     color: #ccc;
 }
 
-.btn-override{
+.btn-override {
     font-size: 12px;
     background-color: #000;
     color: #fff;
 }
 
-.btn-override:hover{
+.btn-override:hover {
     background-color: #555;
     color: #fff;
 }
 
-.table_override{
+.table_override {
     margin: 0px;
+
 }
 
-.table_override thead{
+.table_override thead {
     background-color: #555;
     color: #ddd;
 }
 
 .table_override thead tr th,
-.table_override tbody tr td{
+.table_override tbody tr td {
     border: 1px solid #888;
     text-align: center;
 }
 
-.table_override thead th a{
+.table_override thead th a {
     color: #fff;
 }
 
-.table_override tbody td a i{
+.table_override tbody td a i {
     font-size: 20px;
 }
 
-.table-striped>tbody>tr:nth-child(odd)>td,
-.table-striped>tbody>tr:nth-child(odd)>th {
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
     background-color: #d0d0d0;
 }
 
@@ -196,7 +195,7 @@ a:hover,a:focus{
     background-color: #000;
 }
 
-.addressBar{
+.addressBar {
     background-color: #d0d0d0;
     border-radius: 3px;
     -moz-border-radius: 3px;
@@ -205,29 +204,29 @@ a:hover,a:focus{
     margin-bottom: 10px;
 }
 
-.addItem{
-    float:right;
+.addItem {
+    float: right;
 }
 
-.addItem i{
+.addItem i {
     font-size: 18px;
 }
 
-.pageTitle{
+.pageTitle {
     height: 20px;
     margin-bottom: 7px;
     display: table;
     width: 100%;
 }
 
-.pageTitle h3{
+.pageTitle h3 {
     margin-top: 5px;
     display: table-cell;
     float: left;
 }
 
-.btnWrap{
-    float:right;
+.btnWrap {
+    float: right;
     display: table-cell;
     padding: 5px 12px;
     background-color: #ccc;
@@ -237,28 +236,28 @@ a:hover,a:focus{
     margin-right: 10px;
 }
 
-#downloadLink,#sideBarLink{
+#downloadLink, #sideBarLink {
     font-size: 20px;
     color: #000;
 }
 
-#downloadLink:hover,#sideBarLink:hover{
+#downloadLink:hover, #sideBarLink:hover {
     text-decoration: none;
     color: #333;
 }
 
-#hideDownloadOption,#closeSidebar{
+#hideDownloadOption, #closeSidebar {
     font-size: 12px;
     color: #ddd;
     float: right;
 }
 
-#hideDownloadOption:hover,#closeSidebar:hover{
+#hideDownloadOption:hover, #closeSidebar:hover {
     text-decoration: none;
     color: #999;
 }
 
-.hideDownloadOption{
+.hideDownloadOption {
     padding: 10px;
     background-color: #777;
     z-index: 0;
@@ -267,48 +266,47 @@ a:hover,a:focus{
     -webkit-border-radius: 3px;
 }
 
-.popupBackground{
+.popupBackground {
     position: fixed;
-    top:0px;
+    top: 0px;
     right: 0px;
     bottom: 0px;
     left: 0px;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     display: none;
     z-index: 1;
 }
 
-.printIconsWrap{
+.printIconsWrap {
     text-align: center;
     float: left;
     font-size: 120px;
     width: 120px;
 }
 
-.printIcons{
+.printIcons {
     color: #000;
     outline: none;
 }
 
-.printIcons:hover{
+.printIcons:hover {
     text-decoration: none;
     color: #333;
 }
 
-.chooseFormatPanel{
+.chooseFormatPanel {
     width: 362px;
-    height:211px;
+    height: 211px;
     position: fixed;
     top: 50%;
     left: 50%;
     z-index: 2;
     margin-left: -131px;
-    margin-top:-106px; 
+    margin-top: -106px;
     display: none;
 }
 
-
-.footer{
+.footer {
     border-top: 2px solid #555;
     width: 100%;
     background-color: #000;
@@ -319,8 +317,8 @@ a:hover,a:focus{
     padding: 15px 0px;
 }
 
-.footer-fixed{
-    position:fixed;
+.footer-fixed {
+    position: fixed;
     bottom: 0px;
     border-top: 2px solid #555;
     width: 100%;
@@ -332,24 +330,23 @@ a:hover,a:focus{
     padding: 15px 0px;
 }
 
-
 /*dashboard*/
-.dashBoardBg{
-    background-color: #000; 
+.dashBoardBg {
+    background-color: #000;
     padding: 20px;
     border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
 }
 
-.dashIconWrap{
+.dashIconWrap {
     background: #ccc;
     display: table;
     padding: 5px 0px 0px 5px;
     width: 100%;
 }
 
-.dashIconLink .col-md-2{
+.dashIconLink .col-md-2 {
     background: #000;
     border-right: 5px solid #ccc;
     border-bottom: 5px solid #ccc;
@@ -359,7 +356,7 @@ a:hover,a:focus{
 
 }
 
-.dashIconLink .col-md-2:hover{
+.dashIconLink .col-md-2:hover {
     opacity: 0.8;
 }
 
@@ -420,7 +417,7 @@ a:hover,a:focus{
     margin: 50px auto;
 }
 
-.panel_login .panel-body{
+.panel_login .panel-body {
     margin: 0px;
     padding-top: 0px;
 }
@@ -496,11 +493,11 @@ a:hover,a:focus{
 
 .editDeleteBtn {
     border: 0px;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
     outline: none;
 }
 
-.pagination{
+.pagination {
     margin-left: 7px;
     margin-right: 7px;
 }
@@ -529,6 +526,7 @@ a:hover,a:focus{
 .pagination > .active > span:focus {
     background-color: #333;
     border-color: #555;
+    z-index: 0;
 }
 
 .pagination > .disabled > span,
@@ -542,32 +540,32 @@ a:hover,a:focus{
     border-color: #555;
 }
 
-.form-panel{
+.form-panel {
     padding: 0px 10px;
 }
 
-.form-panel label{
+.form-panel label {
     margin: 10px 0px;
 }
 
-.form-control-override{
+.form-control-override {
     font-size: 12px;
-    
+
 }
 
-.growlPanel{
+.growlPanel {
     width: 180px;
     background-color: #000;
     position: fixed;
-    top:10%;
+    top: 10%;
     right: 20px;
     padding: 12px;
     display: none;
-    z-index:3;
+    z-index: 3;
     color: #fff;
 }
 
-#closeGrowl{
+#closeGrowl {
     position: absolute;
     top: 0px;
     right: 0px;
@@ -575,11 +573,57 @@ a:hover,a:focus{
     color: #ccc;
 }
 
-#closeGrowl:hover{
+#closeGrowl:hover {
     color: #fff;
 }
 
-
-.table-wrap{
+.table-wrap {
     float: none;
+}
+
+th.sortable:hover {
+    cursor: pointer;
+}
+
+th.sortable a:hover {
+    text-decoration: none;
+}
+
+#endDate_day, #endDate_month, #endDate_year,
+#startDate_day, #startDate_month, #startDate_year,
+#endDateInAD_day,#endDateInAD_month,#endDateInAD_year,
+#startDateInAD_day,#startDateInAD_month,#startDateInAD_year{
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    margin-bottom: 10px;
+}
+
+.checkbox label {
+    display: inline-block;
+    font-weight: bold;
+}
+
+.checkbox input {
+    vertical-align: bottom;
+    position: relative;
+    top: 8px;
+}
+
+#dataTable {
+    width: 100%;
+    overflow-x: auto;
 }

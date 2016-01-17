@@ -40,7 +40,7 @@
                         </ul>
                     </g:hasErrors>
                     <div class="panel panel-default form-panel">
-                        <g:form url="[resource: accountHeadInstance, action: 'update']" method="PUT">
+                        <g:form url="[resource: accountHeadInstance, action: 'update']" method="PUT" class="form-group">
                             <fieldset class="form">
                                 <g:render template="form"/>
                             </fieldset>

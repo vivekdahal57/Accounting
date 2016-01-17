@@ -4,7 +4,7 @@
         <th>S.No.</th>
         <g:sortableColumn property="name" id="name-sort"
                           title="${message(code: 'accountHead.name.label', default: 'Name')}" style="text-align:center;"
-                          onclick="sortData(event, url);"/>
+                          onclick="sortData(event, url, 'name-sort');"/>
         <th colspan="2" style="color: #ffffff;">Action</th>
     </tr>
     </thead>
@@ -40,6 +40,8 @@
     var url = $('#name-sort a').attr('href'); //used in g:sortable column
     var urlPaginate = $('ul.pagination li a.step').attr('href');
     $('ul.pagination li a.step, ul.pagination li.prev a').click(function (event) {
-        sortData(event, urlPaginate);
+        sortData(event, urlPaginate, 0);
     });
+
+
 </script>

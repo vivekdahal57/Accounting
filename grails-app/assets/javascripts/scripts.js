@@ -1,3 +1,5 @@
+var sortColumnId = null;
+
 $(window).resize(function () {
     setFooter();
     setFooterLogin();
@@ -200,11 +202,14 @@ function deleteData(deleteurl, redirecturl) {
 
 }
 
-function sortData(event, url) {
+function sortData(event, url, id) {
     event.preventDefault();
-    //setFooter();
+    if (id !== 0) {
+        sortColumnId = id
+    }
     getData(url);
 }
+
 
 function getData(url) {
     $("#popupBackground").show();
@@ -219,11 +224,44 @@ function getData(url) {
         },
         success: function (response) {
             $('#dataTable').html(response);
-            $("#name-sort a").append(" <i class='fa fa-caret-down'></i>");
+            console.log("sortColumnId: " + sortColumnId);
             setFooterAfterAjax();
+            if (sortColumnId !== null) {
+                setCaret(url); //might cause infinite loading icon
+            } else {
+                defaultSort();
+                console.log("default called");
+            }
         },
         failure: function (response) {
             $("#table-wrap").append('No data recieved from server');
         }
     });
+}
+
+function defaultSort() {
+    $('th.sortable a').append(" <i class='fa fa-sort'></i>");
+}
+
+function setCaret(url) {
+    $.urlParam = function (name) {
+        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(url);
+        if (results !== null) {
+            return results[1] || 0;
+        }
+
+    }
+
+    var order = $.urlParam('order');
+    if (order === 'asc') {
+        defaultSort();
+        var activeClasses = $('#' + sortColumnId + ' i').attr("class");
+        $('#' + sortColumnId + ' i').removeClass(activeClasses).addClass("fa fa-caret-up");
+    }
+    if (order === 'desc') {
+        defaultSort();
+        var activeClasses = $('#' + sortColumnId + ' i').attr("class");
+        $('#' + sortColumnId + ' i').removeClass(activeClasses).addClass("fa fa-caret-down");
+    }
+
 }

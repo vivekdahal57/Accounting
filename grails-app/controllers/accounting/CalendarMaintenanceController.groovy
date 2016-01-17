@@ -1,7 +1,6 @@
 package accounting
 
 
-
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -10,9 +9,19 @@ class CalendarMaintenanceController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
+    def index() {
+
+    }
+
+    def getIndexData(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond CalendarMaintenance.list(params), model:[calendarMaintenanceInstanceCount: CalendarMaintenance.count()]
+        if (params.offset != null) {
+            render(template: 'dataTable', model: [calendarMaintenanceInstanceList : CalendarMaintenance.list(params),
+                                                  calendarMaintenanceInstanceCount: CalendarMaintenance.count(), startPoint: Integer.parseInt(params.offset)])
+        } else {
+            render(template: 'dataTable', model: [calendarMaintenanceInstanceList : CalendarMaintenance.list(params),
+                                                  calendarMaintenanceInstanceCount: CalendarMaintenance.count(), startPoint: 0])
+        }
     }
 
     def show(CalendarMaintenance calendarMaintenanceInstance) {
@@ -31,16 +40,16 @@ class CalendarMaintenanceController {
         }
 
         if (calendarMaintenanceInstance.hasErrors()) {
-            respond calendarMaintenanceInstance.errors, view:'create'
+            respond calendarMaintenanceInstance.errors, view: 'create'
             return
         }
 
-        calendarMaintenanceInstance.save flush:true
+        calendarMaintenanceInstance.save flush: true
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'calendarMaintenance.label', default: 'CalendarMaintenance'), calendarMaintenanceInstance.id])
-                redirect (action:"index")
+                flash.message = message(code: 'Calender Created')
+                redirect(action: "index")
             }
             '*' { respond calendarMaintenanceInstance, [status: CREATED] }
         }
@@ -58,18 +67,18 @@ class CalendarMaintenanceController {
         }
 
         if (calendarMaintenanceInstance.hasErrors()) {
-            respond calendarMaintenanceInstance.errors, view:'edit'
+            respond calendarMaintenanceInstance.errors, view: 'edit'
             return
         }
 
-        calendarMaintenanceInstance.save flush:true
+        calendarMaintenanceInstance.save flush: true
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'CalendarMaintenance.label', default: 'CalendarMaintenance'), calendarMaintenanceInstance.id])
-                redirect (action:"index")
+                flash.message = message(code: 'Calender Updated')
+                redirect(action: "index")
             }
-            '*'{ respond calendarMaintenanceInstance, [status: OK] }
+            '*' { respond calendarMaintenanceInstance, [status: OK] }
         }
     }
 
@@ -77,19 +86,11 @@ class CalendarMaintenanceController {
     def delete(CalendarMaintenance calendarMaintenanceInstance) {
 
         if (calendarMaintenanceInstance == null) {
-            notFound()
-            return
+//            notFound()
+//            return
         }
-
-        calendarMaintenanceInstance.delete flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'CalendarMaintenance.label', default: 'CalendarMaintenance'), calendarMaintenanceInstance.id])
-                redirect action:"index", method:"GET"
-            }
-            '*'{ render status: NO_CONTENT }
-        }
+        calendarMaintenanceInstance.delete flush: true
+        render "Deleted Successfully!!!"
     }
 
     protected void notFound() {
@@ -98,7 +99,7 @@ class CalendarMaintenanceController {
                 flash.message = message(code: 'default.not.found.message', args: [message(code: 'calendarMaintenance.label', default: 'CalendarMaintenance'), params.id])
                 redirect action: "index", method: "GET"
             }
-            '*'{ render status: NOT_FOUND }
+            '*' { render status: NOT_FOUND }
         }
     }
 }

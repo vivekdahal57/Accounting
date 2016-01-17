@@ -27,7 +27,7 @@
 
             <div class="checkbox" style="margin-top: 15px; ">
                 <input type='checkbox' class='chk' name='${rememberMeParameter}' id='remember'
-                       style="margin: -8px 5px 0px 0px; display: table-cell;border:none;outline: none;"
+                       style="margin: -17px 5px 0px 0px; display: table-cell;border:none;outline: none;"
                        <g:if test='${hasCookie}'>checked='checked'</g:if>/>&nbsp;
                 <label for="remember">Remember me</label>
             </div>

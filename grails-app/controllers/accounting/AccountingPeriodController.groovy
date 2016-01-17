@@ -1,7 +1,6 @@
 package accounting
 
 
-
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -10,9 +9,17 @@ class AccountingPeriodController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
+    def index() {}
+
+    def getIndexData(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond AccountingPeriod.list(params), model:[accountingPeriodInstanceCount: AccountingPeriod.count()]
+        if (params.offset != null) {
+            render(template: 'dataTable', model: [accountingPeriodInstanceList : AccountingPeriod.list(params),
+                                                  accountingPeriodInstanceCount: AccountingPeriod.count(), startPoint: Integer.parseInt(params.offset)])
+        } else {
+            render(template: 'dataTable', model: [accountingPeriodInstanceList : AccountingPeriod.list(params),
+                                                  accountingPeriodInstanceCount: AccountingPeriod.count(), startPoint: 0])
+        }
     }
 
     def show(AccountingPeriod accountingPeriodInstance) {
@@ -31,16 +38,16 @@ class AccountingPeriodController {
         }
 
         if (accountingPeriodInstance.hasErrors()) {
-            respond accountingPeriodInstance.errors, view:'create'
+            respond accountingPeriodInstance.errors, view: 'create'
             return
         }
 
-        accountingPeriodInstance.save flush:true
+        accountingPeriodInstance.save flush: true
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'accountingPeriod.label', default: 'AccountingPeriod'), accountingPeriodInstance.id])
-                redirect (action:"index")
+                flash.message = message(code: 'Accounting Period Created')
+                redirect(action: "index")
             }
             '*' { respond accountingPeriodInstance, [status: CREATED] }
         }
@@ -58,38 +65,30 @@ class AccountingPeriodController {
         }
 
         if (accountingPeriodInstance.hasErrors()) {
-            respond accountingPeriodInstance.errors, view:'edit'
+            respond accountingPeriodInstance.errors, view: 'edit'
             return
         }
 
-        accountingPeriodInstance.save flush:true
+        accountingPeriodInstance.save flush: true
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'AccountingPeriod.label', default: 'AccountingPeriod'), accountingPeriodInstance.id])
-                redirect (action:"index")
+                flash.message = message(code: 'Accounting Period Updated')
+                redirect(action: "index")
             }
-            '*'{ respond accountingPeriodInstance, [status: OK] }
+            '*' { respond accountingPeriodInstance, [status: OK] }
         }
     }
 
     @Transactional
     def delete(AccountingPeriod accountingPeriodInstance) {
-
         if (accountingPeriodInstance == null) {
-            notFound()
-            return
+            render("Error Deleting " + accountingPeriodInstance.startDate)
+//            notFound()
+//            return
         }
-
-        accountingPeriodInstance.delete flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'AccountingPeriod.label', default: 'AccountingPeriod'), accountingPeriodInstance.id])
-                redirect action:"index", method:"GET"
-            }
-            '*'{ render status: NO_CONTENT }
-        }
+        accountingPeriodInstance.delete flush: true
+        render "Deleted Successfully!!!"
     }
 
     protected void notFound() {
@@ -98,7 +97,7 @@ class AccountingPeriodController {
                 flash.message = message(code: 'default.not.found.message', args: [message(code: 'accountingPeriod.label', default: 'AccountingPeriod'), params.id])
                 redirect action: "index", method: "GET"
             }
-            '*'{ render status: NOT_FOUND }
+            '*' { render status: NOT_FOUND }
         }
     }
 }
